@@ -8,239 +8,280 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Hind+Siliguri:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
-            font-family: 'Hind Siliguri', sans-serif;
-            background: #f5f5f5;
-            color: #333;
-        }
-       .bismillah {
-            font-family: 'Amiri', serif;
-            text-align: center;
-            font-size: 32px;
-            font-weight: 700;
-            padding: 20px 10px 10px;
-            background: linear-gradient(135deg, #d4af37, #f2d377);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-       .subtitle {
-            text-align: center;
-            font-size: 18px;
-            color: #666;
-            margin-bottom: 20px;
-        }
-        header {
-            background: white;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-       .header-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 15px 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-       .logo-section {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-       .logo-section img {
-            width: 50px;
-            height: 50px;
-            border-radius: 8px;
-            object-fit: cover;
-        }
-       .logo-section h1 {
-            font-size: 24px;
-            font-weight: 600;
-            color: #2c3e50;
-        }
-       .admin-btn {
-            background: #3498db;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 6px;
-            cursor: pointer;
-            font-size: 15px;
-            font-family: 'Hind Siliguri', sans-serif;
-        }
-       .main-options {
-            max-width: 1200px;
-            margin: 30px auto;
-            padding: 0 20px;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
-        }
-       .option-card {
-            background: white;
-            padding: 30px;
-            border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-            text-align: center;
-            transition: 0.3s;
-        }
-       .option-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 6px 20px rgba(0,0,0,0.12);
-        }
-       .option-card img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-            border-radius: 8px;
-            margin-bottom: 15px;
-        }
-       .option-card h2 {
-            font-size: 28px;
-            margin-bottom: 15px;
-            color: #2c3e50;
-        }
-       .option-card h3 {
-            font-size: 18px;
-            margin: 10px 0;
-            color: #2c3e50;
-        }
-       .price {
-            color: #e74c3c;
-            font-weight: 600;
-            font-size: 20px;
-            margin: 10px 0;
-        }
-       .btn-start {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            border: none;
-            padding: 12px 35px;
-            border-radius: 25px;
-            font-size: 16px;
-            font-weight: 600;
-            cursor: pointer;
-            font-family: 'Hind Siliguri', sans-serif;
-            transition: 0.3s;
-            text-decoration: none;
-            display: inline-block;
-        }
-       .btn-start:hover {
-            transform: scale(1.05);
-            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
-        }
-       .banner-section {
-            max-width: 1200px;
-            margin: 40px auto;
-            padding: 0 20px;
-        }
-       .section-title {
-            text-align: center;
-            margin-bottom: 25px;
-            font-size: 28px;
-            color: #2c3e50;
-        }
-       .banner {
-            background: white;
-            border-radius: 12px;
-            overflow: hidden;
-            margin-bottom: 30px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-        }
-       .banner img {
-            width: 100%;
-            height: 300px;
-            object-fit: cover;
-            display: block;
-            cursor: pointer;
-        }
-       .product-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-        }
-        footer {
-            background: #2c3e50;
-            color: white;
-            text-align: center;
-            padding: 30px 20px;
-            margin-top: 50px;
-        }
-       .modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0,0,0,0.7);
-            z-index: 1000;
-            justify-content: center;
-            align-items: center;
-        }
-       .modal.active { display: flex; }
-       .modal-content {
-            background: white;
-            padding: 30px;
-            border-radius: 12px;
-            max-width: 600px;
-            width: 90%;
-            max-height: 80vh;
-            overflow-y: auto;
-        }
-       .modal-content h3 { margin-bottom: 20px; color: #2c3e50; }
-       .modal-content h4 { margin: 20px 0 10px; color: #34495e; }
-       .form-group { margin-bottom: 15px; }
-       .form-group label {
-            display: block;
-            margin-bottom: 5px;
-            font-weight: 500;
-            font-size: 14px;
-        }
-       .form-group input {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 6px;
-            font-family: 'Hind Siliguri', sans-serif;
-        }
-       .btn {
-            background: #3498db;
-            color: white;
-            border: none;
-            padding: 10px 25px;
-            border-radius: 6px;
-            cursor: pointer;
-            font-family: 'Hind Siliguri', sans-serif;
-            margin-right: 10px;
-            margin-top: 5px;
-        }
-       .btn:hover { background: #2980b9; }
-       .btn-danger { background: #e74c3c; }
-       .btn-danger:hover { background: #c0392b; }
-       .item-box {
-            border: 1px solid #ddd;
-            padding: 12px;
-            margin: 10px 0;
-            border-radius: 6px;
-            background: #f9f9f9;
-        }
-       .loading {
-            text-align: center;
-            padding: 40px;
-            font-size: 18px;
-            color: #666;
-        }
-        @media (max-width: 768px) {
-           .bismillah { font-size: 24px; }
-           .header-content { flex-direction: column; gap: 15px; }
-           .banner img { height: 200px; }
-        }
-    </style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+        font-family: 'Hind Siliguri', sans-serif;
+        background: #ffffff;
+        color: #0e1318;
+    }
+   .bismillah {
+        font-family: 'Amiri', serif;
+        text-align: center;
+        font-size: 32px;
+        font-weight: 700;
+        padding: 20px 10px 10px;
+        background: linear-gradient(135deg, #8b3dff, #00c4cc);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+   .subtitle {
+        text-align: center;
+        font-size: 18px;
+        color: #6b7280;
+        margin-bottom: 20px;
+    }
+    header {
+        background: white;
+        border-bottom: 1px solid #e5e7eb;
+        position: sticky;
+        top: 0;
+        z-index: 100;
+    }
+   .header-content {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 15px 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+   .logo-section {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+    }
+   .logo-section img {
+        width: 50px;
+        height: 50px;
+        border-radius: 12px;
+        object-fit: cover;
+    }
+   .logo-section h1 {
+        font-size: 24px;
+        font-weight: 700;
+        color: #0e1318;
+    }
+   .admin-btn {
+        background: linear-gradient(135deg, #8b3dff 0%, #00c4cc 100%);
+        color: white;
+        border: none;
+        padding: 10px 24px;
+        border-radius: 8px;
+        cursor: pointer;
+        font-size: 15px;
+        font-weight: 600;
+        font-family: 'Hind Siliguri', sans-serif;
+        transition: 0.2s;
+    }
+   .admin-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 16px rgba(139, 61, 255, 0.3);
+    }
+   .main-options {
+        max-width: 1200px;
+        margin: 40px auto;
+        padding: 0 20px;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 24px;
+    }
+   .option-card {
+        background: #f8f9fb;
+        padding: 32px;
+        border-radius: 16px;
+        border: 1px solid #e5e7eb;
+        text-align: center;
+        transition: 0.3s;
+    }
+   .option-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+        border-color: #8b3dff;
+    }
+   .option-card img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        border-radius: 12px;
+        margin-bottom: 20px;
+    }
+   .option-card h2 {
+        font-size: 28px;
+        margin-bottom: 12px;
+        color: #0e1318;
+        font-weight: 700;
+    }
+   .option-card h3 {
+        font-size: 18px;
+        margin: 10px 0;
+        color: #0e1318;
+        font-weight: 600;
+    }
+   .price {
+        color: #8b3dff;
+        font-weight: 700;
+        font-size: 22px;
+        margin: 12px 0;
+    }
+   .btn-start {
+        background: linear-gradient(135deg, #8b3dff 0%, #00c4cc 100%);
+        color: white;
+        border: none;
+        padding: 14px 40px;
+        border-radius: 8px;
+        font-size: 16px;
+        font-weight: 600;
+        cursor: pointer;
+        font-family: 'Hind Siliguri', sans-serif;
+        transition: 0.2s;
+        text-decoration: none;
+        display: inline-block;
+    }
+   .btn-start:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 20px rgba(139, 61, 255, 0.4);
+    }
+   .banner-section {
+        max-width: 1200px;
+        margin: 50px auto;
+        padding: 0 20px;
+    }
+   .section-title {
+        text-align: center;
+        margin-bottom: 32px;
+        font-size: 32px;
+        color: #0e1318;
+        font-weight: 700;
+    }
+   .banner {
+        background: #f8f9fb;
+        border-radius: 16px;
+        overflow: hidden;
+        margin-bottom: 32px;
+        border: 1px solid #e5e7eb;
+        transition: 0.3s;
+    }
+   .banner:hover {
+        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+    }
+   .banner img {
+        width: 100%;
+        height: 320px;
+        object-fit: cover;
+        display: block;
+        cursor: pointer;
+    }
+   .product-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 24px;
+    }
+    footer {
+        background: #0e1318;
+        color: white;
+        text-align: center;
+        padding: 40px 20px;
+        margin-top: 60px;
+    }
+   .modal {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(14, 19, 24, 0.7);
+        z-index: 1000;
+        justify-content: center;
+        align-items: center;
+    }
+   .modal.active { display: flex; }
+   .modal-content {
+        background: white;
+        padding: 32px;
+        border-radius: 16px;
+        max-width: 600px;
+        width: 90%;
+        max-height: 80vh;
+        overflow-y: auto;
+    }
+   .modal-content h3 { 
+        margin-bottom: 24px; 
+        color: #0e1318; 
+        font-size: 24px;
+        font-weight: 700;
+    }
+   .modal-content h4 { 
+        margin: 24px 0 12px; 
+        color: #0e1318;
+        font-weight: 600;
+    }
+   .form-group { margin-bottom: 16px; }
+   .form-group label {
+        display: block;
+        margin-bottom: 6px;
+        font-weight: 600;
+        font-size: 14px;
+        color: #374151;
+    }
+   .form-group input {
+        width: 100%;
+        padding: 12px;
+        border: 2px solid #e5e7eb;
+        border-radius: 8px;
+        font-family: 'Hind Siliguri', sans-serif;
+        transition: 0.2s;
+    }
+   .form-group input:focus {
+        outline: none;
+        border-color: #8b3dff;
+    }
+   .btn {
+        background: linear-gradient(135deg, #8b3dff 0%, #00c4cc 100%);
+        color: white;
+        border: none;
+        padding: 12px 28px;
+        border-radius: 8px;
+        cursor: pointer;
+        font-family: 'Hind Siliguri', sans-serif;
+        margin-right: 10px;
+        margin-top: 8px;
+        font-weight: 600;
+        transition: 0.2s;
+    }
+   .btn:hover { 
+        transform: translateY(-2px);
+        box-shadow: 0 6px 16px rgba(139, 61, 255, 0.3);
+    }
+   .btn-danger { 
+        background: #ef4444;
+    }
+   .btn-danger:hover { 
+        background: #dc2626;
+        box-shadow: 0 6px 16px rgba(239, 68, 68, 0.3);
+    }
+   .item-box {
+        border: 2px solid #e5e7eb;
+        padding: 16px;
+        margin: 12px 0;
+        border-radius: 12px;
+        background: #f8f9fb;
+    }
+   .loading {
+        text-align: center;
+        padding: 40px;
+        font-size: 18px;
+        color: #6b7280;
+    }
+    @media (max-width: 768px) {
+       .bismillah { font-size: 26px; }
+       .header-content { flex-direction: column; gap: 15px; }
+       .banner img { height: 220px; }
+       .section-title { font-size: 26px; }
+    }
+</style>
+
 </head>
 <body>
     <div class="bismillah">بِسْمِ ٱللَّٰهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ</div>
@@ -315,7 +356,7 @@
                     <input type="text" id="logoUrl" placeholder="images/logo.png বা https://i.imgur.com/logo.png">
                 </div>
                 <button class="btn" onclick="updateBranding()">আপডেট করুন</button>
-                
+               
                 <hr style="margin: 20px 0;">
                 <h4>Banner Management</h4>
                 <div class="form-group">
@@ -328,7 +369,7 @@
                 </div>
                 <button class="btn" onclick="addBanner()">ব্যানার যোগ করুন</button>
                 <div id="bannerList"></div>
-                
+               
                 <hr style="margin: 20px 0;">
                 <h4>Product Management</h4>
                 <div class="form-group">
@@ -349,43 +390,31 @@
                 </div>
                 <button class="btn" onclick="addProduct()">প্রোডাক্ট যোগ করুন</button>
                 <div id="productList"></div>
-                
+               
                 <br>
                 <button class="btn-danger" onclick="adminLogout()">লগআউট</button>
             </div>
         </div>
     </div>
 
-    <!-- Firebase SDK -->
+    <!-- Firebase SDK - পুরানো স্টাইল, এটাই লাগবে -->
     <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-database-compat.js"></script>
 
     <script>
-        // ===== FIREBASE সেটআপ - এটা চেঞ্জ করো =====
-        // Import the functions you need from the SDKs you need
-import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
-
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        // ===== FIREBASE সেটআপ - ঠিক করা হয়েছে =====       
+        const firebaseConfig = {
+          apiKey: "AIzaSyCLV6_U2owfZ2ZBXKW5_6LDVQB4bhqEIzI",
+          authDomain: "booeb-store.firebaseapp.com",
+          databaseURL: "https://booeb-store-default-rtdb.firebaseio.com",
+          projectId: "booeb-store",
+          storageBucket: "booeb-store.firebasestorage.app",
+          messagingSenderId: "1081114446030",
+          appId: "1:1081114446030:web:e3589492837615f01c689f",
+          measurementId: "G-QF3HMRD45N"
+        };
         
-const firebaseConfig = {
-  apiKey: "AIzaSyCLV6_U2owfZ2ZBXKW5_6LDVQB4bhqEIzI",
-  authDomain: "booeb-store.firebaseapp.com",
-  databaseURL: "https://booeb-store-default-rtdb.firebaseio.com",
-  projectId: "booeb-store",
-  storageBucket: "booeb-store.firebasestorage.app",
-  messagingSenderId: "1081114446030",
-  appId: "1:1081114446030:web:e3589492837615f01c689f",
-  measurementId: "G-QF3HMRD45N"
-};
-
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
-        
+        // Initialize Firebase
         firebase.initializeApp(firebaseConfig);
         const db = firebase.database();
         // ===== সেটআপ শেষ =====
@@ -525,7 +554,7 @@ const analytics = getAnalytics(app);
             location.reload();
         }
 
-                function updateBranding() {
+        function updateBranding() {
             const name = document.getElementById('editSiteName').value;
             const logo = document.getElementById('logoUrl').value;
             db.ref('site').set({ name, logo });
@@ -562,30 +591,6 @@ const analytics = getAnalytics(app);
             });
         }
 
-        function deleteBanner(key) {
-            if(confirm('ডিলিট করবেন?')) {
-                db.ref('banners/' + key).remove();
-            }
-        }
-
-        function addProduct() {
-            const name = document.getElementById('productName').value;
-            const price = document.getElementById('productPrice').value;
-            const img = document.getElementById('productImage').value;
-            const link = document.getElementById('productLink').value;
-
-            if(name && price && img && link) {
-                db.ref('products').push({ name, price, img, link });
-                document.getElementById('productName').value = '';
-                document.getElementById('productPrice').value = '';
-                document.getElementById('productImage').value = '';
-                document.getElementById('productLink').value = '';
-                alert('প্রোডাক্ট যোগ হয়েছে! সবাই দেখতে পাবে');
-            } else {
-                alert('সব ফিল্ড পূরণ করুন');
-            }
-        }
-
         function deleteProduct(key) {
             if(confirm('ডিলিট করবেন?')) {
                 db.ref('products/' + key).remove();
@@ -610,4 +615,5 @@ const analytics = getAnalytics(app);
     </script>
 </body>
 </html>
+
 
