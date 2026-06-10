@@ -362,15 +362,28 @@
 
     <script>
         // ===== FIREBASE সেটআপ - এটা চেঞ্জ করো =====
-        const firebaseConfig = {
-            apiKey: "AIzaSyC_YOUR_KEY_HERE",
-            authDomain: "booeb-store.firebaseapp.com",
-            databaseURL: "https://booeb-store-default-rtdb.firebaseio.com",
-            projectId: "booeb-store",
-            storageBucket: "booeb-store.appspot.com",
-            messagingSenderId: "123456789",
-            appId: "1:123456789:web:abcdef"
-        };
+        // Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+// Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+  apiKey: "AIzaSyCLV6_U2owfZ2ZBXKW5_6LDVQB4bhqEIzI",
+  authDomain: "booeb-store.firebaseapp.com",
+  databaseURL: "https://booeb-store-default-rtdb.firebaseio.com",
+  projectId: "booeb-store",
+  storageBucket: "booeb-store.firebasestorage.app",
+  messagingSenderId: "1081114446030",
+  appId: "1:1081114446030:web:e3589492837615f01c689f",
+  measurementId: "G-QF3HMRD45N"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);
         
         firebase.initializeApp(firebaseConfig);
         const db = firebase.database();
