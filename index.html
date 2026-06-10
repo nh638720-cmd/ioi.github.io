@@ -575,15 +575,15 @@
         }
 
        function deleteBanner(key) {
-    console.log('Deleting key:', key); // ডিবাগের জন্য
-    if(confirm('ডিলিট করবেন?')) {
+    console.log('Deleting key:', key); // for debugging
+    if(confirm('Delete?')) {
         db.ref('banners').child(key).remove()
         .then(() => {
-            alert('ব্যানার ডিলিট হয়েছে');
+            alert('Banner deleted');
         })
         .catch((error) => {
             console.error('Delete Error:', error);
-            alert('ডিলিট করতে সমস্যা: ' + error.message);
+            alert('Problem deleting': ' + error.message);
         });
     }
 }
@@ -595,14 +595,14 @@
 
         function deleteProduct(key) {
     console.log('Deleting key:', key);
-    if(confirm('ডিলিট করবেন?')) {
+    if(confirm('Delete?')) {
         db.ref('products').child(key).remove()
         .then(() => {
-            alert('প্রোডাক্ট ডিলিট হয়েছে');
+            alert('Product delete');
         })
         .catch((error) => {
             console.error('Delete Error:', error);
-            alert('ডিলিট করতে সমস্যা: ' + error.message);
+            alert('Problem deleting: ' + error.message);
         });
     }
 }
