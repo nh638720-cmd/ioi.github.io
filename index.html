@@ -8,23 +8,12 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Hind+Siliguri:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
             font-family: 'Hind Siliguri', sans-serif;
             background: #f5f5f5;
             color: #333;
-            top: 0!important;
         }
-
-       .goog-te-banner-frame,.goog-logo-link,.goog-te-gadget {
-            display: none!important;
-        }
-
        .bismillah {
             font-family: 'Amiri', serif;
             text-align: center;
@@ -36,14 +25,12 @@
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
-
        .subtitle {
             text-align: center;
             font-size: 18px;
             color: #666;
             margin-bottom: 20px;
         }
-
         header {
             background: white;
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
@@ -51,7 +38,6 @@
             top: 0;
             z-index: 100;
         }
-
        .header-content {
             max-width: 1200px;
             margin: 0 auto;
@@ -60,31 +46,23 @@
             justify-content: space-between;
             align-items: center;
         }
-
        .logo-section {
             display: flex;
             align-items: center;
             gap: 12px;
         }
-
        .logo-section img {
             width: 50px;
             height: 50px;
             border-radius: 8px;
             object-fit: cover;
         }
-
        .logo-section h1 {
             font-size: 24px;
             font-weight: 600;
             color: #2c3e50;
         }
-
-       .language-selector {
-            position: relative;
-        }
-
-       .lang-btn {
+       .admin-btn {
             background: #3498db;
             color: white;
             border: none;
@@ -93,24 +71,7 @@
             cursor: pointer;
             font-size: 15px;
             font-family: 'Hind Siliguri', sans-serif;
-            transition: 0.3s;
         }
-
-       .lang-btn:hover {
-            background: #2980b9;
-        }
-
-        #google_translate_element {
-            position: absolute;
-            top: 45px;
-            right: 0;
-            background: white;
-            border-radius: 8px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-            padding: 10px;
-            display: none;
-        }
-
        .main-options {
             max-width: 1200px;
             margin: 30px auto;
@@ -119,7 +80,6 @@
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 20px;
         }
-
        .option-card {
             background: white;
             padding: 30px;
@@ -128,18 +88,28 @@
             text-align: center;
             transition: 0.3s;
         }
-
        .option-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 6px 20px rgba(0,0,0,0.12);
         }
-
-       .option-card h2 {
-            font-size: 28px;
+       .option-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
             margin-bottom: 15px;
+        }
+       .option-card h3 {
+            font-size: 18px;
+            margin: 10px 0;
             color: #2c3e50;
         }
-
+       .price {
+            color: #e74c3c;
+            font-weight: 600;
+            font-size: 20px;
+            margin: 10px 0;
+        }
        .btn-start {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
@@ -154,18 +124,21 @@
             text-decoration: none;
             display: inline-block;
         }
-
        .btn-start:hover {
             transform: scale(1.05);
             box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
         }
-
        .banner-section {
             max-width: 1200px;
             margin: 40px auto;
             padding: 0 20px;
         }
-
+       .section-title {
+            text-align: center;
+            margin-bottom: 25px;
+            font-size: 28px;
+            color: #2c3e50;
+        }
        .banner {
             background: white;
             border-radius: 12px;
@@ -173,23 +146,18 @@
             margin-bottom: 30px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.08);
         }
-
        .banner img {
             width: 100%;
             height: 300px;
             object-fit: cover;
             display: block;
+            cursor: pointer;
         }
-
-       .banner-options {
-            padding: 20px;
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            flex-wrap: wrap;
-            background: #fafafa;
+       .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
         }
-
         footer {
             background: #2c3e50;
             color: white;
@@ -197,20 +165,6 @@
             padding: 30px 20px;
             margin-top: 50px;
         }
-
-       .admin-link {
-            color: #95a5a6;
-            text-decoration: none;
-            font-size: 13px;
-            margin-top: 10px;
-            display: inline-block;
-            cursor: pointer;
-        }
-
-       .admin-link:hover {
-            color: white;
-        }
-
        .modal {
             display: none;
             position: fixed;
@@ -223,44 +177,32 @@
             justify-content: center;
             align-items: center;
         }
-
-       .modal.active {
-            display: flex;
-        }
-
+       .modal.active { display: flex; }
        .modal-content {
             background: white;
             padding: 30px;
             border-radius: 12px;
-            max-width: 500px;
+            max-width: 600px;
             width: 90%;
             max-height: 80vh;
             overflow-y: auto;
         }
-
-       .modal-content h3 {
-            margin-bottom: 20px;
-            color: #2c3e50;
-        }
-
-       .form-group {
-            margin-bottom: 15px;
-        }
-
+       .modal-content h3 { margin-bottom: 20px; color: #2c3e50; }
+       .modal-content h4 { margin: 20px 0 10px; color: #34495e; }
+       .form-group { margin-bottom: 15px; }
        .form-group label {
             display: block;
             margin-bottom: 5px;
             font-weight: 500;
+            font-size: 14px;
         }
-
-       .form-group input {
+       .form-group input, .form-group textarea {
             width: 100%;
             padding: 10px;
             border: 1px solid #ddd;
             border-radius: 6px;
             font-family: 'Hind Siliguri', sans-serif;
         }
-
        .btn {
             background: #3498db;
             color: white;
@@ -270,20 +212,24 @@
             cursor: pointer;
             font-family: 'Hind Siliguri', sans-serif;
             margin-right: 10px;
+            margin-top: 5px;
         }
-
-       .btn:hover {
-            background: #2980b9;
+       .btn:hover { background: #2980b9; }
+       .btn-danger { background: #e74c3c; }
+       .btn-danger:hover { background: #c0392b; }
+       .item-box {
+            border: 1px solid #ddd;
+            padding: 12px;
+            margin: 10px 0;
+            border-radius: 6px;
+            background: #f9f9f9;
         }
-
-       .btn-danger {
-            background: #e74c3c;
+       .loading {
+            text-align: center;
+            padding: 40px;
+            font-size: 18px;
+            color: #666;
         }
-
-       .btn-danger:hover {
-            background: #c0392b;
-        }
-
         @media (max-width: 768px) {
            .bismillah { font-size: 24px; }
            .header-content { flex-direction: column; gap: 15px; }
@@ -298,84 +244,27 @@
     <header>
         <div class="header-content">
             <div class="logo-section">
-             <img src="https://imgur.com/gallery/qw5rwt-l7KFD8P#8tYDprH"alt="Logo">
+                <img id="siteLogo" src="https://via.placeholder.com/50" alt="Logo">
                 <h1 id="siteName">Booeb.com</h1>
-          </div>
+            </div>
+            <button class="admin-btn" onclick="openAdmin()">অ্যাডমিন</button>
+        </div>
     </header>
 
-    <div class="main-options">
-        <div class="option-card">
-            <h2>বই</h2>
-            <a href="https://bithilikha.lovable.app" class="btn-start">শুরু করুন</a>
-        </div>
-        <div class="option-card">
-            <h2>প্রোডাক্ট</h2>
-            <a href="https://bithilikha.bolt.host/" class="btn-start">শুরু করুন</a>
-        </div>
+    <div class="banner-section" id="bannerSection">
+        <h2 class="section-title">অফার</h2>
+        <div class="loading">লোড হচ্ছে...</div>
     </div>
 
-    <div class="banner-section" id="bannerSection">
-        <div class="banner">
-            <img src="https://picsum.photos/1200/300?random=1" alt="Banner 1" class="banner-img">
-            <div class="banner-options">
-                <a href="https://bithilikha.lovable.app" class="btn-start">বই - শুরু করুন</a>
-                <a href="https://bithilikha.bolt.host/" class="btn-start">প্রোডাক্ট - শুরু করুন</a>
-            </div>
-        </div>
-        <div class="banner">
-            <img src="https://picsum.photos/1200/300?random=2" alt="Banner 2" class="banner-img">
-            <div class="banner-options">
-                <a href="https://bithilikha.lovable.app" class="btn-start">বই - শুরু করুন</a>
-                <a href="https://bithilikha.bolt.host/" class="btn-start">প্রোডাক্ট - শুরু করুন</a>
-            </div>
-        </div>
-        <div class="banner">
-            <img src="https://picsum.photos/1200/300?random=3" alt="Banner 3" class="banner-img">
-            <div class="banner-options">
-                <a href="https://bithilikha.lovable.app" class="btn-start">বই - শুরু করুন</a>
-                <a href="https://bithilikha.bolt.host/" class="btn-start">প্রোডাক্ট - শুরু করুন</a>
-            </div>
-        </div>
-        <div class="banner">
-            <img src="https://picsum.photos/1200/300?random=2" alt="Banner 2" class="banner-img">
-            <div class="banner-options">
-                <a href="https://bithilikha.lovable.app" class="btn-start">বই - শুরু করুন</a>
-                <a href="https://bithilikha.bolt.host/" class="btn-start">প্রোডাক্ট - শুরু করুন</a>
-             </div>
-         </div>
-         <div class="banner">
-            <img src="https://picsum.photos/1200/300?random=2" alt="Banner 2" class="banner-img">
-            <div class="banner-options">
-                <a href="https://bithilikha.lovable.app" class="btn-start">বই - শুরু করুন</a>
-                <a href="https://bithilikha.bolt.host/" class="btn-start">প্রোডাক্ট - শুরু করুন</a>
-            </div>
-        </div>
-             <div class="banner">
-            <img src="https://picsum.photos/1200/300?random=2" alt="Banner 2" class="banner-img">
-            <div class="banner-options">
-                <a href="https://bithilikha.lovable.app" class="btn-start">বই - শুরু করুন</a>
-                <a href="https://bithilikha.bolt.host/" class="btn-start">প্রোডাক্ট - শুরু করুন</a>
-            </div>
-        </div>
-             <div class="banner">
-            <img src="https://picsum.photos/1200/300?random=2" alt="Banner 2" class="banner-img">
-            <div class="banner-options">
-                <a href="https://bithilikha.lovable.app" class="btn-start">বই - শুরু করুন</a>
-                <a href="https://bithilikha.bolt.host/" class="btn-start">প্রোডাক্ট - শুরু করুন</a>
-            </div>
-        </div>
-             <div class="banner">
-            <img src="https://picsum.photos/1200/300?random=2" alt="Banner 2" class="banner-img">
-            <div class="banner-options">
-                <a href="https://bithilikha.lovable.app" class="btn-start">বই - শুরু করুন</a>
-                <a href="https://bithilikha.bolt.host/" class="btn-start">প্রোডাক্ট - শুরু করুন</a>
-            </div>
+    <div class="banner-section">
+        <h2 class="section-title">আমাদের প্রোডাক্ট</h2>
+        <div class="product-grid" id="productGrid">
+            <div class="loading">লোড হচ্ছে...</div>
         </div>
     </div>
 
     <footer>
-        <p>&copy; 2026 BithiLikha Store. সর্বস্বত্ব সংরক্ষিত।</p>
-        <a class="admin-link" onclick="openAdmin()">Admin</a>
+        <p>&copy; 2026 Booeb.com. সর্বস্বত্ব সংরক্ষিত।</p>
     </footer>
 
     <div id="adminModal" class="modal">
@@ -398,58 +287,130 @@
                 <div class="form-group">
                     <label>সাইটের নাম</label>
                     <input type="text" id="editSiteName">
-                    <button class="btn" onclick="updateSiteName()">আপডেট করুন</button>
                 </div>
                 <div class="form-group">
-                    <label>লোগো আপলোড</label>
-                    <input type="file" id="logoFile" accept="image/*">
-                    <button class="btn" onclick="uploadLogo()">আপলোড করুন</button>
+                    <label>লোগো URL</label>
+                    <input type="text" id="logoUrl" placeholder="https://i.imgur.com/logo.png">
                 </div>
+                <button class="btn" onclick="updateBranding()">আপডেট করুন</button>
+                
                 <hr style="margin: 20px 0;">
                 <h4>Banner Management</h4>
+                <div class="form-group">
+                    <label>ব্যানার ছবির URL</label>
+                    <input type="text" id="bannerImg" placeholder="https://i.imgur.com/banner.jpg">
+                </div>
+                <div class="form-group">
+                    <label>ক্লিক করলে যাবে</label>
+                    <input type="text" id="bannerLink" placeholder="https://your-link.com">
+                </div>
+                <button class="btn" onclick="addBanner()">ব্যানার যোগ করুন</button>
                 <div id="bannerList"></div>
+                
+                <hr style="margin: 20px 0;">
+                <h4>Product Management</h4>
+                <div class="form-group">
+                    <label>প্রোডাক্টের নাম</label>
+                    <input type="text" id="productName">
+                </div>
+                <div class="form-group">
+                    <label>দাম</label>
+                    <input type="text" id="productPrice" placeholder="১২০০ টাকা">
+                </div>
+                <div class="form-group">
+                    <label>ছবির URL</label>
+                    <input type="text" id="productImage" placeholder="https://i.imgur.com/product.jpg">
+                </div>
+                <div class="form-group">
+                    <label>Buy Now লিংক</label>
+                    <input type="text" id="productLink" placeholder="https://your-shop.com/product">
+                </div>
+                <button class="btn" onclick="addProduct()">প্রোডাক্ট যোগ করুন</button>
+                <div id="productList"></div>
+                
+                <br>
                 <button class="btn-danger" onclick="adminLogout()">লগআউট</button>
             </div>
         </div>
     </div>
 
-    <script type="text/javascript">
-        function googleTranslateElementInit() {
-            new google.translate.TranslateElement({
-                pageLanguage: 'bn',
-                includedLanguages: 'bn,en,hi,ar,ur,es,fr',
-                layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
-                autoDisplay: false
-            }, 'google_translate_element');
-        }
-    </script>
-    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-database-compat.js"></script>
 
     <script>
-        // Load saved data
-        window.onload = function() {
-            if(localStorage.getItem('siteName')) {
-                document.getElementById('siteName').textContent = localStorage.getItem('siteName');
-                document.getElementById('editSiteName').value = localStorage.getItem('siteName');
-            }
-            if(localStorage.getItem('siteLogo')) {
-                document.getElementById('siteLogo').src = localStorage.getItem('siteLogo');
-            }
+        // ===== FIREBASE সেটআপ - এটা তোমাকে চেঞ্জ করতে হবে =====
+        const firebaseConfig = {
+            apiKey: "AIzaSyDemoKey-Replace-With-Yours",
+            authDomain: "your-project.firebaseapp.com",
+            databaseURL: "https://your-project-default-rtdb.firebaseio.com",
+            projectId: "your-project",
+            storageBucket: "your-project.appspot.com",
+            messagingSenderId: "123456789",
+            appId: "1:123456789:web:abcdef"
+        };
+        
+        // Firebase ইনিশিয়ালাইজ
+        firebase.initializeApp(firebaseConfig);
+        const db = firebase.database();
+        // ===== সেটআপ শেষ =====
 
-            // Load banners
-            const banners = document.querySelectorAll('.banner-img');
-            banners.forEach((img, i) => {
-                const saved = localStorage.getItem('banner' + i);
-                if(saved) img.src = saved;
+        // রিয়েলটাইম ডেটা লোড
+        db.ref('site').on('value', (snapshot) => {
+            const data = snapshot.val();
+            if(data) {
+                document.getElementById('siteName').textContent = data.name || 'Booeb.com';
+                document.getElementById('siteLogo').src = data.logo || 'https://via.placeholder.com/50';
+            }
+        });
+
+        db.ref('banners').on('value', (snapshot) => {
+            const banners = snapshot.val() || [];
+            renderBanners(Object.values(banners));
+        });
+
+        db.ref('products').on('value', (snapshot) => {
+            const products = snapshot.val() || [];
+            renderProducts(Object.values(products));
+        });
+
+        function renderBanners(banners) {
+            const section = document.getElementById('bannerSection');
+            section.innerHTML = '<h2 class="section-title">অফার</h2>';
+            if(banners.length === 0) {
+                section.innerHTML += '<p style="text-align:center; color:#999;">কোনো ব্যানার নেই</p>';
+                return;
+            }
+            banners.forEach(b => {
+                section.innerHTML += `
+                    <div class="banner">
+                        <a href="${b.link}" target="_blank">
+                            <img src="${b.img}" alt="Banner">
+                        </a>
+                    </div>
+                `;
             });
         }
 
-        function toggleTranslate() {
-            const el = document.getElementById('google_translate_element');
-            el.style.display = el.style.display === 'none'? 'block' : 'none';
+        function renderProducts(products) {
+            const grid = document.getElementById('productGrid');
+            grid.innerHTML = '';
+            if(products.length === 0) {
+                grid.innerHTML = '<p style="text-align:center; color:#999; grid-column: 1/-1;">কোনো প্রোডাক্ট নেই</p>';
+                return;
+            }
+            products.forEach(p => {
+                grid.innerHTML += `
+                    <div class="option-card">
+                        <img src="${p.img}" alt="${p.name}">
+                        <h3>${p.name}</h3>
+                        <p class="price">${p.price}</p>
+                        <a href="${p.link}" class="btn-start" target="_blank">কিনুন</a>
+                    </div>
+                `;
+            });
         }
 
-        // Admin Functions
         function openAdmin() {
             document.getElementById('adminModal').classList.add('active');
             if(localStorage.getItem('adminLoggedIn') === 'true') {
@@ -464,12 +425,10 @@
         function adminLogin() {
             const email = document.getElementById('adminEmail').value;
             const pass = document.getElementById('adminPass').value;
-
             let adminEmail = localStorage.getItem('adminEmail');
             let adminPass = localStorage.getItem('adminPass');
 
             if(!adminEmail) {
-                // First time signup
                 if(email && pass) {
                     localStorage.setItem('adminEmail', email);
                     localStorage.setItem('adminPass', pass);
@@ -480,7 +439,6 @@
                     alert('ইমেইল ও পাসওয়ার্ড দিন');
                 }
             } else {
-                // Login
                 if(email === adminEmail && pass === adminPass) {
                     localStorage.setItem('adminLoggedIn', 'true');
                     showDashboard();
@@ -495,6 +453,7 @@
             document.getElementById('adminDashboard').style.display = 'block';
             document.getElementById('adminTitle').textContent = 'অ্যাডমিন ড্যাশবোর্ড';
             loadBannerList();
+            loadProductList();
         }
 
         function adminLogout() {
@@ -502,54 +461,86 @@
             location.reload();
         }
 
-        function updateSiteName() {
+        function updateBranding() {
             const name = document.getElementById('editSiteName').value;
-            localStorage.setItem('siteName', name);
-            document.getElementById('siteName').textContent = name;
-            alert('সাইটের নাম আপডেট হয়েছে!');
+            const logo = document.getElementById('logoUrl').value;
+            db.ref('site').set({ name, logo });
+            alert('আপডেট হয়েছে! সবাই এখন দেখতে পাবে');
         }
 
-        function uploadLogo() {
-            const file = document.getElementById('logoFile').files[0];
-            if(file) {
-                const reader = new FileReader();
-                reader.onload = function(e) {
-                    localStorage.setItem('siteLogo', e.target.result);
-                    document.getElementById('siteLogo').src = e.target.result;
-                    alert('লোগো আপলোড হয়েছে!');
-                }
-                reader.readAsDataURL(file);
+        function addBanner() {
+            const img = document.getElementById('bannerImg').value;
+            const link = document.getElementById('bannerLink').value;
+            if(img && link) {
+                db.ref('banners').push({ img, link });
+                document.getElementById('bannerImg').value = '';
+                document.getElementById('bannerLink').value = '';
+                alert('ব্যানার যোগ হয়েছে! সবাই দেখতে পাবে');
             } else {
-                alert('ফাইল সিলেক্ট করুন');
+                alert('ছবি ও লিংক দুটোই দিন');
             }
         }
 
         function loadBannerList() {
-            const list = document.getElementById('bannerList');
-            list.innerHTML = '';
-            for(let i = 0; i < 8; i++){
-                const div = document.createElement('div');
-                div.className = 'form-group';
-                div.innerHTML = `
-                    <label>ব্যানার ${i+1}</label>
-                    <input type="file" id="bannerFile${i}" accept="image/*">
-                    <button class="btn" onclick="uploadBanner(${i})">আপলোড</button>
-                `;
-                list.appendChild(div);
+            db.ref('banners').once('value', (snapshot) => {
+                const banners = snapshot.val() || {};
+                const list = document.getElementById('bannerList');
+                list.innerHTML = '<h5>বর্তমান ব্যানার:</h5>';
+                Object.entries(banners).forEach(([key, b]) => {
+                    list.innerHTML += `
+                        <div class="item-box">
+                            <img src="${b.img}" style="width:100%; height:100px; object-fit:cover; border-radius:4px;">
+                            <p style="font-size:12px; margin:5px 0;">${b.link}</p>
+                            <button class="btn-danger" onclick="deleteBanner('${key}')">ডিলিট</button>
+                        </div>
+                    `;
+                });
+            });
+        }
+
+        function deleteBanner(key) {
+            if(confirm('ডিলিট করবেন?')) {
+                db.ref('banners/' + key).remove();
             }
         }
-        
 
-        function uploadBanner(index) {
-            const file = document.getElementById('bannerFile' + index).files[0];
-            if(file) {
-                const reader = new FileReader();
-                reader.onload = function(e) {
-                    localStorage.setItem('banner' + index, e.target.result);
-                    document.querySelectorAll('.banner-img')[index].src = e.target.result;
-                    alert('ব্যানার ' + (index+1) + ' আপলোড হয়েছে!');
-                }
-                reader.readAsDataURL(file);
+        function addProduct() {
+            const name = document.getElementById('productName').value;
+            const price = document.getElementById('productPrice').value;
+            const img = document.getElementById('productImage').value;
+            const link = document.getElementById('productLink').value;
+
+            if(name && price && img && link) {
+                db.ref('products').push({ name, price, img, link });
+                document.getElementById('productName').value = '';
+                document.getElementById('productPrice').value = '';
+                document.getElementById('productImage').value = '';
+                document.getElementById('productLink').value = '';
+                alert('প্রোডাক্ট যোগ হয়েছে! সবাই দেখতে পাবে');
+            } else {
+                alert('সব ফিল্ড পূরণ করুন');
+            }
+        }
+
+        function loadProductList() {
+            db.ref('products').once('value', (snapshot) => {
+                const products = snapshot.val() || {};
+                const list = document.getElementById('productList');
+                list.innerHTML = '<h5>বর্তমান প্রোডাক্ট:</h5>';
+                Object.entries(products).forEach(([key, p]) => {
+                    list.innerHTML += `
+                        <div class="item-box">
+                            <p><b>${p.name}</b> - ${p.price}</p>
+                            <button class="btn-danger" onclick="deleteProduct('${key}')">ডিলিট</button>
+                        </div>
+                    `;
+                });
+            });
+        }
+
+        function deleteProduct(key) {
+            if(confirm('ডিলিট করবেন?')) {
+                db.ref('products/' + key).remove();
             }
         }
     </script>
