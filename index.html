@@ -99,6 +99,11 @@
             border-radius: 8px;
             margin-bottom: 15px;
         }
+       .option-card h2 {
+            font-size: 28px;
+            margin-bottom: 15px;
+            color: #2c3e50;
+        }
        .option-card h3 {
             font-size: 18px;
             margin: 10px 0;
@@ -196,7 +201,7 @@
             font-weight: 500;
             font-size: 14px;
         }
-       .form-group input, .form-group textarea {
+       .form-group input {
             width: 100%;
             padding: 10px;
             border: 1px solid #ddd;
@@ -244,18 +249,34 @@
     <header>
         <div class="header-content">
             <div class="logo-section">
-                <img id="siteLogo" src="https://via.placeholder.com/50" alt="Logo">
+                <img id="siteLogo" src="images/logo.png" alt="Logo">
                 <h1 id="siteName">Booeb.com</h1>
             </div>
             <button class="admin-btn" onclick="openAdmin()">অ্যাডমিন</button>
         </div>
     </header>
 
+    <!-- মেইন দুইটা অপশন - এগুলো ফিক্সড, ১০০% থাকবে -->
+    <div class="main-options">
+        <div class="option-card">
+            <h2>বই</h2>
+            <p style="margin: 15px 0; color: #666;">সকল ইসলামিক ও শিক্ষামূলক বই</p>
+            <a href="https://bithilikha.lovable.app" class="btn-start" target="_blank">শুরু করুন</a>
+        </div>
+        <div class="option-card">
+            <h2>প্রোডাক্ট</h2>
+            <p style="margin: 15px 0; color: #666;">সকল ধরনের প্রোডাক্ট</p>
+            <a href="https://bithilikha.bolt.host/" class="btn-start" target="_blank">শুরু করুন</a>
+        </div>
+    </div>
+
+    <!-- ব্যানার সেকশন -->
     <div class="banner-section" id="bannerSection">
-        <h2 class="section-title">অফার</h2>
+        <h2 class="section-title">অফার ও ব্যানার</h2>
         <div class="loading">লোড হচ্ছে...</div>
     </div>
 
+    <!-- প্রোডাক্ট সেকশন -->
     <div class="banner-section">
         <h2 class="section-title">আমাদের প্রোডাক্ট</h2>
         <div class="product-grid" id="productGrid">
@@ -267,6 +288,7 @@
         <p>&copy; 2026 Booeb.com. সর্বস্বত্ব সংরক্ষিত।</p>
     </footer>
 
+    <!-- অ্যাডমিন প্যানেল -->
     <div id="adminModal" class="modal">
         <div class="modal-content">
             <h3 id="adminTitle">অ্যাডমিন লগইন</h3>
@@ -290,7 +312,7 @@
                 </div>
                 <div class="form-group">
                     <label>লোগো URL</label>
-                    <input type="text" id="logoUrl" placeholder="https://i.imgur.com/logo.png">
+                    <input type="text" id="logoUrl" placeholder="images/logo.png বা https://i.imgur.com/logo.png">
                 </div>
                 <button class="btn" onclick="updateBranding()">আপডেট করুন</button>
                 
@@ -298,11 +320,11 @@
                 <h4>Banner Management</h4>
                 <div class="form-group">
                     <label>ব্যানার ছবির URL</label>
-                    <input type="text" id="bannerImg" placeholder="https://i.imgur.com/banner.jpg">
+                    <input type="text" id="bannerImg" placeholder="images/banner.jpg বা https://i.imgur.com/banner.jpg">
                 </div>
                 <div class="form-group">
-                    <label>ক্লিক করলে যাবে</label>
-                    <input type="text" id="bannerLink" placeholder="https://your-link.com">
+                    <label>ক্লিক করলে যাবে - লিংক</label>
+                    <input type="text" id="bannerLink" placeholder="https://bithilikha.bolt.host/">
                 </div>
                 <button class="btn" onclick="addBanner()">ব্যানার যোগ করুন</button>
                 <div id="bannerList"></div>
@@ -319,11 +341,11 @@
                 </div>
                 <div class="form-group">
                     <label>ছবির URL</label>
-                    <input type="text" id="productImage" placeholder="https://i.imgur.com/product.jpg">
+                    <input type="text" id="productImage" placeholder="images/product.jpg বা https://i.imgur.com/product.jpg">
                 </div>
                 <div class="form-group">
                     <label>Buy Now লিংক</label>
-                    <input type="text" id="productLink" placeholder="https://your-shop.com/product">
+                    <input type="text" id="productLink" placeholder="https://bithilikha.bolt.host/product/1">
                 </div>
                 <button class="btn" onclick="addProduct()">প্রোডাক্ট যোগ করুন</button>
                 <div id="productList"></div>
@@ -339,44 +361,72 @@
     <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-database-compat.js"></script>
 
     <script>
-        // ===== FIREBASE সেটআপ - এটা তোমাকে চেঞ্জ করতে হবে =====
+        // ===== FIREBASE সেটআপ - এটা চেঞ্জ করো =====
         const firebaseConfig = {
-            apiKey: "AIzaSyDemoKey-Replace-With-Yours",
-            authDomain: "your-project.firebaseapp.com",
-            databaseURL: "https://your-project-default-rtdb.firebaseio.com",
-            projectId: "your-project",
-            storageBucket: "your-project.appspot.com",
+            apiKey: "AIzaSyC_YOUR_KEY_HERE",
+            authDomain: "booeb-store.firebaseapp.com",
+            databaseURL: "https://booeb-store-default-rtdb.firebaseio.com",
+            projectId: "booeb-store",
+            storageBucket: "booeb-store.appspot.com",
             messagingSenderId: "123456789",
             appId: "1:123456789:web:abcdef"
         };
         
-        // Firebase ইনিশিয়ালাইজ
         firebase.initializeApp(firebaseConfig);
         const db = firebase.database();
         // ===== সেটআপ শেষ =====
+
+        // ডিফল্ট ডেটা - যদি Firebase খালি থাকে
+        const defaultBanners = [
+            { img: 'images/banner1.jpg', link: 'https://bithilikha.bolt.host/' },
+            { img: 'images/banner2.jpg', link: 'https://bithilikha.lovable.app' }
+        ];
+
+        const defaultProducts = [
+            {
+                name: 'ইসলামিক বই কালেকশন',
+                price: '৩৫০ টাকা থেকে',
+                img: 'images/book1.jpg',
+                link: 'https://bithilikha.lovable.app'
+            },
+            {
+                name: 'স্মার্ট প্রোডাক্ট',
+                price: '১২০০ টাকা থেকে',
+                img: 'images/product1.jpg',
+                link: 'https://bithilikha.bolt.host/'
+            }
+        ];
 
         // রিয়েলটাইম ডেটা লোড
         db.ref('site').on('value', (snapshot) => {
             const data = snapshot.val();
             if(data) {
                 document.getElementById('siteName').textContent = data.name || 'Booeb.com';
-                document.getElementById('siteLogo').src = data.logo || 'https://via.placeholder.com/50';
+                document.getElementById('siteLogo').src = data.logo || 'images/logo.png';
             }
         });
 
         db.ref('banners').on('value', (snapshot) => {
-            const banners = snapshot.val() || [];
-            renderBanners(Object.values(banners));
+            const banners = snapshot.val();
+            if(banners) {
+                renderBanners(Object.values(banners));
+            } else {
+                renderBanners(defaultBanners);
+            }
         });
 
         db.ref('products').on('value', (snapshot) => {
-            const products = snapshot.val() || [];
-            renderProducts(Object.values(products));
+            const products = snapshot.val();
+            if(products) {
+                renderProducts(Object.values(products));
+            } else {
+                renderProducts(defaultProducts);
+            }
         });
 
         function renderBanners(banners) {
             const section = document.getElementById('bannerSection');
-            section.innerHTML = '<h2 class="section-title">অফার</h2>';
+            section.innerHTML = '<h2 class="section-title">অফার ও ব্যানার</h2>';
             if(banners.length === 0) {
                 section.innerHTML += '<p style="text-align:center; color:#999;">কোনো ব্যানার নেই</p>';
                 return;
@@ -461,11 +511,11 @@
             location.reload();
         }
 
-        function updateBranding() {
+                function updateBranding() {
             const name = document.getElementById('editSiteName').value;
             const logo = document.getElementById('logoUrl').value;
             db.ref('site').set({ name, logo });
-            alert('আপডেট হয়েছে! সবাই এখন দেখতে পাবে');
+            alert('আপডেট হয়েছে! সবাই দেখতে পাবে');
         }
 
         function addBanner() {
@@ -490,7 +540,7 @@
                     list.innerHTML += `
                         <div class="item-box">
                             <img src="${b.img}" style="width:100%; height:100px; object-fit:cover; border-radius:4px;">
-                            <p style="font-size:12px; margin:5px 0;">${b.link}</p>
+                            <p style="font-size:12px; margin:5px 0; word-break:break-all;">${b.link}</p>
                             <button class="btn-danger" onclick="deleteBanner('${key}')">ডিলিট</button>
                         </div>
                     `;
@@ -522,6 +572,12 @@
             }
         }
 
+        function deleteProduct(key) {
+            if(confirm('ডিলিট করবেন?')) {
+                db.ref('products/' + key).remove();
+            }
+        }
+
         function loadProductList() {
             db.ref('products').once('value', (snapshot) => {
                 const products = snapshot.val() || {};
@@ -537,12 +593,7 @@
                 });
             });
         }
-
-        function deleteProduct(key) {
-            if(confirm('ডিলিট করবেন?')) {
-                db.ref('products/' + key).remove();
-            }
-        }
     </script>
 </body>
 </html>
+
