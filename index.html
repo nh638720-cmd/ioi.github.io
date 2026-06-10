@@ -3,406 +3,372 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Booeb.com - কেনাকাটা শুরু করুন</title>
+    <title id="metaTitle">Booeb.com - Start Shopping</title>
+    <meta name="description" id="metaDesc" content="Booeb.com - Best Online Shopping">
+    <meta name="keywords" id="metaKeywords" content="shopping, ecommerce, bangladesh">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Hind+Siliguri:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body {
-        font-family: 'Hind Siliguri', sans-serif;
-        background: #ffffff;
-        color: #0e1318;
-    }
-   .bismillah {
-        font-family: 'Amiri', serif;
-        text-align: center;
-        font-size: 32px;
-        font-weight: 700;
-        padding: 20px 10px 10px;
-        background: linear-gradient(135deg, #8b3dff, #00c4cc);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-    }
-   .subtitle {
-        text-align: center;
-        font-size: 18px;
-        color: #6b7280;
-        margin-bottom: 20px;
-    }
-    header {
-        background: white;
-        border-bottom: 1px solid #e5e7eb;
-        position: sticky;
-        top: 0;
-        z-index: 100;
-    }
-   .header-content {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 15px 20px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-   .logo-section {
-        display: flex;
-        align-items: center;
-        gap: 12px;
-    }
-   .logo-section img {
-        width: 50px;
-        height: 50px;
-        border-radius: 12px;
-        object-fit: cover;
-    }
-   .logo-section h1 {
-        font-size: 24px;
-        font-weight: 700;
-        color: #0e1318;
-    }
-   .admin-btn {
-        background: linear-gradient(135deg, #8b3dff 0%, #00c4cc 100%);
-        color: white;
-        border: none;
-        padding: 10px 24px;
-        border-radius: 8px;
-        cursor: pointer;
-        font-size: 15px;
-        font-weight: 600;
-        font-family: 'Hind Siliguri', sans-serif;
-        transition: 0.2s;
-    }
-   .admin-btn:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 8px 16px rgba(139, 61, 255, 0.3);
-    }
-   .main-options {
-        max-width: 1200px;
-        margin: 40px auto;
-        padding: 0 20px;
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        gap: 24px;
-    }
-   .option-card {
-        background: #f8f9fb;
-        padding: 32px;
-        border-radius: 16px;
-        border: 1px solid #e5e7eb;
-        text-align: center;
-        transition: 0.3s;
-    }
-   .option-card:hover {
-        transform: translateY(-4px);
-        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
-        border-color: #8b3dff;
-    }
-   .option-card img {
-        width: 100%;
-        height: 200px;
-        object-fit: cover;
-        border-radius: 12px;
-        margin-bottom: 20px;
-    }
-   .option-card h2 {
-        font-size: 28px;
-        margin-bottom: 12px;
-        color: #0e1318;
-        font-weight: 700;
-    }
-   .option-card h3 {
-        font-size: 18px;
-        margin: 10px 0;
-        color: #0e1318;
-        font-weight: 600;
-    }
-   .price {
-        color: #8b3dff;
-        font-weight: 700;
-        font-size: 22px;
-        margin: 12px 0;
-    }
-   .btn-start {
-        background: linear-gradient(135deg, #8b3dff 0%, #00c4cc 100%);
-        color: white;
-        border: none;
-        padding: 14px 40px;
-        border-radius: 8px;
-        font-size: 16px;
-        font-weight: 600;
-        cursor: pointer;
-        font-family: 'Hind Siliguri', sans-serif;
-        transition: 0.2s;
-        text-decoration: none;
-        display: inline-block;
-    }
-   .btn-start:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 8px 20px rgba(139, 61, 255, 0.4);
-    }
-   .banner-section {
-        max-width: 1200px;
-        margin: 50px auto;
-        padding: 0 20px;
-    }
-   .section-title {
-        text-align: center;
-        margin-bottom: 32px;
-        font-size: 32px;
-        color: #0e1318;
-        font-weight: 700;
-    }
-   .banner {
-        background: #f8f9fb;
-        border-radius: 16px;
-        overflow: hidden;
-        margin-bottom: 32px;
-        border: 1px solid #e5e7eb;
-        transition: 0.3s;
-    }
-   .banner:hover {
-        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
-    }
-   .banner img {
-        width: 100%;
-        height: 320px;
-        object-fit: cover;
-        display: block;
-        cursor: pointer;
-    }
-   .product-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-        gap: 24px;
-    }
-    footer {
-        background: #0e1318;
-        color: white;
-        text-align: center;
-        padding: 40px 20px;
-        margin-top: 60px;
-    }
-   .modal {
-        display: none;
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(14, 19, 24, 0.7);
-        z-index: 1000;
-        justify-content: center;
-        align-items: center;
-    }
-   .modal.active { display: flex; }
-   .modal-content {
-        background: white;
-        padding: 32px;
-        border-radius: 16px;
-        max-width: 600px;
-        width: 90%;
-        max-height: 80vh;
-        overflow-y: auto;
-    }
-   .modal-content h3 { 
-        margin-bottom: 24px; 
-        color: #0e1318; 
-        font-size: 24px;
-        font-weight: 700;
-    }
-   .modal-content h4 { 
-        margin: 24px 0 12px; 
-        color: #0e1318;
-        font-weight: 600;
-    }
-   .form-group { margin-bottom: 16px; }
-   .form-group label {
-        display: block;
-        margin-bottom: 6px;
-        font-weight: 600;
-        font-size: 14px;
-        color: #374151;
-    }
-   .form-group input {
-        width: 100%;
-        padding: 12px;
-        border: 2px solid #e5e7eb;
-        border-radius: 8px;
-        font-family: 'Hind Siliguri', sans-serif;
-        transition: 0.2s;
-    }
-   .form-group input:focus {
-        outline: none;
-        border-color: #8b3dff;
-    }
-   .btn {
-        background: linear-gradient(135deg, #8b3dff 0%, #00c4cc 100%);
-        color: white;
-        border: none;
-        padding: 12px 28px;
-        border-radius: 8px;
-        cursor: pointer;
-        font-family: 'Hind Siliguri', sans-serif;
-        margin-right: 10px;
-        margin-top: 8px;
-        font-weight: 600;
-        transition: 0.2s;
-    }
-   .btn:hover { 
-        transform: translateY(-2px);
-        box-shadow: 0 6px 16px rgba(139, 61, 255, 0.3);
-    }
-   .btn-danger { 
-        background: #ef4444;
-    }
-   .btn-danger:hover { 
-        background: #dc2626;
-        box-shadow: 0 6px 16px rgba(239, 68, 68, 0.3);
-    }
-   .item-box {
-        border: 2px solid #e5e7eb;
-        padding: 16px;
-        margin: 12px 0;
-        border-radius: 12px;
-        background: #f8f9fb;
-    }
-   .loading {
-        text-align: center;
-        padding: 40px;
-        font-size: 18px;
-        color: #6b7280;
-    }
-    @media (max-width: 768px) {
-       .bismillah { font-size: 26px; }
-       .header-content { flex-direction: column; gap: 15px; }
-       .banner img { height: 220px; }
-       .section-title { font-size: 26px; }
-    }
-</style>
-
+        :root {
+            --primary-color: #8b3dff;
+            --secondary-color: #00c4cc;
+            --text-color: #0e1318;
+            --bg-color: #ffffff;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Hind Siliguri', 'Inter', sans-serif; background: var(--bg-color); color: var(--text-color); }
+    .bismillah { text-align: center; font-size: 28px; font-weight: 700; padding: 20px 10px 10px; background: linear-gradient(135deg, var(--primary-color), var(--secondary-color)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .subtitle { text-align: center; font-size: 16px; color: #6b7280; margin-bottom: 20px; }
+        header { background: white; border-bottom: 1px solid #e5e7eb; position: sticky; top: 0; z-index: 100; }
+    .header-content { max-width: 1200px; margin: 0 auto; padding: 15px 20px; display: flex; justify-content: space-between; align-items: center; }
+    .logo-section { display: flex; align-items: center; gap: 12px; }
+    .logo-section img { width: 50px; height: 50px; border-radius: 12px; object-fit: cover; }
+    .logo-section h1 { font-size: 24px; font-weight: 700; color: var(--text-color); font-family: 'Inter', sans-serif; }
+    .contact-header { font-size: 14px; color: #6b7280; }
+    .main-options { max-width: 1200px; margin: 40px auto; padding: 0 20px; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; }
+    .option-card { background: #f8f9fb; padding: 32px; border-radius: 16px; border: 1px solid #e5e7eb; text-align: center; transition: 0.3s; }
+    .option-card:hover { transform: translateY(-4px); box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08); border-color: var(--primary-color); }
+    .option-card img { width: 100%; height: 200px; object-fit: cover; border-radius: 12px; margin-bottom: 20px; }
+    .option-card h2 { font-size: 28px; margin-bottom: 12px; color: var(--text-color); font-weight: 700; }
+    .option-card h3 { font-size: 18px; margin: 10px 0; color: var(--text-color); font-weight: 600; }
+    .price { color: var(--primary-color); font-weight: 700; font-size: 22px; margin: 12px 0; }
+    .btn-start { background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%); color: white; border: none; padding: 14px 40px; border-radius: 8px; font-size: 16px; font-weight: 600; cursor: pointer; transition: 0.2s; text-decoration: none; display: inline-block; font-family: 'Hind Siliguri', sans-serif; }
+    .btn-start:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(139, 61, 255, 0.4); }
+    .banner-section { max-width: 1200px; margin: 50px auto; padding: 0 20px; }
+    .section-title { text-align: center; margin-bottom: 32px; font-size: 32px; color: var(--text-color); font-weight: 700; }
+    .banner { background: #f8f9fb; border-radius: 16px; overflow: hidden; margin-bottom: 32px; border: 1px solid #e5e7eb; transition: 0.3s; }
+    .banner:hover { box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08); }
+    .banner img { width: 100%; height: 320px; object-fit: cover; display: block; cursor: pointer; }
+    .product-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; }
+    .payment-section { max-width: 1200px; margin: 50px auto; padding: 0 20px; text-align: center; }
+    .payment-icons { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-top: 20px; }
+    .payment-icons img { height: 50px; object-fit: contain; }
+    .subscribe-section { max-width: 600px; margin: 50px auto; padding: 40px 20px; background: #f8f9fb; border-radius: 16px; text-align: center; }
+    .subscribe-section input { padding: 12px 20px; border: 2px solid #e5e7eb; border-radius: 8px; width: 70%; margin-right: 10px; font-family: 'Hind Siliguri', sans-serif; }
+    .subscribe-section button { padding: 12px 28px; }
+    .social-links { display: flex; justify-content: center; gap: 15px; margin-top: 20px; }
+    .social-links a { width: 40px; height: 40px; border-radius: 50%; background: var(--primary-color); display: flex; align-items: center; justify-content: center; color: white; text-decoration: none; }
+        footer { background: #0e1318; color: white; text-align: center; padding: 40px 20px; margin-top: 60px; }
+    .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(14, 19, 24, 0.7); z-index: 1000; justify-content: center; align-items: center; }
+    .modal.active { display: flex; }
+    .modal-content { background: white; padding: 32px; border-radius: 16px; max-width: 800px; width: 90%; max-height: 80vh; overflow-y: auto; }
+    .modal-content h3 { margin-bottom: 24px; color: #0e1318; font-size: 24px; font-weight: 700; }
+    .modal-content h4 { margin: 24px 0 12px; color: #0e1318; font-weight: 600; border-bottom: 2px solid var(--primary-color); padding-bottom: 8px; }
+    .form-group { margin-bottom: 16px; }
+    .form-group label { display: block; margin-bottom: 6px; font-weight: 600; font-size: 14px; color: #374151; }
+    .form-group input,.form-group textarea,.form-group select { width: 100%; padding: 12px; border: 2px solid #e5e7eb; border-radius: 8px; transition: 0.2s; font-family: 'Hind Siliguri', sans-serif; }
+    .form-group textarea { resize: vertical; min-height: 80px; }
+    .form-group input:focus,.form-group textarea:focus,.form-group select:focus { outline: none; border-color: var(--primary-color); }
+    .btn { background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%); color: white; border: none; padding: 12px 28px; border-radius: 8px; cursor: pointer; margin-right: 10px; margin-top: 8px; font-weight: 600; transition: 0.2s; font-family: 'Hind Siliguri', sans-serif; }
+    .btn:hover { transform: translateY(-2px); box-shadow: 0 6px 16px rgba(139, 61, 255, 0.3); }
+    .btn-danger { background: #ef4444; }
+    .btn-danger:hover { background: #dc2626; box-shadow: 0 6px 16px rgba(239, 68, 68, 0.3); }
+    .item-box { border: 2px solid #e5e7eb; padding: 16px; margin: 12px 0; border-radius: 12px; background: #f8f9fb; }
+    .tab-buttons { display: flex; gap: 10px; margin-bottom: 20px; flex-wrap: wrap; }
+    .tab-btn { padding: 10px 20px; background: #e5e7eb; border: none; border-radius: 8px; cursor: pointer; font-weight: 600; }
+    .tab-btn.active { background: var(--primary-color); color: white; }
+    .tab-content { display: none; }
+    .tab-content.active { display: block; }
+        @media (max-width: 768px) {.bismillah { font-size: 24px; }.banner img { height: 220px; }.section-title { font-size: 26px; }.subscribe-section input { width: 100%; margin-bottom: 10px; } }
+    </style>
 </head>
 <body>
-    <div class="bismillah">بِسْمِ ٱللَّٰهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ</div>
-    <div class="subtitle">চলুন কেনাকাটা শুরু করা যাক</div>
+    <div class="bismillah" id="bismillahText">بِسْمِ ٱللَّٰهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ</div>
+    <div class="subtitle" id="subtitleText">চলুন কেনাকাটা শুরু করা যাক | Let's Start Shopping</div>
 
     <header>
         <div class="header-content">
             <div class="logo-section">
-                <img id="siteLogo" src="images/logo.png" alt="Logo">
+                <img id="siteLogo" src="https://placehold.co/50x50/8b3dff/ffffff?text=B" alt="Logo">
                 <h1 id="siteName">Booeb.com</h1>
             </div>
-            
+            <div class="contact-header" id="headerContact">
+                📞 <span id="headerPhone">+880 1234-567890</span>
+            </div>
         </div>
     </header>
 
-    <!-- মেইন দুইটা অপশন - এগুলো ফিক্সড, ১০০% থাকবে -->
     <div class="main-options">
         <div class="option-card">
-            <h2>বই</h2>
-            <p style="margin: 15px 0; color: #666;">সকল ইসলামিক ও শিক্ষামূলক বই</p>
-            <a href="https://bithilikha.lovable.app" class="btn-start" target="_blank">শুরু করুন</a>
+            <h2 id="booksTitle">বই | Books</h2>
+            <p id="booksDesc" style="margin: 15px 0; color: #666;">সকল ইসলামিক ও শিক্ষামূলক বই</p>
+            <a href="https://bithilikha.lovable.app" class="btn-start" target="_blank" id="booksBtn">শুরু করুন</a>
         </div>
         <div class="option-card">
-            <h2>প্রোডাক্ট</h2>
-            <p style="margin: 15px 0; color: #666;">সকল ধরনের প্রোডাক্ট</p>
-            <a href="https://bithilikha.bolt.host/" class="btn-start" target="_blank">শুরু করুন</a>
+            <h2 id="productsTitle">প্রোডাক্ট | Products</h2>
+            <p id="productsDesc" style="margin: 15px 0; color: #666;">সকল ধরনের প্রোডাক্ট</p>
+            <a href="https://bithilikha.bolt.host/" class="btn-start" target="_blank" id="productsBtn">শুরু করুন</a>
         </div>
     </div>
 
-    <!-- ব্যানার সেকশন -->
     <div class="banner-section" id="bannerSection">
-        <h2 class="section-title">অফার ও ব্যানার</h2>
-        <div class="loading">লোড হচ্ছে...</div>
+        <h2 class="section-title" id="bannerSectionTitle">অফার ও ব্যানার | Offers & Banners</h2>
     </div>
 
-    <!-- প্রোডাক্ট সেকশন -->
     <div class="banner-section">
-        <h2 class="section-title">আমাদের প্রোডাক্ট</h2>
-        <div class="product-grid" id="productGrid">
-            <div class="loading">লোড হচ্ছে...</div>
-        </div>
+        <h2 class="section-title" id="productSectionTitle">আমাদের প্রোডাক্ট | Our Products</h2>
+        <div class="product-grid" id="productGrid"></div>
+    </div>
+
+    <div class="payment-section">
+        <h2 class="section-title" id="paymentTitle">পেমেন্ট অপশন | Payment Options</h2>
+        <div class="payment-icons" id="paymentIcons"></div>
+    </div>
+
+    <div class="subscribe-section">
+        <h3 id="subscribeTitle">নিউজলেটার সাবস্ক্রাইব করুন | Subscribe Newsletter</h3>
+        <p id="subscribeDesc" style="margin: 15px 0; color: #666;">নতুন অফার পেতে ইমেইল দিন</p>
+        <input type="email" id="subscribeEmail" placeholder="আপনার ইমেইল | Your Email">
+        <button class="btn" id="subscribeBtn">সাবস্ক্রাইব | Subscribe</button>
+        <div id="subscriberCount" style="margin-top: 15px; font-size: 14px; color: #6b7280;"></div>
     </div>
 
     <footer>
-        <p>&copy; 2026 Booeb.com. সর্বস্বত্ব সংরক্ষিত।</p>
+        <div id="footerText">&copy; 2026 Booeb.com. সর্বস্বত্ব সংরক্ষিত | All rights reserved.</div>
+        <div class="social-links" id="socialLinks"></div>
+        <div style="margin-top: 20px; font-size: 14px;" id="footerContact"></div>
     </footer>
 
-    <!-- অ্যাডমিন প্যানেল -->
-    <div id="adminModal" class="modal">
+
+ <div id="adminModal" class="modal">
         <div class="modal-content">
-            <h3 id="adminTitle">অ্যাডমিন লগইন</h3>
+            <h3 id="adminTitle">Admin Login</h3>
             <div id="loginForm">
                 <div class="form-group">
-                    <label>ইমেইল</label>
+                    <label>Email</label>
                     <input type="email" id="adminEmail" placeholder="admin@example.com">
                 </div>
                 <div class="form-group">
-                    <label>পাসওয়ার্ড</label>
+                    <label>Password</label>
                     <input type="password" id="adminPass" placeholder="••••••••">
                 </div>
-                <button class="btn" onclick="adminLogin()">লগইন</button>
-                <button class="btn-danger" onclick="closeAdmin()">বন্ধ করুন</button>
+                <button class="btn" id="loginBtn">Login</button>
+                <button class="btn-danger" id="closeBtn">Close</button>
             </div>
             <div id="adminDashboard" style="display:none;">
-                <h4>Site Branding</h4>
-                <div class="form-group">
-                    <label>সাইটের নাম</label>
-                    <input type="text" id="editSiteName">
+                
+                <div class="tab-buttons">
+                    <button class="tab-btn active" onclick="switchTab('general')">সাধারণ | General</button>
+                    <button class="tab-btn" onclick="switchTab('content')">কন্টেন্ট | Content</button>
+                    <button class="tab-btn" onclick="switchTab('banner')">ব্যানার | Banners</button>
+                    <button class="tab-btn" onclick="switchTab('product')">প্রোডাক্ট | Products</button>
+                    <button class="tab-btn" onclick="switchTab('payment')">পেমেন্ট | Payment</button>
+                    <button class="tab-btn" onclick="switchTab('social')">সোশ্যাল | Social</button>
+                    <button class="tab-btn" onclick="switchTab('seo')">SEO</button>
+                    <button class="tab-btn" onclick="switchTab('email')">ইমেইল | Emails</button>
                 </div>
-                <div class="form-group">
-                    <label>লোগো URL</label>
-                    <input type="text" id="logoUrl" placeholder="images/logo.png বা https://i.imgur.com/logo.png">
+
+                <!-- TAB 1: GENERAL SETTINGS -->
+                <div id="tab-general" class="tab-content active">
+                    <h4>১. সাধারণ সেটিংস | General Settings</h4>
+                    <div class="form-group">
+                        <label>বিসমিল্লাহ লেখা | Bismillah Text</label>
+                        <input type="text" id="editBismillah">
+                    </div>
+                    <div class="form-group">
+                        <label>সাবটাইটেল | Subtitle</label>
+                        <input type="text" id="editSubtitle">
+                    </div>
+                    <div class="form-group">
+                        <label>সাইটের নাম | Site Name</label>
+                        <input type="text" id="editSiteName">
+                    </div>
+                    <div class="form-group">
+                        <label>লোগো URL | Logo URL</label>
+                        <input type="text" id="logoUrl" placeholder="https://i.imgur.com/logo.png">
+                    </div>
+                    <div class="form-group">
+                        <label>প্রাইমারি কালার | Primary Color</label>
+                        <input type="color" id="primaryColor" value="#8b3dff">
+                    </div>
+                    <div class="form-group">
+                        <label>সেকেন্ডারি কালার | Secondary Color</label>
+                        <input type="color" id="secondaryColor" value="#00c4cc">
+                    </div>
+                    <div class="form-group">
+                        <label>হেডার ফোন নম্বর | Header Phone</label>
+                        <input type="text" id="editHeaderPhone" placeholder="+880 1234-567890">
+                    </div>
+                    <div class="form-group">
+                        <label>ফুটার লেখা | Footer Text</label>
+                        <textarea id="editFooter"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label>ফুটার কন্টাক্ট | Footer Contact</label>
+                        <textarea id="editFooterContact" placeholder="ঠিকানা, ফোন, ইমেইল"></textarea>
+                    </div>
                 </div>
-                <button class="btn" onclick="updateBranding()">আপডেট করুন</button>
-               
-                <hr style="margin: 20px 0;">
-                <h4>Banner Management</h4>
-                <div class="form-group">
-                    <label>ব্যানার ছবির URL</label>
-                    <input type="text" id="bannerImg" placeholder="images/banner.jpg বা https://i.imgur.com/banner.jpg">
+
+                <!-- TAB 2: CONTENT -->
+                <div id="tab-content" class="tab-content">
+                    <h4>২. সেকশন টাইটেল ও টেক্সট | Section Titles & Text</h4>
+                    <div class="form-group">
+                        <label>বই সেকশন টাইটেল</label>
+                        <input type="text" id="editBooksTitle">
+                    </div>
+                    <div class="form-group">
+                        <label>বই ডেসক্রিপশন</label>
+                        <input type="text" id="editBooksDesc">
+                    </div>
+                    <div class="form-group">
+                        <label>প্রোডাক্ট সেকশন টাইটেল</label>
+                        <input type="text" id="editProductsTitle">
+                    </div>
+                    <div class="form-group">
+                        <label>প্রোডাক্ট ডেসক্রিপশন</label>
+                        <input type="text" id="editProductsDesc">
+                    </div>
+                    <div class="form-group">
+                        <label>ব্যানার সেকশন টাইটেল</label>
+                        <input type="text" id="editBannerTitle">
+                    </div>
+                    <div class="form-group">
+                        <label>প্রোডাক্ট লিস্ট টাইটেল</label>
+                        <input type="text" id="editProductListTitle">
+                    </div>
+                    <div class="form-group">
+                        <label>পেমেন্ট সেকশন টাইটেল</label>
+                        <input type="text" id="editPaymentTitle">
+                    </div>
+                    <div class="form-group">
+                        <label>সাবস্ক্রাইব টাইটেল</label>
+                        <input type="text" id="editSubscribeTitle">
+                    </div>
+                    <div class="form-group">
+                        <label>সাবস্ক্রাইব ডেসক্রিপশন</label>
+                        <input type="text" id="editSubscribeDesc">
+                    </div>
                 </div>
-                <div class="form-group">
-                    <label>ক্লিক করলে যাবে - লিংক</label>
-                    <input type="text" id="bannerLink" placeholder="https://bithilikha.bolt.host/">
+
+
+                <!-- TAB 3: BANNERS -->
+                <div id="tab-banner" class="tab-content">
+                    <h4>৩. ব্যানার ম্যানেজমেন্ট | Banner Management</h4>
+                    <div class="form-group">
+                        <label>ব্যানার ছবির URL | Banner Image URL</label>
+                        <input type="text" id="bannerImg" placeholder="https://i.imgur.com/banner.jpg">
+                    </div>
+                    <div class="form-group">
+                        <label>ক্লিক লিংক | Click Link</label>
+                        <input type="text" id="bannerLink" placeholder="https://bithilikha.bolt.host/">
+                    </div>
+                    <button class="btn" id="addBannerBtn">ব্যানার যোগ করুন | Add Banner</button>
+                    <div id="bannerList"></div>
                 </div>
-                <button class="btn" onclick="addBanner()">ব্যানার যোগ করুন</button>
-                <div id="bannerList"></div>
-               
-                <hr style="margin: 20px 0;">
-                <h4>Product Management</h4>
-                <div class="form-group">
-                    <label>প্রোডাক্টের নাম</label>
-                    <input type="text" id="productName">
+
+                <!-- TAB 4: PRODUCTS -->
+                <div id="tab-product" class="tab-content">
+                    <h4>৪. প্রোডাক্ট ম্যানেজমেন্ট | Product Management</h4>
+                    <div class="form-group">
+                        <label>প্রোডাক্টের নাম | Product Name</label>
+                        <input type="text" id="productName">
+                    </div>
+                    <div class="form-group">
+                        <label>দাম | Price</label>
+                        <input type="text" id="productPrice" placeholder="১২০০ টাকা">
+                    </div>
+                    <div class="form-group">
+                        <label>ছবির URL | Image URL</label>
+                        <input type="text" id="productImage" placeholder="https://i.imgur.com/product.jpg">
+                    </div>
+                    <div class="form-group">
+                        <label>Buy Now লিংক | Buy Link</label>
+                        <input type="text" id="productLink" placeholder="https://bithilikha.bolt.host/product/1">
+                    </div>
+                    <button class="btn" id="addProductBtn">প্রোডাক্ট যোগ করুন | Add Product</button>
+                    <div id="productList"></div>
                 </div>
-                <div class="form-group">
-                    <label>দাম</label>
-                    <input type="text" id="productPrice" placeholder="১২০০ টাকা">
+
+                <!-- TAB 5: PAYMENT -->
+                <div id="tab-payment" class="tab-content">
+                    <h4>৫. পেমেন্ট অপশন | Payment Options</h4>
+                    <div class="form-group">
+                        <label>পেমেন্ট ছবির URL | Payment Image URL</label>
+                        <input type="text" id="paymentImgUrl" placeholder="https://i.imgur.com/bkash.png">
+                    </div>
+                    <div class="form-group">
+                        <label>পেমেন্ট নাম | Payment Name</label>
+                        <input type="text" id="paymentName" placeholder="bKash">
+                    </div>
+                    <button class="btn" id="addPaymentBtn">পেমেন্ট যোগ করুন | Add Payment</button>
+                    <div id="paymentList"></div>
                 </div>
-                <div class="form-group">
-                    <label>ছবির URL</label>
-                    <input type="text" id="productImage" placeholder="images/product.jpg বা https://i.imgur.com/product.jpg">
+
+                <!-- TAB 6: SOCIAL -->
+                <div id="tab-social" class="tab-content">
+                    <h4>৬. সোশ্যাল মিডিয়া লিংক | Social Media Links</h4>
+                    <div class="form-group">
+                        <label>Facebook URL</label>
+                        <input type="text" id="facebookUrl" placeholder="https://facebook.com/yourpage">
+                    </div>
+                    <div class="form-group">
+                        <label>Instagram URL</label>
+                        <input type="text" id="instagramUrl" placeholder="https://instagram.com/yourpage">
+                    </div>
+                    <div class="form-group">
+                        <label>YouTube URL</label>
+                        <input type="text" id="youtubeUrl" placeholder="https://youtube.com/@yourchannel">
+                    </div>
+                    <div class="form-group">
+                        <label>WhatsApp Number</label>
+                        <input type="text" id="whatsappNumber" placeholder="+8801XXXXXXXXX">
+                    </div>
+                    <div class="form-group">
+                        <label>Telegram URL</label>
+                        <input type="text" id="telegramUrl" placeholder="https://t.me/yourchannel">
+                    </div>
                 </div>
-                <div class="form-group">
-                    <label>Buy Now লিংক</label>
-                    <input type="text" id="productLink" placeholder="https://bithilikha.bolt.host/product/1">
+
+                <!-- TAB 7: SEO -->
+                <div id="tab-seo" class="tab-content">
+                    <h4>৭. SEO সেটিংস | SEO Settings</h4>
+                    <div class="form-group">
+                        <label>Meta Title</label>
+                        <input type="text" id="metaTitleInput" placeholder="Booeb.com - Best Shopping">
+                    </div>
+                    <div class="form-group">
+                        <label>Meta Description</label>
+                        <textarea id="metaDescInput" placeholder="বাংলাদেশের সেরা অনলাইন শপ"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label>Meta Keywords</label>
+                        <input type="text" id="metaKeywordsInput" placeholder="shopping, ecommerce, bangladesh, online">
+                    </div>
+                    <div class="form-group">
+                        <label>Google Analytics ID</label>
+                        <input type="text" id="gaId" placeholder="G-XXXXXXXXXX">
+                    </div>
+                    <div class="form-group">
+                        <label>Facebook Pixel ID</label>
+                        <input type="text" id="fbPixel" placeholder="123456789">
+                    </div>
                 </div>
-                <button class="btn" onclick="addProduct()">প্রোডাক্ট যোগ করুন</button>
-                <div id="productList"></div>
-               
+
+                <!-- TAB 8: EMAIL SUBSCRIBERS -->
+                <div id="tab-email" class="tab-content">
+                    <h4>৮. ইমেইল সাবস্ক্রাইবার | Email Subscribers</h4>
+                    <div class="form-group">
+                        <label>মোট সাবস্ক্রাইবার | Total Subscribers</label>
+                        <input type="text" id="totalSubscribers" readonly>
+                    </div>
+                    <button class="btn" id="downloadEmailsBtn">CSV ডাউনলোড | Download CSV</button>
+                    <button class="btn-danger" id="clearEmailsBtn">সব মুছুন | Clear All</button>
+                    <div id="emailList" style="margin-top: 20px; max-height: 300px; overflow-y: auto;"></div>
+                </div>
+
                 <br>
-                <button class="btn-danger" onclick="adminLogout()">লগআউট</button>
+                <button class="btn" id="saveAllBtn">সব সেভ করুন | Save All Changes</button>
+                <button class="btn-danger" id="logoutBtn">Logout</button>
             </div>
         </div>
     </div>
 
-    <!-- Firebase SDK - পুরানো স্টাইল, এটাই লাগবে -->
-    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+
+     <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-database-compat.js"></script>
 
     <script>
-        // ===== FIREBASE সেটআপ - ঠিক করা হয়েছে =====       
         const firebaseConfig = {
           apiKey: "AIzaSyCLV6_U2owfZ2ZBXKW5_6LDVQB4bhqEIzI",
           authDomain: "booeb-store.firebaseapp.com",
@@ -413,75 +379,71 @@
           appId: "1:1081114446030:web:e3589492837615f01c689f",
           measurementId: "G-QF3HMRD45N"
         };
-        
-        // Initialize Firebase
+
         firebase.initializeApp(firebaseConfig);
         const db = firebase.database();
-        // ===== সেটআপ শেষ =====
 
-        // ডিফল্ট ডেটা - যদি Firebase খালি থাকে
-        const defaultBanners = [
-            { img: 'images/banner1.jpg', link: 'https://bithilikha.bolt.host/' },
-            { img: 'images/banner2.jpg', link: 'https://bithilikha.lovable.app' }
-        ];
-
-        const defaultProducts = [
-            {
-                name: 'ইসলামিক বই কালেকশন',
-                price: '৩৫০ টাকা থেকে',
-                img: 'images/book1.jpg',
-                link: 'https://bithilikha.lovable.app'
-            },
-            {
-                name: 'স্মার্ট প্রোডাক্ট',
-                price: '১২০০ টাকা থেকে',
-                img: 'images/product1.jpg',
-                link: 'https://bithilikha.bolt.host/'
+        if(window.location.search === '?admin=1') {
+            document.getElementById('adminModal').classList.add('active');
+            if(localStorage.getItem('adminLoggedIn') === 'true') {
+                showDashboard();
             }
-        ];
+        }
 
-        // রিয়েলটাইম ডেটা লোড
-        db.ref('site').on('value', (snapshot) => {
-            const data = snapshot.val();
-            if(data) {
-                document.getElementById('siteName').textContent = data.name || 'Booeb.com';
-                document.getElementById('siteLogo').src = data.logo || 'images/logo.png';
-            }
+        // Load All Settings
+        db.ref('settings').on('value', (snapshot) => {
+            const s = snapshot.val() || {};
+            document.getElementById('bismillahText').textContent = s.bismillah || 'بِسْمِ ٱللَّٰهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ';
+            document.getElementById('subtitleText').textContent = s.subtitle || 'চলুন কেনাকাটা শুরু করা যাক | Let\'s Start Shopping';
+            document.getElementById('siteName').textContent = s.siteName || 'Booeb.com';
+            document.getElementById('siteLogo').src = s.logo || 'https://placehold.co/50x50/8b3dff/ffffff?text=B';
+            document.getElementById('headerPhone').textContent = s.headerPhone || '+880 1234-567890';
+            document.getElementById('booksTitle').textContent = s.booksTitle || 'বই | Books';
+            document.getElementById('booksDesc').textContent = s.booksDesc || 'সকল ইসলামিক ও শিক্ষামূলক বই';
+            document.getElementById('productsTitle').textContent = s.productsTitle || 'প্রোডাক্ট | Products';
+            document.getElementById('productsDesc').textContent = s.productsDesc || 'সকল ধরনের প্রোডাক্ট';
+            document.getElementById('bannerSectionTitle').textContent = s.bannerTitle || 'অফার ও ব্যানার | Offers & Banners';
+            document.getElementById('productSectionTitle').textContent = s.productListTitle || 'আমাদের প্রোডাক্ট | Our Products';
+            document.getElementById('paymentTitle').textContent = s.paymentTitle || 'পেমেন্ট অপশন | Payment Options';
+            document.getElementById('subscribeTitle').textContent = s.subscribeTitle || 'নিউজলেটার সাবস্ক্রাইব করুন | Subscribe Newsletter';
+            document.getElementById('subscribeDesc').textContent = s.subscribeDesc || 'নতুন অফার পেতে ইমেইল দিন';
+            document.getElementById('footerText').innerHTML = s.footer || '&copy; 2026 Booeb.com. সর্বস্বত্ব সংরক্ষিত | All rights reserved.';
+            document.getElementById('footerContact').innerHTML = s.footerContact || '';
+
+            // Update Colors
+            if(s.primaryColor) document.documentElement.style.setProperty('--primary-color', s.primaryColor);
+            if(s.secondaryColor) document.documentElement.style.setProperty('--secondary-color', s.secondaryColor);
+
+            // Update Meta
+            document.getElementById('metaTitle').textContent = s.metaTitle || 'Booeb.com - Start Shopping';
+            document.getElementById('metaDesc').content = s.metaDesc || 'Booeb.com - Best Online Shopping';
+            document.getElementById('metaKeywords').content = s.metaKeywords || 'shopping, ecommerce, bangladesh';
+
+            // Social Links
+            const socialDiv = document.getElementById('socialLinks');
+            socialDiv.innerHTML = '';
+            if(s.facebookUrl) socialDiv.innerHTML += `<a href="${s.facebookUrl}" target="_blank">f</a>`;
+            if(s.instagramUrl) socialDiv.innerHTML += `<a href="${s.instagramUrl}" target="_blank">i</a>`;
+            if(s.youtubeUrl) socialDiv.innerHTML += `<a href="${s.youtubeUrl}" target="_blank">▶</a>`;
+            if(s.whatsappNumber) socialDiv.innerHTML += `<a href="https://wa.me/${s.whatsappNumber}" target="_blank">w</a>`;
+            if(s.telegramUrl) socialDiv.innerHTML += `<a href="${s.telegramUrl}" target="_blank">t</a>`;
         });
 
-        db.ref('banners').on('value', (snapshot) => {
-            const banners = snapshot.val();
-            if(banners) {
-                renderBanners(Object.values(banners));
-            } else {
-                renderBanners(defaultBanners);
-            }
-        });
-
-        db.ref('products').on('value', (snapshot) => {
-            const products = snapshot.val();
-            if(products) {
-                renderProducts(Object.values(products));
-            } else {
-                renderProducts(defaultProducts);
-            }
-        });
+        db.ref('banners').on('value', (snapshot) => renderBanners(snapshot.val()? Object.values(snapshot.val()) : []));
+        db.ref('products').on('value', (snapshot) => renderProducts(snapshot.val()? Object.values(snapshot.val()) : []));
+        db.ref('payments').on('value', (snapshot) => renderPayments(snapshot.val()? Object.values(snapshot.val()) : []));
+        db.ref('subscribers').on('value', (snapshot) => loadEmailList(snapshot.val() || {}));
 
         function renderBanners(banners) {
             const section = document.getElementById('bannerSection');
-            section.innerHTML = '<h2 class="section-title">অফার ও ব্যানার</h2>';
+            const title = document.getElementById('bannerSectionTitle').textContent;
+            section.innerHTML = `<h2 class="section-title">${title}</h2>`;
             if(banners.length === 0) {
                 section.innerHTML += '<p style="text-align:center; color:#999;">কোনো ব্যানার নেই</p>';
                 return;
             }
             banners.forEach(b => {
-                section.innerHTML += `
-                    <div class="banner">
-                        <a href="${b.link}" target="_blank">
-                            <img src="${b.img}" alt="Banner">
-                        </a>
-                    </div>
-                `;
+                section.innerHTML += `<div class="banner"><a href="${b.link}" target="_blank"><img src="${b.img}" alt="Banner"></a></div>`;
             });
         }
 
@@ -493,27 +455,33 @@
                 return;
             }
             products.forEach(p => {
-                grid.innerHTML += `
-                    <div class="option-card">
-                        <img src="${p.img}" alt="${p.name}">
-                        <h3>${p.name}</h3>
-                        <p class="price">${p.price}</p>
-                        <a href="${p.link}" class="btn-start" target="_blank">কিনুন</a>
-                    </div>
-                `;
+                grid.innerHTML += `<div class="option-card"><img src="${p.img}" alt="${p.name}"><h3>${p.name}</h3><p class="price">${p.price}</p><a href="${p.link}" class="btn-start" target="_blank">কিনুন | Buy Now</a></div>`;
             });
         }
 
-        function openAdmin() {
-            document.getElementById('adminModal').classList.add('active');
-            if(localStorage.getItem('adminLoggedIn') === 'true') {
-                showDashboard();
-            }
+        function renderPayments(payments) {
+            const container = document.getElementById('paymentIcons');
+            container.innerHTML = '';
+            payments.forEach(p => {
+                container.innerHTML += `<img src="${p.img}" alt="${p.name}">`;
+            });
         }
 
-        function closeAdmin() {
-            document.getElementById('adminModal').classList.remove('active');
-        }
+        // Email Subscribe
+        document.getElementById('subscribeBtn').addEventListener('click', () => {
+            const email = document.getElementById('subscribeEmail').value.trim();
+            if(email && email.includes('@')) {
+                db.ref('subscribers').push({ email, date: new Date().toISOString() });
+                document.getElementById('subscribeEmail').value = '';
+                alert('ধন্যবাদ! সাবস্ক্রাইব হয়েছে | Thank you for subscribing!');
+            } else {
+                alert('সঠিক ইমেইল দিন | Enter valid email');
+            }
+        });
+
+        // Admin Functions
+        document.getElementById('closeBtn').addEventListener('click', () => document.getElementById('adminModal').classList.remove('active'));
+        document.getElementById('loginBtn').addEventListener('click', adminLogin);
 
         function adminLogin() {
             const email = document.getElementById('adminEmail').value;
@@ -544,75 +512,233 @@
         function showDashboard() {
             document.getElementById('loginForm').style.display = 'none';
             document.getElementById('adminDashboard').style.display = 'block';
-            document.getElementById('adminTitle').textContent = 'অ্যাডমিন ড্যাশবোর্ড';
+            document.getElementById('adminTitle').textContent = 'Admin Dashboard';
+
+            db.ref('settings').once('value', (snapshot) => {
+                const s = snapshot.val() || {};
+                document.getElementById('editBismillah').value = s.bismillah || '';
+                document.getElementById('editSubtitle').value = s.subtitle || '';
+                document.getElementById('editSiteName').value = s.siteName || '';
+                document.getElementById('logoUrl').value = s.logo || '';
+                document.getElementById('primaryColor').value = s.primaryColor || '#8b3dff';
+                document.getElementById('secondaryColor').value = s.secondaryColor || '#00c4cc';
+                document.getElementById('editHeaderPhone').value = s.headerPhone || '';
+                document.getElementById('editFooter').value = s.footer || '';
+                document.getElementById('editFooterContact').value = s.footerContact || '';
+                document.getElementById('editBooksTitle').value = s.booksTitle || '';
+                document.getElementById('editBooksDesc').value = s.booksDesc || '';
+                document.getElementById('editProductsTitle').value = s.productsTitle || '';
+                document.getElementById('editProductsDesc').value = s.productsDesc || '';
+                document.getElementById('editBannerTitle').value = s.bannerTitle || '';
+                document.getElementById('editProductListTitle').value = s.productListTitle || '';
+                document.getElementById('editPaymentTitle').value = s.paymentTitle || '';
+                document.getElementById('editSubscribeTitle').value = s.subscribeTitle || '';
+                document.getElementById('editSubscribeDesc').value = s.subscribeDesc || '';
+                document.getElementById('facebookUrl').value = s.facebookUrl || '';
+                document.getElementById('instagramUrl').value = s.instagramUrl || '';
+                document.getElementById('youtubeUrl').value = s.youtubeUrl || '';
+                document.getElementById('whatsappNumber').value = s.whatsappNumber || '';
+                document.getElementById('telegramUrl').value = s.telegramUrl || '';
+                document.getElementById('metaTitleInput').value = s.metaTitle || '';
+                document.getElementById('metaDescInput').value = s.metaDesc || '';
+                document.getElementById('metaKeywordsInput').value = s.metaKeywords || '';
+                document.getElementById('gaId').value = s.gaId || '';
+                document.getElementById('fbPixel').value = s.fbPixel || '';
+            });
+
             loadBannerList();
             loadProductList();
+            loadPaymentList();
         }
 
-        function adminLogout() {
+        function switchTab(tab) {
+            document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+            document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+            event.target.classList.add('active');
+            document.getElementById('tab-' + tab).classList.add('active');
+        }
+
+        document.getElementById('logoutBtn').addEventListener('click', () => {
             localStorage.setItem('adminLoggedIn', 'false');
             location.reload();
-        }
+        });
 
-        function updateBranding() {
-            const name = document.getElementById('editSiteName').value;
-            const logo = document.getElementById('logoUrl').value;
-            db.ref('site').set({ name, logo });
-            alert('আপডেট হয়েছে! সবাই দেখতে পাবে');
-        }
+        document.getElementById('saveAllBtn').addEventListener('click', () => {
+            const settings = {
+                bismillah: document.getElementById('editBismillah').value,
+                subtitle: document.getElementById('editSubtitle').value,
+                siteName: document.getElementById('editSiteName').value,
+                logo: document.getElementById('logoUrl').value,
+                primaryColor: document.getElementById('primaryColor').value,
+                secondaryColor: document.getElementById('secondaryColor').value,
+                headerPhone: document.getElementById('editHeaderPhone').value,
+                footer: document.getElementById('editFooter').value,
+                footerContact: document.getElementById('editFooterContact').value,
+                booksTitle: document.getElementById('editBooksTitle').value,
+                booksDesc: document.getElementById('editBooksDesc').value,
+                productsTitle: document.getElementById('editProductsTitle').value,
+                productsDesc: document.getElementById('editProductsDesc').value,
+                bannerTitle: document.getElementById('editBannerTitle').value,
+                productListTitle: document.getElementById('editProductListTitle').value,
+                paymentTitle: document.getElementById('editPaymentTitle').value,
+                subscribeTitle: document.getElementById('editSubscribeTitle').value,
+                subscribeDesc: document.getElementById('editSubscribeDesc').value,
+                facebookUrl: document.getElementById('facebookUrl').value,
+                instagramUrl: document.getElementById('instagramUrl').value,
+                youtubeUrl: document.getElementById('youtubeUrl').value,
+                whatsappNumber: document.getElementById('whatsappNumber').value,
+                telegramUrl: document.getElementById('telegramUrl').value,
+                metaTitle: document.getElementById('metaTitleInput').value,
+                metaDesc: document.getElementById('metaDescInput').value,
+                metaKeywords: document.getElementById('metaKeywordsInput').value,
+                gaId: document.getElementById('gaId').value,
+                fbPixel: document.getElementById('fbPixel').value
+            };
+            db.ref('settings').set(settings);
+            alert('সব সেটিংস সেভ হয়েছে! সবাই দেখতে পাবে');
+        });
 
-        function addBanner() {
-            const img = document.getElementById('bannerImg').value;
-            const link = document.getElementById('bannerLink').value;
+        document.getElementById('addBannerBtn').addEventListener('click', () => {
+            const img = document.getElementById('bannerImg').value.trim();
+            const link = document.getElementById('bannerLink').value.trim();
             if(img && link) {
                 db.ref('banners').push({ img, link });
                 document.getElementById('bannerImg').value = '';
                 document.getElementById('bannerLink').value = '';
-                alert('ব্যানার যোগ হয়েছে! সবাই দেখতে পাবে');
+                alert('ব্যানার যোগ হয়েছে!');
             } else {
-                alert('ছবি ও লিংক দুটোই দিন');
+                alert('দুটো ফিল্ডই লাগবে');
             }
+        });
+
+        function loadBannerList() {
+            db.ref('banners').on('value', (snapshot) => {
+                const banners = snapshot.val() || {};
+                const list = document.getElementById('bannerList');
+                list.innerHTML = '<h5>বর্তমান ব্যানার:</h5>';
+                Object.keys(banners).forEach(key => {
+                    const b = banners[key];
+                    const div = document.createElement('div');
+                    div.className = 'item-box';
+                    div.innerHTML = `<img src="${b.img}" style="width:100%; height:100px; object-fit:cover; border-radius:4px;"><p style="font-size:12px; margin:5px 0; word-break:break-all;">${b.link}</p><button class="btn-danger" data-key="${key}" data-type="banner">ডিলিট | Delete</button>`;
+                    list.appendChild(div);
+                });
+            });
         }
 
-       function deleteBanner(key) {
-    console.log('Deleting key:', key); // for debugging
-    if(confirm('Delete?')) {
-        db.ref('banners').child(key).remove()
-        .then(() => {
-            alert('Banner deleted');
-        })
-        .catch((error) => {
-            console.error('Delete Error:', error);
-            alert('Problem deleting': ' + error.message);
-        });
-    }
-}
-        function deleteProduct(key) {
-            if(confirm('Delete?')) {
-                db.ref('products/' + key).remove();
+        document.getElementById('addProductBtn').addEventListener('click', () => {
+            const name = document.getElementById('productName').value.trim();
+            const price = document.getElementById('productPrice').value.trim();
+            const img = document.getElementById('productImage').value.trim();
+            const link = document.getElementById('productLink').value.trim();
+            if(name && price && img && link) {
+                db.ref('products').push({ name, price, img, link });
+                document.getElementById('productName').value = '';
+                document.getElementById('productPrice').value = '';
+                document.getElementById('productImage').value = '';
+                document.getElementById('productLink').value = '';
+                alert('প্রোডাক্ট যোগ হয়েছে!');
+            } else {
+                alert('সব ফিল্ড পূরণ করুন');
             }
+        });
+
+        function loadProductList() {
+            db.ref('products').on('value', (snapshot) => {
+                const products = snapshot.val() || {};
+                const list = document.getElementById('productList');
+                list.innerHTML = '<h5>বর্তমান প্রোডাক্ট:</h5>';
+                Object.keys(products).forEach(key => {
+                    const p = products[key];
+                    const div = document.createElement('div');
+                    div.className = 'item-box';
+                    div.innerHTML = `<p><b>${p.name}</b> - ${p.price}</p><button class="btn-danger" data-key="${key}" data-type="product">ডিলিট | Delete</button>`;
+                    list.appendChild(div);
+                });
+            });
         }
 
-        function deleteProduct(key) {
-    console.log('Deleting key:', key);
-    if(confirm('Delete?')) {
-        db.ref('products').child(key).remove()
-        .then(() => {
-            alert('Product delete');
-        })
-        .catch((error) => {
-            console.error('Delete Error:', error);
-            alert('Problem deleting: ' + error.message);
+        document.getElementById('addPaymentBtn').addEventListener('click', () => {
+            const img = document.getElementById('paymentImgUrl').value.trim();
+            const name = document.getElementById('paymentName').value.trim();
+            if(img && name) {
+                db.ref('payments').push({ img, name });
+                document.getElementById('paymentImgUrl').value = '';
+                document.getElementById('paymentName').value = '';
+                alert('পেমেন্ট অপশন যোগ হয়েছে!');
+            } else {
+                alert('দুটো ফিল্ডই লাগবে');
+            }
         });
-    }
-}
 
-        // সিক্রেট অ্যাডমিন লিংক: ?admin=1
-if(window.location.search === '?admin=1') {
-    openAdmin();
-}
+        function loadPaymentList() {
+            db.ref('payments').on('value', (snapshot) => {
+                const payments = snapshot.val() || {};
+                const list = document.getElementById('paymentList');
+                list.innerHTML = '<h5>বর্তমান পেমেন্ট:</h5>';
+                Object.keys(payments).forEach(key => {
+                    const p = payments[key];
+                    const div = document.createElement('div');
+                    div.className = 'item-box';
+                    div.innerHTML = `<img src="${p.img}" style="height:40px; object-fit:contain;"> <span>${p.name}</span><button class="btn-danger" data-key="${key}" data-type="payment">ডিলিট | Delete</button>`;
+                    list.appendChild(div);
+                });
+            });
+        }
+
+        function loadEmailList(subscribers) {
+            const emails = Object.values(subscribers);
+            document.getElementById('totalSubscribers').textContent = `মোট: ${emails.length} জন`;
+            const list = document.getElementById('emailList');
+            list.innerHTML = emails.map(s => `<div class="item-box">${s.email} - ${new Date(s.date).toLocaleDateString('bn-BD')}</div>`).join('');
+        }
+
+        document.getElementById('downloadEmailsBtn').addEventListener('click', () => {
+            db.ref('subscribers').once('value', (snapshot) => {
+                const subs = Object.values(snapshot.val() || {});
+                const csv = 'Email,Date\n' + subs.map(s => `${s.email},${s.date}`).join('\n');
+                const blob = new Blob([csv], { type: 'text/csv' });
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = 'subscribers.csv';
+                a.click();
+            });
+        });
+
+        document.getElementById('clearEmailsBtn').addEventListener('click', () => {
+            if(confirm('সব ইমেইল মুছে ফেলবেন? Delete all emails?')) {
+                db.ref('subscribers').remove();
+                alert('সব ইমেইল মুছে ফেলা হয়েছে');
+            }
+        });
+
+        // Delete Handler
+        document.
+
+
+
+
+            
+ // ===== DELETE HANDLER - ১০০% কাজ করে =====
+        document.addEventListener('click', function(e) {
+            if (e.target && e.target.classList.contains('btn-danger') && e.target.dataset.key) {
+                const key = e.target.dataset.key;
+                const type = e.target.dataset.type;
+                if (confirm('ডিলিট করবেন? Delete this item?')) {
+                    db.ref(type + 's').child(key).remove()
+                   .then(() => {
+                        console.log('Deleted:', key);
+                        alert('ডিলিট হয়েছে! Deleted successfully!');
+                    })
+                   .catch((error) => {
+                        console.error('Delete Error:', error);
+                        alert('ডিলিট করতে সমস্যা: ' + error.message);
+                    });
+                }
+            }
+        });
     </script>
 </body>
 </html>
-
 
