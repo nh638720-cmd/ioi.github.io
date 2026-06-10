@@ -293,7 +293,7 @@
                 <img id="siteLogo" src="images/logo.png" alt="Logo">
                 <h1 id="siteName">Booeb.com</h1>
             </div>
-            <button class="admin-btn" onclick="openAdmin()">অ্যাডমিন</button>
+            
         </div>
     </header>
 
@@ -612,6 +612,11 @@
                 });
             });
         }
+
+        // সিক্রেট অ্যাডমিন লিংক: ?admin=1
+if(window.location.search === '?admin=1') {
+    openAdmin();
+}
     </script>
 </body>
 </html>
