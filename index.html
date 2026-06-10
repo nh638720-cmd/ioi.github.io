@@ -574,44 +574,38 @@
             }
         }
 
-        function loadBannerList() {
-            db.ref('banners').on('value', (snapshot) => {
-                const banners = snapshot.val() || {};
-                const list = document.getElementById('bannerList');
-                list.innerHTML = '<h5>বর্তমান ব্যানার:</h5>';
-                Object.entries(banners).forEach(([key, b]) => {
-                    list.innerHTML += `
-                        <div class="item-box">
-                            <img src="${b.img}" style="width:100%; height:100px; object-fit:cover; border-radius:4px;">
-                            <p style="font-size:12px; margin:5px 0; word-break:break-all;">${b.link}</p>
-                            <button class="btn-danger" onclick="deleteBanner('${key}')">Delete</button>
-                        </div>
-                    `;
-                });
-            });
-        }
-
+       function deleteBanner(key) {
+    console.log('Deleting key:', key); // ডিবাগের জন্য
+    if(confirm('ডিলিট করবেন?')) {
+        db.ref('banners').child(key).remove()
+        .then(() => {
+            alert('ব্যানার ডিলিট হয়েছে');
+        })
+        .catch((error) => {
+            console.error('Delete Error:', error);
+            alert('ডিলিট করতে সমস্যা: ' + error.message);
+        });
+    }
+}
         function deleteProduct(key) {
             if(confirm('Delete?')) {
                 db.ref('products/' + key).remove();
             }
         }
 
-        function loadProductList() {
-            db.ref('products').on('value', (snapshot) => {
-                const products = snapshot.val() || {};
-                const list = document.getElementById('productList');
-                list.innerHTML = '<h5>বর্তমান প্রোডাক্ট:</h5>';
-                Object.entries(products).forEach(([key, p]) => {
-                    list.innerHTML += `
-                        <div class="item-box">
-                            <p><b>${p.name}</b> - ${p.price}</p>
-                            <button class="btn-danger" onclick="deleteProduct('${key}')">Delete</button>
-                        </div>
-                    `;
-                });
-            });
-        }
+        function deleteProduct(key) {
+    console.log('Deleting key:', key);
+    if(confirm('ডিলিট করবেন?')) {
+        db.ref('products').child(key).remove()
+        .then(() => {
+            alert('প্রোডাক্ট ডিলিট হয়েছে');
+        })
+        .catch((error) => {
+            console.error('Delete Error:', error);
+            alert('ডিলিট করতে সমস্যা: ' + error.message);
+        });
+    }
+}
 
         // সিক্রেট অ্যাডমিন লিংক: ?admin=1
 if(window.location.search === '?admin=1') {
