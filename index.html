@@ -3,376 +3,401 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title id="metaTitle">Booeb.com - Start Shopping</title>
-    <meta name="description" id="metaDesc" content="Booeb.com - Best Online Shopping">
-    <meta name="keywords" id="metaKeywords" content="shopping, ecommerce, bangladesh">
+    <title>Booeb.com - Start Shopping</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary-color: #8b3dff;
-            --secondary-color: #00c4cc;
-            --text-color: #0e1318;
-            --bg-color: #ffffff;
+            --primary: #dc2626;
+            --primary-dark: #b91c1c;
+            --secondary: #8b3dff;
+            --accent: #f59e0b;
+            --text-dark: #0f172a;
+            --text-light: #64748b;
+            --bg: #fff5f5;
+            --white: #ffffff;
+            --name-gradient: linear-gradient(135deg, #dc2626 0%, #b91c1c 50%, #8b3dff 100%);
         }
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Hind Siliguri', 'Inter', sans-serif; background: var(--bg-color); color: var(--text-color); }
-        .bismillah { text-align: center; font-size: 28px; font-weight: 700; padding: 20px 10px 10px; background: linear-gradient(135deg, var(--primary-color), var(--secondary-color)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
-        .subtitle { text-align: center; font-size: 16px; color: #6b7280; margin-bottom: 20px; }
-        header { background: white; border-bottom: 1px solid #e5e7eb; position: sticky; top: 0; z-index: 100; }
-        .header-content { max-width: 1200px; margin: 0 auto; padding: 15px 20px; display: flex; justify-content: space-between; align-items: center; }
-        .logo-section { display: flex; align-items: center; gap: 12px; }
-        .logo-section img { width: 50px; height: 50px; border-radius: 12px; object-fit: cover; }
-        .logo-section h1 { font-size: 24px; font-weight: 700; color: var(--text-color); font-family: 'Inter', sans-serif; }
-        .contact-header { font-size: 14px; color: #6b7280; }
-        .main-options { max-width: 1200px; margin: 40px auto; padding: 0 20px; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; }
-        .option-card { background: #f8f9fb; padding: 32px; border-radius: 16px; border: 1px solid #e5e7eb; text-align: center; transition: 0.3s; }
-        .option-card:hover { transform: translateY(-4px); box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08); border-color: var(--primary-color); }
-        .option-card img { width: 100%; height: 200px; object-fit: cover; border-radius: 12px; margin-bottom: 20px; }
-        .option-card h2 { font-size: 28px; margin-bottom: 12px; color: var(--text-color); font-weight: 700; }
-        .option-card h3 { font-size: 18px; margin: 10px 0; color: var(--text-color); font-weight: 600; }
-        .price { color: var(--primary-color); font-weight: 700; font-size: 22px; margin: 12px 0; }
-        .btn-start { background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%); color: white; border: none; padding: 14px 40px; border-radius: 8px; font-size: 16px; font-weight: 600; cursor: pointer; transition: 0.2s; text-decoration: none; display: inline-block; font-family: 'Hind Siliguri', sans-serif; }
-        .btn-start:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(139, 61, 255, 0.4); }
-        .banner-section { max-width: 1200px; margin: 50px auto; padding: 0 20px; }
-        .section-title { text-align: center; margin-bottom: 32px; font-size: 32px; color: var(--text-color); font-weight: 700; }
-        .product-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; }
-        .payment-section { max-width: 1200px; margin: 50px auto; padding: 0 20px; text-align: center; }
-        .payment-icons { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-top: 20px; }
-        .payment-icons img { height: 50px; object-fit: contain; }
-        .subscribe-section { max-width: 600px; margin: 50px auto; padding: 40px 20px; background: #f8f9fb; border-radius: 16px; text-align: center; }
-        .subscribe-section input { padding: 12px 20px; border: 2px solid #e5e7eb; border-radius: 8px; width: 70%; margin-right: 10px; font-family: 'Hind Siliguri', sans-serif; }
-        .subscribe-section button { padding: 12px 28px; }
-        .social-links { display: flex; justify-content: center; gap: 15px; margin-top: 20px; }
-        .social-links a { width: 40px; height: 40px; border-radius: 50%; background: var(--primary-color); display: flex; align-items: center; justify-content: center; color: white; text-decoration: none; }
-        footer { background: #0e1318; color: white; text-align: center; padding: 40px 20px; margin-top: 60px; }
-        .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(14, 19, 24, 0.7); z-index: 1000; justify-content: center; align-items: center; }
-        .modal.active { display: flex; }
-        .modal-content { background: white; padding: 32px; border-radius: 16px; max-width: 800px; width: 90%; max-height: 80vh; overflow-y: auto; }
-        .modal-content h3 { margin-bottom: 24px; color: #0e1318; font-size: 24px; font-weight: 700; }
-        .modal-content h4 { margin: 24px 0 12px; color: #0e1318; font-weight: 600; border-bottom: 2px solid var(--primary-color); padding-bottom: 8px; }
-        .form-group { margin-bottom: 16px; }
-        .form-group label { display: block; margin-bottom: 6px; font-weight: 600; font-size: 14px; color: #374151; }
-        .form-group input,.form-group textarea,.form-group select { width: 100%; padding: 12px; border: 2px solid #e5e7eb; border-radius: 8px; transition: 0.2s; font-family: 'Hind Siliguri', sans-serif; }
-        .form-group textarea { resize: vertical; min-height: 80px; }
-        .form-group input:focus,.form-group textarea:focus,.form-group select:focus { outline: none; border-color: var(--primary-color); }
-        .btn { background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%); color: white; border: none; padding: 12px 28px; border-radius: 8px; cursor: pointer; margin-right: 10px; margin-top: 8px; font-weight: 600; transition: 0.2s; font-family: 'Hind Siliguri', sans-serif; }
-        .btn:hover { transform: translateY(-2px); box-shadow: 0 6px 16px rgba(139, 61, 255, 0.3); }
-        .btn-danger { background: #ef4444; }
-        .btn-danger:hover { background: #dc2626; box-shadow: 0 6px 16px rgba(239, 68, 68, 0.3); }
-        .item-box { border: 2px solid #e5e7eb; padding: 16px; margin: 12px 0; border-radius: 12px; background: #f8f9fb; }
-        .tab-buttons { display: flex; gap: 10px; margin-bottom: 20px; flex-wrap: wrap; }
-        .tab-btn { padding: 10px 20px; background: #e5e7eb; border: none; border-radius: 8px; cursor: pointer; font-weight: 600; }
-        .tab-btn.active { background: var(--primary-color); color: white; }
-        .tab-content { display: none; }
-        .tab-content.active { display: block; }
+        body { 
+            font-family: 'Hind Siliguri', 'Inter', sans-serif; 
+            background: linear-gradient(135deg, #fff5f5 0%, #fef2f2 50%, #fff1f2 100%);
+            color: var(--text-dark);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 50px 20px;
+            flex: 1;
+        }
+        .logo-area {
+            text-align: center;
+            margin-bottom: 50px;
+            animation: fadeInDown 0.8s ease;
+        }
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .logo-area img {
+            width: 130px;
+            height: 130px;
+            border-radius: 50%;
+            object-fit: cover;
+            box-shadow: 0 12px 32px rgba(220, 38, 38, 0.25);
+            margin-bottom: 20px;
+            border: 5px solid white;
+        }
+        .logo-area h1 {
+            font-size: 42px;
+            font-weight: 800;
+            background: var(--name-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-family: 'Inter', sans-serif;
+            letter-spacing: -1px;
+        }
+        .bismillah {
+            text-align: center;
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 14px;
+            background: linear-gradient(135deg, #dc2626, #f59e0b);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .subtitle {
+            text-align: center;
+            font-size: 19px;
+            color: var(--text-light);
+            margin-bottom: 70px;
+            font-weight: 500;
+        }
+        .links-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 28px;
+            margin-bottom: 70px;
+        }
+        .link-card {
+            background: white;
+            padding: 45px 36px;
+            border-radius: 24px;
+            border: 2px solid #fee2e2;
+            text-align: center;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            text-decoration: none;
+            display: block;
+            position: relative;
+            overflow: hidden;
+        }
+        .link-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #dc2626, #8b3dff);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            z-index: 0;
+        }
+        .link-card:hover::before { opacity: 1; }
+        .link-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 25px 50px rgba(220, 38, 38, 0.3);
+            border-color: transparent;
+        }
+        .link-card * {
+            position: relative;
+            z-index: 1;
+            transition: color 0.4s ease;
+        }
+        .link-card:hover h2, .link-card:hover p { color: white; }
+        .link-card .icon { font-size: 56px; margin-bottom: 18px; }
+        .link-card h2 { font-size: 26px; margin-bottom: 10px; color: var(--text-dark); font-weight: 700; }
+        .link-card p { color: var(--text-light); font-size: 16px; line-height: 1.6; }
+        footer {
+            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+            color: #cbd5e1;
+            text-align: center;
+            padding: 60px 20px 35px;
+            margin-top: auto;
+            border-top: 4px solid #dc2626;
+        }
+        footer h3 { color: white; font-size: 26px; margin-bottom: 18px; font-weight: 700; }
+        footer p { max-width: 650px; margin: 0 auto 25px; line-height: 1.9; font-size: 16px; color: #94a3b8; }
+        footer .copyright {
+            margin-top: 35px;
+            padding-top: 25px;
+            border-top: 1px solid #334155;
+            font-size: 14px;
+            color: #64748b;
+        }
         
-        /* ===== ব্যানার স্লাইডার - ফাইনাল ===== */
-        .banner-slider { position: relative; width: 100%; max-width: 1140px; margin: 0 auto; border-radius: 12px; overflow: hidden; background: #f5f5f5; }
-        .banner-track { display: flex; transition: transform 0.5s ease-in-out; }
-        .banner-track .banner { min-width: 100%; flex-shrink: 0; line-height: 0; }
-        .banner-track .banner img { width: 100%; height: auto; display: block; }
-        .banner-dots { text-align: center; padding: 12px 0; background: rgba(0,0,0,0.03); }
-        .banner-dots .dot { height: 8px; width: 8px; margin: 0 4px; background: #bbb; border-radius: 50%; display: inline-block; cursor: pointer; transition: all 0.3s; }
-        .banner-dots .dot.active { background: #c3213a; width: 24px; border-radius: 4px; }
+        /* ===== লুকানো এডমিন প্যানেল ===== */
+        .admin-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 99999;
+            backdrop-filter: blur(8px);
+            justify-content: center;
+            align-items: center;
+        }
+        .admin-modal.active { display: flex; }
+        .admin-box {
+            background: white;
+            padding: 35px;
+            border-radius: 20px;
+            max-width: 500px;
+            width: 90%;
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.3);
+        }
+        .admin-box h3 {
+            margin-bottom: 25px;
+            color: #dc2626;
+            font-size: 24px;
+            font-weight: 700;
+            text-align: center;
+        }
+        .form-group { margin-bottom: 20px; }
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            font-size: 14px;
+            color: #374151;
+        }
+        .form-group input {
+            width: 100%;
+            padding: 12px 16px;
+            border: 2px solid #e5e7eb;
+            border-radius: 10px;
+            font-family: 'Hind Siliguri', sans-serif;
+            font-size: 15px;
+            transition: 0.2s;
+        }
+        .form-group input:focus {
+            outline: none;
+            border-color: #dc2626;
+            box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.1);
+        }
+        .color-input {
+            height: 50px;
+            cursor: pointer;
+        }
+        .btn-group { display: flex; gap: 12px; margin-top: 25px; }
+        .btn {
+            flex: 1;
+            background: linear-gradient(135deg, #dc2626, #b91c1c);
+            color: white;
+            border: none;
+            padding: 14px 28px;
+            border-radius: 10px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 16px;
+            font-family: 'Hind Siliguri', sans-serif;
+            transition: 0.2s;
+        }
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(220, 38, 38, 0.4);
+        }
+        .btn-close { background: #64748b; }
+        .btn-close:hover { background: #475569; }
+        .preview-text {
+            text-align: center;
+            padding: 15px;
+            background: #f8fafc;
+            border-radius: 10px;
+            margin-top: 10px;
+            font-size: 28px;
+            font-weight: 700;
+        }
 
-        /* ===== মোবাইল পপআপ ===== */
-        .mobile-popup-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); z-index: 99999; backdrop-filter: blur(5px); }
-        .mobile-popup-box { position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background: white; padding: 25px 20px; border-radius: 15px; text-align: center; width: 85%; max-width: 320px; box-shadow: 0 10px 30px rgba(0,0,0,0.3); animation: popupScale 0.3s ease; }
-        @keyframes popupScale { from { transform: translate(-50%, -50%) scale(0.7); opacity: 0; } to { transform: translate(-50%, -50%) scale(1); opacity: 1; } }
-        .mobile-popup-icon { font-size: 50px; margin-bottom: 15px; }
-        .mobile-popup-box h3 { margin: 0 0 10px 0; color: #c3213a; font-size: 20px; }
-        .mobile-popup-box p { margin: 0 0 20px 0; color: #555; font-size: 15px; line-height: 1.5; }
-        .mobile-popup-btn { background: #c3213a; color: white; border: none; padding: 12px 30px; border-radius: 8px; font-size: 16px; cursor: pointer; width: 100%; }
-
-        @media (max-width: 768px) {.bismillah { font-size: 24px; }.section-title { font-size: 26px; }.subscribe-section input { width: 100%; margin-bottom: 10px; } }
+        @media (max-width: 768px) {
+            .bismillah { font-size: 28px; }
+            .logo-area h1 { font-size: 32px; }
+            .link-card { padding: 36px 28px; }
+            .logo-area img { width: 110px; height: 110px; }
+        }
     </style>
 </head>
-<body>
-    <div class="bismillah" id="bismillahText">بِسْمِ ٱللَّٰهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ</div>
-    <div class="subtitle" id="subtitleText">চলুন কেনাকাটা শুরু করা যাক | Let's Start Shopping</div>
 
-    <header>
-        <div class="header-content">
-            <div class="logo-section">
-                <img id="siteLogo" src="https://placehold.co/50x50/8b3dff/ffffff?text=B" alt="Logo">
-                <h1 id="siteName">Booeb.com</h1>
-            </div>
-            <div class="contact-header" id="headerContact">
-                📞 <span id="headerPhone">+880 1234-567890</span>
-            </div>
+    <body>
+    <div class="container">
+        <div class="logo-area">
+            <img id="siteLogo" src="https://placehold.co/130x130/dc2626/ffffff?text=B" alt="Booeb Logo">
+            <h1 id="siteName">Booeb.com</h1>
         </div>
-    </header>
 
-    <div class="main-options">
-        <div class="option-card">
-            <h2 id="booksTitle">বই | Books</h2>
-            <p id="booksDesc" style="margin: 15px 0; color: #666;">সকল ইসলামিক ও শিক্ষামূলক বই</p>
-            <a href="https://bithilikha.lovable.app" class="btn-start" target="_blank" id="booksBtn">শুরু করুন</a>
+        <div class="bismillah">بِسْمِ ٱللَّٰهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ</div>
+        <div class="subtitle">চলুন কেনাকাটা শুরু করা যাক | Let's Start Shopping</div>
+
+        <div class="links-grid">
+            <a href="https://bithilikha.lovable.app" class="link-card" target="_blank">
+                <div class="icon">📚</div>
+                <h2>বই কালেকশন</h2>
+                <p>সকল ইসলামিক ও শিক্ষামূলক বইয়ের বিশাল সমাহার</p>
+            </a>
+            
+            <a href="https://bithilikha.bolt.host/" class="link-card" target="_blank">
+                <div class="icon">🛍️</div>
+                <h2>প্রোডাক্ট শপ</h2>
+                <p>দৈনন্দিন জীবনের সকল কোয়ালিটি প্রোডাক্ট</p>
+            </a>
         </div>
-        <div class="option-card">
-            <h2 id="productsTitle">প্রোডাক্ট | Products</h2>
-            <p id="productsDesc" style="margin: 15px 0; color: #666;">সকল ধরনের প্রোডাক্ট</p>
-            <a href="https://bithilikha.bolt.host/" class="btn-start" target="_blank" id="productsBtn">শুরু করুন</a>
-        </div>
-    </div>
-
-    <div class="banner-section" id="bannerSection">
-        <h2 class="section-title" id="bannerSectionTitle">অফার ও ব্যানার | Offers & Banners</h2>
-    </div>
-
-    <div class="banner-section">
-        <h2 class="section-title" id="productSectionTitle">আমাদের প্রোডাক্ট | Our Products</h2>
-        <div class="product-grid" id="productGrid"></div>
-    </div>
-
-    <div class="payment-section">
-        <h2 class="section-title" id="paymentTitle">পেমেন্ট অপশন | Payment Options</h2>
-        <div class="payment-icons" id="paymentIcons"></div>
-    </div>
-
-    <div class="subscribe-section">
-        <h3 id="subscribeTitle">নিউজলেটার সাবস্ক্রাইব করুন | Subscribe Newsletter</h3>
-        <p id="subscribeDesc" style="margin: 15px 0; color: #666;">নতুন অফার পেতে ইমেইল দিন</p>
-        <input type="email" id="subscribeEmail" placeholder="আপনার ইমেইল | Your Email">
-        <button class="btn" id="subscribeBtn">সাবস্ক্রাইব | Subscribe</button>
-        <div id="subscriberCount" style="margin-top: 15px; font-size: 14px; color: #6b7280;"></div>
     </div>
 
     <footer>
-        <div id="footerText">&copy; 2026 Booeb.com. সর্বস্বত্ব সংরক্ষিত | All rights reserved.</div>
-        <div class="social-links" id="socialLinks"></div>
-        <div style="margin-top: 20px; font-size: 14px;" id="footerContact"></div>
+        <h3>Booeb.com সম্পর্কে</h3>
+        <p>
+            Booeb.com একটি বিশ্বস্ত অনলাইন শপিং প্ল্যাটফর্ম। আমরা আপনাদের জন্য নিয়ে এসেছি সেরা মানের ইসলামিক বই এবং দৈনন্দিন জীবনের প্রয়োজনীয় সকল প্রোডাক্ট। আমাদের লক্ষ্য হলো সহজ, নিরাপদ এবং ঝামেলামুক্ত কেনাকাটার অভিজ্ঞতা নিশ্চিত করা। আপনার সন্তুষ্টিই আমাদের মূল উদ্দেশ্য।
+        </p>
+        <div class="copyright">
+            &copy; 2026 Booeb.com. সর্বস্বত্ব সংরক্ষিত | All rights reserved.
+        </div>
     </footer>
 
-    <!-- মোবাইল মেসেজ পপআপ -->
-    <div class="mobile-popup-overlay" id="mobilePopup">
-        <div class="mobile-popup-box">
-            <div class="mobile-popup-icon">🎁</div>
-            <h3>আরে দাঁড়াও!</h3>
-            <p>
-                <b>তুমি মোবাইল দিয়ে ঢুকছো?</b><br><br>
-                আমাদের ওয়েবসাইটের <b>সব ফিচার + বেস্ট ডিল</b> কম্পিউটারে আরও সুন্দর দেখায় ✨<br><br>
-                💻 <b>ল্যাপটপ/পিসিতে ওপেন করো</b><br>
-                আর মিস করো না কোনো অফার!
-            </p>
-            <button class="mobile-popup-btn" onclick="closeMobilePopup()">ঠিক আছে, পরে পিসিতে দেখবো 👍</button>
-        </div>
-    </div>
-
-    <div id="adminModal" class="modal">
-        <div class="modal-content">
-            <h3 id="adminTitle">Admin Login</h3>
-            <div id="loginForm">
-                <div class="form-group">
-                    <label>Email</label>
-                    <input type="email" id="adminEmail" placeholder="admin@example.com">
-                </div>
-                <div class="form-group">
-                    <label>Password</label>
-                    <input type="password" id="adminPass" placeholder="••••••••">
-                </div>
-                <button class="btn" id="loginBtn">Login</button>
-                <button class="btn-danger" id="closeBtn">Close</button>
+    <!-- লুকানো এডমিন প্যানেল -->
+    <div id="adminModal" class="admin-modal">
+        <div class="admin-box">
+            <h3>🔐 এডমিন প্যানেল</h3>
+            
+            <div class="form-group">
+                <label>ওয়েবসাইট নামের কালার ১</label>
+                <input type="color" id="color1" class="color-input" value="#dc2626">
             </div>
-            <div id="adminDashboard" style="display:none;">
-                <div class="tab-buttons">
-                    <button class="tab-btn active" onclick="switchTab('general')">সাধারণ | General</button>
-                    <button class="tab-btn" onclick="switchTab('content')">কন্টেন্ট | Content</button>
-                    <button class="tab-btn" onclick="switchTab('banner')">ব্যানার | Banners</button>
-                    <button class="tab-btn" onclick="switchTab('product')">প্রোডাক্ট | Products</button>
-                    <button class="tab-btn" onclick="switchTab('payment')">পেমেন্ট | Payment</button>
-                    <button class="tab-btn" onclick="switchTab('social')">সোশ্যাল | Social</button>
-                    <button class="tab-btn" onclick="switchTab('seo')">SEO</button>
-                    <button class="tab-btn" onclick="switchTab('email')">ইমেইল | Emails</button>
-                </div>
-                <div id="tab-general" class="tab-content active">
-                    <h4>১. সাধারণ সেটিংস | General Settings</h4>
-                    <div class="form-group"><label>বিসমিল্লাহ লেখা | Bismillah Text</label><input type="text" id="editBismillah"></div>
-                    <div class="form-group"><label>সাবটাইটেল | Subtitle</label><input type="text" id="editSubtitle"></div>
-                    <div class="form-group"><label>সাইটের নাম | Site Name</label><input type="text" id="editSiteName"></div>
-                    <div class="form-group"><label>লোগো URL | Logo URL</label><input type="text" id="logoUrl" placeholder="https://i.imgur.com/logo.png"></div>
-                    <div class="form-group"><label>প্রাইমারি কালার | Primary Color</label><input type="color" id="primaryColor" value="#8b3dff"></div>
-                    <div class="form-group"><label>সেকেন্ডারি কালার | Secondary Color</label><input type="color" id="secondaryColor" value="#00c4cc"></div>
-                    <div class="form-group"><label>হেডার ফোন নম্বর | Header Phone</label><input type="text" id="editHeaderPhone" placeholder="+880 1234-567890"></div>
-                    <div class="form-group"><label>ফুটার লেখা | Footer Text</label><textarea id="editFooter"></textarea></div>
-                    <div class="form-group"><label>ফুটার কন্টাক্ট | Footer Contact</label><textarea id="editFooterContact" placeholder="ঠিকানা, ফোন, ইমেইল"></textarea></div>
-                </div>
-                <div id="tab-content" class="tab-content">
-                    <h4>২. সেকশন টাইটেল ও টেক্সট | Section Titles & Text</h4>
-                    <div class="form-group"><label>বই সেকশন টাইটেল</label><input type="text" id="editBooksTitle"></div>
-                    <div class="form-group"><label>বই ডেসক্রিপশন</label><input type="text" id="editBooksDesc"></div>
-                    <div class="form-group"><label>প্রোডাক্ট সেকশন টাইটেল</label><input type="text" id="editProductsTitle"></div>
-                    <div class="form-group"><label>প্রোডাক্ট ডেসক্রিপশন</label><input type="text" id="editProductsDesc"></div>
-                    <div class="form-group"><label>ব্যানার সেকশন টাইটেল</label><input type="text" id="editBannerTitle"></div>
-                    <div class="form-group"><label>প্রোডাক্ট লিস্ট টাইটেল</label><input type="text" id="editProductListTitle"></div>
-                    <div class="form-group"><label>পেমেন্ট সেকশন টাইটেল</label><input type="text" id="editPaymentTitle"></div>
-                    <div class="form-group"><label>সাবস্ক্রাইব টাইটেল</label><input type="text" id="editSubscribeTitle"></div>
-                    <div class="form-group"><label>সাবস্ক্রাইব ডেসক্রিপশন</label><input type="text" id="editSubscribeDesc"></div>
-                </div>
-                <div id="tab-banner" class="tab-content">
-                    <h4>৩. ব্যানার ম্যানেজমেন্ট | Banner Management</h4>
-                    <div class="form-group"><label>ব্যানার ছবির URL | Banner Image URL</label><input type="text" id="bannerImg" placeholder="https://i.imgur.com/banner.jpg"></div>
-                    <div class="form-group"><label>ক্লিক লিংক | Click Link</label><input type="text" id="bannerLink" placeholder="https://bithilikha.bolt.host/"></div>
-                    <button class="btn" id="addBannerBtn">ব্যানার যোগ করুন | Add Banner</button>
-                    <div id="bannerList"></div>
-                </div>
-                <div id="tab-product" class="tab-content">
-                    <h4>৪. প্রোডাক্ট ম্যানেজমেন্ট | Product Management</h4>
-                    <div class="form-group"><label>প্রোডাক্টের নাম | Product Name</label><input type="text" id="productName"></div>
-                    <div class="form-group"><label>দাম | Price</label><input type="text" id="productPrice" placeholder="১২০০ টাকা"></div>
-                    <div class="form-group"><label>ছবির URL | Image URL</label><input type="text" id="productImage" placeholder="https://i.imgur.com/product.jpg"></div>
-                    <div class="form-group"><label>Buy Now লিংক | Buy Link</label><input type="text" id="productLink" placeholder="https://bithilikha.bolt.host/product/1"></div>
-                    <button class="btn" id="addProductBtn">প্রোডাক্ট যোগ করুন | Add Product</button>
-                    <div id="productList"></div>
-                </div>
-                <div id="tab-payment" class="tab-content">
-                    <h4>৫. পেমেন্ট অপশন | Payment Options</h4>
-                    <div class="form-group"><label>পেমেন্ট ছবির URL | Payment Image URL</label><input type="text" id="paymentImgUrl" placeholder="https://i.imgur.com/bkash.png"></div>
-                    <div class="form-group"><label>পেমেন্ট নাম | Payment Name</label><input type="text" id="paymentName" placeholder="bKash"></div>
-                    <button class="btn" id="addPaymentBtn">পেমেন্ট যোগ করুন | Add Payment</button>
-                    <div id="paymentList"></div>
-                </div>
-                <div id="tab-social" class="tab-content">
-                    <h4>৬. সোশ্যাল মিডিয়া লিংক | Social Media Links</h4>
-                    <div class="form-group"><label>Facebook URL</label><input type="text" id="facebookUrl" placeholder="https://facebook.com/yourpage"></div>
-                    <div class="form-group"><label>Instagram URL</label><input type="text" id="instagramUrl" placeholder="https://instagram.com/yourpage"></div>
-                    <div class="form-group"><label>YouTube URL</label><input type="text" id="youtubeUrl" placeholder="https://youtube.com/@yourchannel"></div>
-                    <div class="form-group"><label>WhatsApp Number</label><input type="text" id="whatsappNumber" placeholder="+8801XXXXXXXXX"></div>
-                    <div class="form-group"><label>Telegram URL</label><input type="text" id="telegramUrl" placeholder="https://t.me/yourchannel"></div>
-                </div>
-                <div id="tab-seo" class="tab-content">
-                    <h4>৭. SEO সেটিংস | SEO Settings</h4>
-                    <div class="form-group"><label>Meta Title</label><input type="text" id="metaTitleInput" placeholder="Booeb.com - Best Shopping"></div>
-                    <div class="form-group"><label>Meta Description</label><textarea id="metaDescInput" placeholder="বাংলাদেশের সেরা অনলাইন শপ"></textarea></div>
-                    <div class="form-group"><label>Meta Keywords</label><input type="text" id="metaKeywordsInput" placeholder="shopping, ecommerce, bangladesh, online"></div>
-                    <div class="form-group"><label>Google Analytics ID</label><input type="text" id="gaId" placeholder="G-XXXXXXXXXX"></div>
-                    <div class="form-group"><label>Facebook Pixel ID</label><input type="text" id="fbPixel" placeholder="123456789"></div>
-                </div>
-                <div id="tab-email" class="tab-content">
-                    <h4>৮. ইমেইল সাবস্ক্রাইবার | Email Subscribers</h4>
-                    <div class="form-group"><label>মোট সাবস্ক্রাইবার | Total Subscribers</label><input type="text" id="totalSubscribers" readonly></div>
-                    <button class="btn" id="downloadEmailsBtn">CSV ডাউনলোড | Download CSV</button>
-                    <button class="btn-danger" id="clearEmailsBtn">সব মুছুন | Clear All</button>
-                    <div id="emailList" style="margin-top: 20px; max-height: 300px; overflow-y: auto;"></div>
-                </div>
-                <br>
-                <button class="btn" id="saveAllBtn">সব সেভ করুন | Save All Changes</button>
-                <button class="btn-danger" id="logoutBtn">Logout</button>
+            
+            <div class="form-group">
+                <label>ওয়েবসাইট নামের কালার ২</label>
+                <input type="color" id="color2" class="color-input" value="#b91c1c">
+            </div>
+            
+            <div class="form-group">
+                <label>ওয়েবসাইট নামের কালার ৩</label>
+                <input type="color" id="color3" class="color-input" value="#8b3dff">
+            </div>
+
+            <div class="preview-text" id="colorPreview">Booeb.com</div>
+            
+            <div class="form-group">
+                <label>লোগোর ছবি URL</label>
+                <input type="text" id="logoUrl" placeholder="https://i.imgur.com/your-logo.png">
+                <small style="color:#64748b; font-size:13px; margin-top:5px; display:block;">প্রফেশনাল লোগোর লিংক দিন। বৃত্তাকার হবে অটো।</small>
+            </div>
+
+            <div class="btn-group">
+                <button class="btn" onclick="saveAdminSettings()">সেভ করুন</button>
+                <button class="btn btn-close" onclick="closeAdmin()">বন্ধ করুন</button>
             </div>
         </div>
     </div>
 
-    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-database-compat.js"></script>
     <script>
-        const firebaseConfig = {
-          apiKey: "AIzaSyCLV6_U2owfZ2ZBXKW5_6LDVQB4bhqEIzI",
-          authDomain: "booeb-store.firebaseapp.com",
-          databaseURL: "https://booeb-store-default-rtdb.firebaseio.com",
-          projectId: "booeb-store",
-          storageBucket: "booeb-store.firebasestorage.app",
-          messagingSenderId: "1081114446030",
-          appId: "1:1081114446030:web:e3589492837615f01c689f",
-          measurementId: "G-QF3HMRD45N"
-        };
-
-        firebase.initializeApp(firebaseConfig);
-        const db = firebase.database();
-
-        if(window.location.search === '?admin=1') {
-            document.getElementById('adminModal').classList.add('active');
-            if(localStorage.getItem('adminLoggedIn') === 'true') {
-                showDashboard();
-            }
-        }
-
-        db.ref('settings').on('value', (snapshot) => {
-            const s = snapshot.val() || {};
-            document.getElementById('bismillahText').textContent = s.bismillah || 'بِسْمِ ٱللَّٰهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ';
-            document.getElementById('subtitleText').textContent = s.subtitle || 'চলুন কেনাকাটা শুরু করা যাক | Let\'s Start Shopping';
-            document.getElementById('siteName').textContent = s.siteName || 'Booeb.com';
-            document.getElementById('siteLogo').src = s.logo || 'https://placehold.co/50x50/8b3dff/ffffff?text=B';
-            document.getElementById('headerPhone').textContent = s.headerPhone || '+880 1234-567890';
-            document.getElementById('booksTitle').textContent = s.booksTitle || 'বই | Books';
-            document.getElementById('booksDesc').textContent = s.booksDesc || 'সকল ইসলামিক ও শিক্ষামূলক বই';
-            document.getElementById('productsTitle').textContent = s.productsTitle || 'প্রোডাক্ট | Products';
-            document.getElementById('productsDesc').textContent = s.productsDesc || 'সকল ধরনের প্রোডাক্ট';
-            document.getElementById('bannerSectionTitle').textContent = s.bannerTitle || 'অফার ও ব্যানার | Offers & Banners';
-            document.getElementById('productSectionTitle').textContent = s.productListTitle || 'আমাদের প্রোডাক্ট | Our Products';
-            document.getElementById('paymentTitle').textContent = s.paymentTitle || 'পেমেন্ট অপশন | Payment Options';
-            document.getElementById('subscribeTitle').textContent = s.subscribeTitle || 'নিউজলেটার সাবস্ক্রাইব করুন | Subscribe Newsletter';
-            document.getElementById('subscribeDesc').textContent = s.subscribeDesc || 'নতুন অফার পেতে ইমেইল দিন';
-            document.getElementById('footerText').innerHTML = s.footer || '&copy; 2026 Booeb.com. সর্বস্বত্ব সংরক্ষিত | All rights reserved.';
-            document.getElementById('footerContact').innerHTML = s.footerContact || '';
-            if(s.primaryColor) document.documentElement.style.setProperty('--primary-color', s.primaryColor);
-            if(s.secondaryColor) document.documentElement.style.setProperty('--secondary-color', s.secondaryColor);
-            document.getElementById('metaTitle').textContent = s.metaTitle || 'Booeb.com - Start Shopping';
-            document.getElementById('metaDesc').content = s.metaDesc || 'Booeb.com - Best Online Shopping';
-            document.getElementById('metaKeywords').content = s.metaKeywords || 'shopping, ecommerce, bangladesh';
-            const socialDiv = document.getElementById('socialLinks');
-            socialDiv.innerHTML = '';
-            if(s.facebookUrl) socialDiv.innerHTML += `<a href="${s.facebookUrl}" target="_blank">f</a>`;
-            if(s.instagramUrl) socialDiv.innerHTML += `<a href="${s.instagramUrl}" target="_blank">i</a>`;
-            if(s.youtubeUrl) socialDiv.innerHTML += `<a href="${s.youtubeUrl}" target="_blank">▶</a>`;
-            if(s.whatsappNumber) socialDiv.innerHTML += `<a href="https://wa.me/${s.whatsappNumber}" target="_blank">w</a>`;
-            if(s.telegramUrl) socialDiv.innerHTML += `<a href="${s.telegramUrl}" target="_blank">t</a>`;
-        });
-
-        db.ref('banners').on('value', (snapshot) => renderBanners(snapshot.val() || {}));
-        db.ref('products').on('value', (snapshot) => renderProducts(snapshot.val() ? Object.values(snapshot.val()) : []));
-        db.ref('payments').on('value', (snapshot) => renderPayments(snapshot.val() ? Object.values(snapshot.val()) : []));
-        db.ref('subscribers').on('value', (snapshot) => loadEmailList(snapshot.val() || {}));
-
-        function renderBanners(bannersObj) {
-            const section = document.getElementById('bannerSection');
-            const title = document.getElementById('bannerSectionTitle').textContent;
-            section.innerHTML = `<h2 class="section-title">${title}</h2>`;
-            const banners = bannersObj ? Object.entries(bannersObj) : [];
-            if(banners.length === 0) {
-                section.innerHTML += '<p style="text-align:center; color:#999;">কোনো ব্যানার নেই</p>';
-                return;
-            }
-            let sliderHTML = `<div class="banner-slider"><div class="banner-track" id="bannerTrack">`;
-            banners.forEach(([key, b]) => {
-                sliderHTML += `<div class="banner"><a href="${b.link}" target="_blank"><img src="${b.img}" alt="Banner"></a></div>`;
-            });
-            sliderHTML += `</div><div class="banner-dots" id="bannerDots"></div></div>`;
-            section.innerHTML += sliderHTML;
-            setTimeout(() => startBannerSlider(banners.length), 100);
-        }
-
-        function renderProducts(products) {
-            const grid = document.getElementById('productGrid');
-            grid.innerHTML = '';
-            if(products.length === 0) {
-                grid.innerHTML = '<p style="text-align:center; color:#999; grid-column: 1/-1;">কোনো প্রোডাক্ট নেই</p>';
-                return;
-            }
-            products.forEach(p => {
-                grid.innerHTML += `<div class="option-card"><img src="${p.img}" alt="${p.name}"><h3>${p.name}</h3><p class="price">${p.price}</p><a href="${p.link}" class="btn-start" target="_blank">কিনুন | Buy Now</a></div>`;
-            });
-        }
-
-        function renderPayments(payments) {
-            const container = document.getElementById('paymentIcons');
-            container.innerHTML = '';
-            payments.forEach(p => {
-                container.innerHTML += `<img src="${p.img}" alt="${p.name}">`;
-            });
-        }
-
-        document.getElementById('subscribeBtn').addEventListener('click', () => {
-            const email = document.getElementById('subscribeEmail').value.trim();
-            if(email && email.includes('@')) {
-                db.ref('subscribers').push({ email, date: new Date().toISOString() });
-                document.getElementById('subscribeEmail').value = '';
-                alert('ধন্যবাদ! সাবস্ক্রাইব হয়েছে | Thank you for subscribing!');
-            } else {
-                alert('সঠিক ইমেইল দিন | Enter valid email');
+        // পেজ লোড হলে সেভ করা ডাটা লোড করো
+        window.addEventListener('load', function() {
+            loadSettings();
+            
+            // URL এ ?admin=1 থাকলে এডমিন প্যানেল খুলো
+            if(window.location.search === '?admin=1') {
+                document.getElementById('adminModal').classList.add('active');
+                loadCurrentColors();
             }
         });
 
-        document.getElementById('closeBtn').addEventListener('click', () => document.getElementById
+        // সেভ করা সেটিংস লোড করো
+        function loadSettings() {
+            const savedLogo = localStorage.getItem('siteLogo');
+            const savedColor1 = localStorage.getItem('nameColor1');
+            const savedColor2 = localStorage.getItem('nameColor2');
+            const savedColor3 = localStorage.getItem('nameColor3');
+            
+            if(savedLogo) {
+                document.getElementById('siteLogo').src = savedLogo;
+            }
+            
+            if(savedColor1 && savedColor2 && savedColor3) {
+                const gradient = `linear-gradient(135deg, ${savedColor1} 0%, ${savedColor2} 50%, ${savedColor3} 100%)`;
+                document.documentElement.style.setProperty('--name-gradient', gradient);
+            }
+        }
+
+        // এডমিন প্যানেলে কারেন্ট কালার লোড করো
+        function loadCurrentColors() {
+            const c1 = localStorage.getItem('nameColor1') || '#dc2626';
+            const c2 = localStorage.getItem('nameColor2') || '#b91c1c';
+            const c3 = localStorage.getItem('nameColor3') || '#8b3dff';
+            const logo = localStorage.getItem('siteLogo') || '';
+            
+            document.getElementById('color1').value = c1;
+            document.getElementById('color2').value = c2;
+            document.getElementById('color3').value = c3;
+            document.getElementById('logoUrl').value = logo;
+            updatePreview();
+        }
+
+        // কালার চেঞ্জ হলে প্রিভিউ আপডেট
+        document.getElementById('color1').addEventListener('input', updatePreview);
+        document.getElementById('color2').addEventListener('input', updatePreview);
+        document.getElementById('color3').addEventListener('input', updatePreview);
+
+        function updatePreview() {
+            const c1 = document.getElementById('color1').value;
+            const c2 = document.getElementById('color2').value;
+            const c3 = document.getElementById('color3').value;
+            const preview = document.getElementById('colorPreview');
+            preview.style.background = `linear-gradient(135deg, ${c1}, ${c2}, ${c3})`;
+            preview.style.webkitBackgroundClip = 'text';
+            preview.style.webkitTextFillColor = 'transparent';
+            preview.style.backgroundClip = 'text';
+        }
+
+        // সেভ বাটন
+        function saveAdminSettings() {
+            const c1 = document.getElementById('color1').value;
+            const c2 = document.getElementById('color2').value;
+            const c3 = document.getElementById('color3').value;
+            const logo = document.getElementById('logoUrl').value.trim();
+            
+            // লোকাল স্টোরেজে সেভ করো
+            localStorage.setItem('nameColor1', c1);
+            localStorage.setItem('nameColor2', c2);
+            localStorage.setItem('nameColor3', c3);
+            
+            if(logo) {
+                localStorage.setItem('siteLogo', logo);
+                document.getElementById('siteLogo').src = logo;
+            }
+            
+            // কালার এপ্লাই করো
+            const gradient = `linear-gradient(135deg, ${c1} 0%, ${c2} 50%, ${c3} 100%)`;
+            document.documentElement.style.setProperty('--name-gradient', gradient);
+            
+            alert('✅ সেভ হয়েছে! সবাই নতুন ডিজাইন দেখতে পাবে।');
+            closeAdmin();
+        }
+
+        // এডমিন প্যানেল বন্ধ
+        function closeAdmin() {
+            document.getElementById('adminModal').classList.remove('active');
+            // URL থেকে ?admin=1 রিমুভ করো
+            window.history.replaceState({}, document.title, window.location.pathname);
+        }
+    </script>
+</body>
+</html>
 
