@@ -495,16 +495,14 @@
         db.ref('payments').on('value', (snapshot) => renderPayments(snapshot.val()? Object.values(snapshot.val()) : []));
         db.ref('subscribers').on('value', (snapshot) => loadEmailList(snapshot.val() || {}));
 
-     function renderBanners(bannersObj) {
+  function renderBanners(bannersObj) {
     const section = document.getElementById('bannerSection');
     const title = document.getElementById('bannerSectionTitle').textContent;
     section.innerHTML = `<h2 class="section-title">${title}</h2>`;
     
-    // Firebase থেকে ডাটা আসছে কিনা চেক
-    const banners = bannersObj ? Object.entries(bannersObj) : [];
-    console.log('ব্যানার সংখ্যা:', banners.length); // টেস্টের জন্য
+    const banners = Object.entries(bannersObj || {});
     
-    if(banners.length === 0) {
+    if(!banners || banners.length === 0) {
         section.innerHTML += '<p style="text-align:center; color:#999;">কোনো ব্যানার নেই</p>';
         return;
     }
@@ -532,10 +530,8 @@
     
     section.innerHTML += sliderHTML;
     
-    // DOM রেডি হওয়ার পর স্লাইডার চালু করো
-    setTimeout(() => {
-        startBannerSlider(banners.length);
-    }, 100);
+    // এই লাইন মাস্ট - স্লাইডার চালু করবে
+    startBannerSlider(banners.length);
 }
     
     // স্লাইডার চালু করো
@@ -932,7 +928,73 @@ window.addEventListener('resize', () => {
     setTimeout(updateSliderHeight, 100);
 });
         
+  // ===== ব্যানার অটো স্লাইডার - ফাইনাল =====
+let bannerSlideIndex = 0;
+let bannerSlideTimer = null;
 
+function startBannerSlider(totalBanners) {
+    console.log('স্লাইডার শুরু:', totalBanners); // F12 Console এ দেখবা
+    
+    // পুরান টাইমার বন্ধ
+    if(bannerSlideTimer) {
+        clearInterval(bannerSlideTimer);
+        bannerSlideTimer = null;
+    }
+    
+    if (totalBanners <= 1) {
+        const dots = document.getElementById('bannerDots');
+        if(dots) dots.style.display = 'none';
+        return;
+    }
+    
+    const track = document.getElementById('bannerTrack');
+    const dotsContainer = document.getElementById('bannerDots');
+    if(!track || !dotsContainer) {
+        console.log('track বা dots পাওয়া যায় নাই');
+        return;
+    }
+    
+    // ডট তৈরি
+    dotsContainer.innerHTML = '';
+    for (let i = 0; i < totalBanners; i++) {
+        const dot = document.createElement('span');
+        dot.className = 'dot';
+        if (i === 0) dot.classList.add('active');
+        dot.onclick = () => goToBannerSlide(i, totalBanners);
+        dotsContainer.appendChild(dot);
+    }
+    
+    bannerSlideIndex = 0;
+    
+    // ৩ সেকেন্ড পর পর স্লাইড
+    bannerSlideTimer = setInterval(() => {
+        bannerSlideIndex = (bannerSlideIndex + 1) % totalBanners;
+        updateBannerSlide();
+        console.log('স্লাইড নম্বর:', bannerSlideIndex);
+    }, 3000);
+}
+
+function updateBannerSlide() {
+    const track = document.getElementById('bannerTrack');
+    const dots = document.querySelectorAll('#bannerDots .dot');
+    if (!track) return;
+    
+    track.style.transform = `translateX(-${bannerSlideIndex * 100}%)`;
+    
+    dots.forEach((dot, i) => {
+        dot.classList.toggle('active', i === bannerSlideIndex);
+    });
+}
+
+function goToBannerSlide(index, totalBanners) {
+    bannerSlideIndex = index;
+    updateBannerSlide();
+    if(bannerSlideTimer) clearInterval(bannerSlideTimer);
+    bannerSlideTimer = setInterval(() => {
+        bannerSlideIndex = (bannerSlideIndex + 1) % totalBanners;
+        updateBannerSlide();
+    }, 3000);
+}
 
     </script>
 </body>
