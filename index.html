@@ -71,46 +71,57 @@
     .tab-content { display: none; }
     .tab-content.active { display: block; }
         @media (max-width: 768px) {.bismillah { font-size: 24px; }.banner img { height: 220px; }.section-title { font-size: 26px; }.subscribe-section input { width: 100%; margin-bottom: 10px; } }
-    /* ===== ব্যানার স্লাইডার CSS ===== */
+   /* ===== ব্যানার স্লাইডার - অটো হাইট ===== */
 .banner-slider {
     position: relative;
     width: 100%;
     max-width: 800px;
     margin: 0 auto;
-    overflow: hidden;
     border-radius: 12px;
+    overflow: hidden;
+    background: #f5f5f5;
 }
 
 .banner-track {
     display: flex;
     transition: transform 0.5s ease-in-out;
+    align-items: flex-start; /* উপরে এলাইন */
 }
 
-.banner-track .banner {
+.banner-track.banner {
     min-width: 100%;
     margin: 0;
+    line-height: 0; /* ইমেজের নিচে গ্যাপ দূর করে */
+}
+
+.banner-track.banner img {
+    width: 100%;
+    height: auto; /* আসল সাইজে দেখাবে, কাটবে না */
+    display: block;
+    border-radius: 0;
 }
 
 .banner-dots {
     text-align: center;
-    padding: 10px 0;
+    padding: 12px 0;
+    background: rgba(0,0,0,0.03);
 }
 
-.banner-dots .dot {
-    height: 10px;
-    width: 10px;
+.banner-dots.dot {
+    height: 8px;
+    width: 8px;
     margin: 0 4px;
     background-color: #bbb;
     border-radius: 50%;
     display: inline-block;
     cursor: pointer;
-    transition: background-color 0.3s;
+    transition: all 0.3s;
 }
 
-.banner-dots .dot.active {
+.banner-dots.dot.active {
     background-color: #c3213a;
-    width: 25px;
-    border-radius: 5px;
+    width: 24px;
+    border-radius: 4px;
 }
         
     </style>
@@ -816,16 +827,21 @@
 
 
 
-      // ===== ব্যানার অটো স্লাইডার =====
+     // ===== ব্যানার অটো স্লাইডার - অটো হাইট সহ =====
 let bannerSlideIndex = 0;
 let bannerSlideTimer;
 
 function startBannerSlider(totalBanners) {
-    if (totalBanners <= 1) return; // ১টা ব্যানার হলে স্লাইড লাগবে না
-    
+    if (totalBanners <= 1) {
+        // ১টা ব্যানার হলে ডট লাগবে না
+        document.getElementById('bannerDots').style.display = 'none';
+        return;
+    }
+
     const track = document.getElementById('bannerTrack');
     const dotsContainer = document.getElementById('bannerDots');
-    
+    const slider = document.querySelector('.banner-slider');
+
     // ডট তৈরি করো
     dotsContainer.innerHTML = '';
     for (let i = 0; i < totalBanners; i++) {
@@ -835,21 +851,51 @@ function startBannerSlider(totalBanners) {
         dot.onclick = () => goToBannerSlide(i, totalBanners);
         dotsContainer.appendChild(dot);
     }
-    
+
+    // ইমেজ লোড হলে হাইট ঠিক করো
+    const images = track.querySelectorAll('img');
+    let loadedCount = 0;
+
+    images.forEach(img => {
+        if (img.complete) {
+            loadedCount++;
+            if (loadedCount === images.length) updateSliderHeight();
+        } else {
+            img.onload = () => {
+                loadedCount++;
+                if (loadedCount === images.length) updateSliderHeight();
+            };
+        }
+    });
+
     // অটো স্লাইড শুরু
     clearInterval(bannerSlideTimer);
     bannerSlideTimer = setInterval(() => {
         bannerSlideIndex = (bannerSlideIndex + 1) % totalBanners;
         updateBannerSlide(totalBanners);
-    }, 3000); // ৩ সেকেন্ড পর পর স্লাইড হবে
+    }, 3000);
+}
+
+function updateSliderHeight() {
+    const track = document.getElementById('bannerTrack');
+    const slider = document.querySelector('.banner-slider');
+    const currentBanner = track.children[bannerSlideIndex];
+    if (currentBanner) {
+        // কারেন্ট ব্যানারের হাইট অনুযায়ী স্লাইডার হাইট সেট করো
+        const height = currentBanner.offsetHeight;
+        slider.style.height = height + 'px';
+    }
 }
 
 function updateBannerSlide(totalBanners) {
     const track = document.getElementById('bannerTrack');
-    const dots = document.querySelectorAll('#bannerDots .dot');
-    
+    const dots = document.querySelectorAll('#bannerDots.dot');
+
     track.style.transform = `translateX(-${bannerSlideIndex * 100}%)`;
-    
+
+    // হাইট রিসেট করো প্রতি স্লাইডে
+    setTimeout(updateSliderHeight, 50);
+
     dots.forEach((dot, i) => {
         dot.classList.toggle('active', i === bannerSlideIndex);
     });
@@ -865,6 +911,12 @@ function goToBannerSlide(index, totalBanners) {
         updateBannerSlide(totalBanners);
     }, 3000);
 }
+
+// উইন্ডো রিসাইজ হলে হাইট ঠিক করো
+window.addEventListener('resize', () => {
+    setTimeout(updateSliderHeight, 100);
+});
+
   
     </script>
 </body>
