@@ -123,7 +123,14 @@
     border-radius: 4px;
 }
 
-
+.banner-slider { position: relative; width: 100%; max-width: 800px; margin: 0 auto; border-radius: 12px; overflow: hidden; }
+.banner-track { display: flex; transition: transform 0.5s ease-in-out; }
+.banner-track .banner { min-width: 100%; flex-shrink: 0; line-height: 0; }
+.banner-track .banner img { width: 100%; height: auto; display: block; }
+.banner-dots { text-align: center; padding: 12px 0; }
+.banner-dots .dot { height: 8px; width: 8px; margin: 0 4px; background: #bbb; border-radius: 50%; display: inline-block; cursor: pointer; transition: all 0.3s; }
+.banner-dots .dot.active { background: #c3213a; width: 24px; border-radius: 4px; }
+        
 
     </style>
 </head>
@@ -926,73 +933,7 @@ window.addEventListener('resize', () => {
 });
         
 
-  // ===== ব্যানার অটো স্লাইডার - ফাইনাল =====
-let bannerSlideIndex = 0;
-let bannerSlideTimer = null;
 
-function startBannerSlider(totalBanners) {
-    console.log('স্লাইডার শুরু:', totalBanners); // F12 Console এ দেখবা
-    
-    // পুরান টাইমার বন্ধ
-    if(bannerSlideTimer) {
-        clearInterval(bannerSlideTimer);
-        bannerSlideTimer = null;
-    }
-    
-    if (totalBanners <= 1) {
-        const dots = document.getElementById('bannerDots');
-        if(dots) dots.style.display = 'none';
-        return;
-    }
-    
-    const track = document.getElementById('bannerTrack');
-    const dotsContainer = document.getElementById('bannerDots');
-    if(!track || !dotsContainer) {
-        console.log('track বা dots পাওয়া যায় নাই');
-        return;
-    }
-    
-    // ডট তৈরি
-    dotsContainer.innerHTML = '';
-    for (let i = 0; i < totalBanners; i++) {
-        const dot = document.createElement('span');
-        dot.className = 'dot';
-        if (i === 0) dot.classList.add('active');
-        dot.onclick = () => goToBannerSlide(i, totalBanners);
-        dotsContainer.appendChild(dot);
-    }
-    
-    bannerSlideIndex = 0;
-    
-    // ৩ সেকেন্ড পর পর স্লাইড
-    bannerSlideTimer = setInterval(() => {
-        bannerSlideIndex = (bannerSlideIndex + 1) % totalBanners;
-        updateBannerSlide();
-        console.log('স্লাইড নম্বর:', bannerSlideIndex);
-    }, 3000);
-}
-
-function updateBannerSlide() {
-    const track = document.getElementById('bannerTrack');
-    const dots = document.querySelectorAll('#bannerDots .dot');
-    if (!track) return;
-    
-    track.style.transform = `translateX(-${bannerSlideIndex * 100}%)`;
-    
-    dots.forEach((dot, i) => {
-        dot.classList.toggle('active', i === bannerSlideIndex);
-    });
-}
-
-function goToBannerSlide(index, totalBanners) {
-    bannerSlideIndex = index;
-    updateBannerSlide();
-    if(bannerSlideTimer) clearInterval(bannerSlideTimer);
-    bannerSlideTimer = setInterval(() => {
-        bannerSlideIndex = (bannerSlideIndex + 1) % totalBanners;
-        updateBannerSlide();
-    }, 3000);
-}
     </script>
 </body>
 </html>
