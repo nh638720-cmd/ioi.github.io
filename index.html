@@ -71,6 +71,48 @@
     .tab-content { display: none; }
     .tab-content.active { display: block; }
         @media (max-width: 768px) {.bismillah { font-size: 24px; }.banner img { height: 220px; }.section-title { font-size: 26px; }.subscribe-section input { width: 100%; margin-bottom: 10px; } }
+    /* ===== ব্যানার স্লাইডার CSS ===== */
+.banner-slider {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    overflow: hidden;
+    border-radius: 12px;
+}
+
+.banner-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.banner-track .banner {
+    min-width: 100%;
+    margin: 0;
+}
+
+.banner-dots {
+    text-align: center;
+    padding: 10px 0;
+}
+
+.banner-dots .dot {
+    height: 10px;
+    width: 10px;
+    margin: 0 4px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.banner-dots .dot.active {
+    background-color: #c3213a;
+    width: 25px;
+    border-radius: 5px;
+}
+        
     </style>
 </head>
 <body>
@@ -434,19 +476,26 @@
         db.ref('payments').on('value', (snapshot) => renderPayments(snapshot.val()? Object.values(snapshot.val()) : []));
         db.ref('subscribers').on('value', (snapshot) => loadEmailList(snapshot.val() || {}));
 
-        function renderBanners(bannersObj) {
+      function renderBanners(bannersObj) {
     const section = document.getElementById('bannerSection');
     const title = document.getElementById('bannerSectionTitle').textContent;
     section.innerHTML = `<h2 class="section-title">${title}</h2>`;
     
-    if(!bannersObj || Object.keys(bannersObj).length === 0) {
+    const banners = Object.entries(bannersObj);
+    
+    if(!banners || banners.length === 0) {
         section.innerHTML += '<p style="text-align:center; color:#999;">কোনো ব্যানার নেই</p>';
         return;
     }
     
-    // key সহ লুপ চালাও
-    Object.entries(bannersObj).forEach(([key, b]) => {
-        section.innerHTML += `
+    // স্লাইডার HTML তৈরি
+    let sliderHTML = `
+        <div class="banner-slider">
+            <div class="banner-track" id="bannerTrack">
+    `;
+    
+    banners.forEach(([key, b]) => {
+        sliderHTML += `
             <div class="banner">
                 <a href="${b.link}" target="_blank">
                     <img src="${b.img}" alt="Banner">
@@ -454,7 +503,19 @@
             </div>
         `;
     });
+    
+    sliderHTML += `
+            </div>
+            <div class="banner-dots" id="bannerDots"></div>
+        </div>
+    `;
+    
+    section.innerHTML += sliderHTML;
+    
+    // স্লাইডার চালু করো
+    startBannerSlider(banners.length);
 }
+
 
 
         function renderProducts(products) {
@@ -752,6 +813,59 @@
                 }
             }
         });
+
+
+
+      // ===== ব্যানার অটো স্লাইডার =====
+let bannerSlideIndex = 0;
+let bannerSlideTimer;
+
+function startBannerSlider(totalBanners) {
+    if (totalBanners <= 1) return; // ১টা ব্যানার হলে স্লাইড লাগবে না
+    
+    const track = document.getElementById('bannerTrack');
+    const dotsContainer = document.getElementById('bannerDots');
+    
+    // ডট তৈরি করো
+    dotsContainer.innerHTML = '';
+    for (let i = 0; i < totalBanners; i++) {
+        const dot = document.createElement('span');
+        dot.className = 'dot';
+        if (i === 0) dot.classList.add('active');
+        dot.onclick = () => goToBannerSlide(i, totalBanners);
+        dotsContainer.appendChild(dot);
+    }
+    
+    // অটো স্লাইড শুরু
+    clearInterval(bannerSlideTimer);
+    bannerSlideTimer = setInterval(() => {
+        bannerSlideIndex = (bannerSlideIndex + 1) % totalBanners;
+        updateBannerSlide(totalBanners);
+    }, 3000); // ৩ সেকেন্ড পর পর স্লাইড হবে
+}
+
+function updateBannerSlide(totalBanners) {
+    const track = document.getElementById('bannerTrack');
+    const dots = document.querySelectorAll('#bannerDots .dot');
+    
+    track.style.transform = `translateX(-${bannerSlideIndex * 100}%)`;
+    
+    dots.forEach((dot, i) => {
+        dot.classList.toggle('active', i === bannerSlideIndex);
+    });
+}
+
+function goToBannerSlide(index, totalBanners) {
+    bannerSlideIndex = index;
+    updateBannerSlide(totalBanners);
+    // ম্যানুয়াল ক্লিক করলে টাইমার রিসেট
+    clearInterval(bannerSlideTimer);
+    bannerSlideTimer = setInterval(() => {
+        bannerSlideIndex = (bannerSlideIndex + 1) % totalBanners;
+        updateBannerSlide(totalBanners);
+    }, 3000);
+}
+  
     </script>
 </body>
 </html>
