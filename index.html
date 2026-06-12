@@ -465,6 +465,25 @@
                 document.getElementById('guideModal').classList.remove('active');
             }
         }
+
+
+        // SEO কন্টেন্ট টগল
+function toggleSeoContent() {
+    const content = document.getElementById('seoContent');
+    const text = document.getElementById('seoText');
+    const icon = document.getElementById('seoIcon');
+    
+    content.classList.toggle('active');
+    
+    if (content.classList.contains('active')) {
+        text.textContent = 'লেখা বন্ধ করুন';
+        icon.classList.add('open');
+    } else {
+        text.textContent = 'Booeb.com সম্পর্কে আরও জানুন';
+        icon.classList.remove('open');
+    }
+}
+
     </script>
 
 <!-- অফলাইন ডাইনো গেম -->
