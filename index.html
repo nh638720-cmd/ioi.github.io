@@ -5,9 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="application-name" content="Booeb">
     <meta property="og:site_name" content="Booeb">
-    <meta name="description" content="Booeb: Bangladesh's #1 marketplace! Shop millions of quality products at the best prices with secure cash on delivery and fast delivery">
+    <meta name="description" content="Booeb: Bangladesh's #1 marketplace! Shop millions of quality products at the best prices with secure cash on delivery and fast delivery. Online shopping made easy.">
+    <meta name="keywords" content="Booeb, অনলাইন শপিং, বই কিনুন, পণ্য কিনুন, বাংলাদেশ, ই-কমার্স, শপিং, ক্যাশ অন ডেলিভারি">
     <meta name="author" content="Booeb">
-    <title>Booeb.com. Fraud-free shopping. Trusted shopping.</title>
+    <meta property="og:title" content="Booeb.com - Bangladesh's #1 Online Marketplace">
+    <meta property="og:description" content="Buy books and products online from Booeb. Fast delivery, secure payment, cash on delivery available.">
+    <meta property="og:type" content="website">
+    <title>Booeb.com | বাংলাদেশের সেরা অনলাইন শপিং প্ল্যাটফর্ম | Books & Products</title>
     <link rel="icon" type="image/png" href="https://imgur.com/uqa5nAs.png">
     <link rel="apple-touch-icon" href="https://imgur.com/uqa5nAs.png">
     <link rel="shortcut icon" href="https://imgur.com/uqa5nAs.png">
@@ -320,7 +324,7 @@
     margin-top: 20px;
 }
 .seo-content.active {
-    max-height: 5000px;
+    max-height: 8000px;
 }
 .seo-content h4 {
     color: #e2e8f0;
@@ -340,13 +344,206 @@
     font-weight: 600;
 }
 
+/* ===== চ্যাটবট স্টাইল ===== */
+.chatbot-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 9998;
+    font-family: 'Hind Siliguri', sans-serif;
+}
+
+.chatbot-button {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, #dc2626, #8b3dff);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(220, 38, 38, 0.4);
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+}
+
+.chatbot-button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 24px rgba(220, 38, 38, 0.6);
+}
+
+.chatbot-button.active {
+    display: none;
+}
+
+.chatbot-window {
+    position: absolute;
+    bottom: 80px;
+    right: 0;
+    width: 380px;
+    height: 600px;
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 5px 40px rgba(0, 0, 0, 0.2);
+    display: none;
+    flex-direction: column;
+    animation: slideUp 0.3s ease;
+}
+
+.chatbot-window.active {
+    display: flex;
+}
+
+.chatbot-header {
+    background: linear-gradient(135deg, #dc2626, #8b3dff);
+    color: white;
+    padding: 20px;
+    border-radius: 16px 16px 0 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.chatbot-header h3 {
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.chatbot-close {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.chatbot-close:hover {
+    transform: rotate(90deg);
+}
+
+.chatbot-messages {
+    flex: 1;
+    overflow-y: auto;
+    padding: 20px;
+    background: #f8f9fa;
+}
+
+.chatbot-message {
+    margin-bottom: 15px;
+    display: flex;
+    animation: fadeIn 0.3s ease;
+}
+
+.chatbot-message.bot {
+    justify-content: flex-start;
+}
+
+.chatbot-message.user {
+    justify-content: flex-end;
+}
+
+.message-bubble {
+    max-width: 80%;
+    padding: 12px 16px;
+    border-radius: 12px;
+    line-height: 1.5;
+    font-size: 14px;
+}
+
+.bot-message {
+    background: #e5e7eb;
+    color: #0f172a;
+    border-radius: 12px 12px 12px 0;
+}
+
+.user-message {
+    background: linear-gradient(135deg, #dc2626, #8b3dff);
+    color: white;
+    border-radius: 12px 12px 0 12px;
+}
+
+.chatbot-input-area {
+    padding: 15px;
+    border-top: 1px solid #e5e7eb;
+    display: flex;
+    gap: 10px;
+}
+
+.chatbot-input {
+    flex: 1;
+    padding: 12px;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    font-family: 'Hind Siliguri', sans-serif;
+    font-size: 14px;
+    resize: none;
+}
+
+.chatbot-input:focus {
+    outline: none;
+    border-color: #dc2626;
+    box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.1);
+}
+
+.chatbot-send {
+    background: linear-gradient(135deg, #dc2626, #8b3dff);
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: 0.2s;
+}
+
+.chatbot-send:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(220, 38, 38, 0.4);
+}
+
+.quick-replies {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 8px;
+    margin-top: 10px;
+}
+
+.quick-reply-btn {
+    background: white;
+    border: 1px solid #dc2626;
+    color: #dc2626;
+    padding: 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 500;
+    transition: all 0.2s;
+    text-align: left;
+}
+
+.quick-reply-btn:hover {
+    background: #fee2e2;
+    transform: translateX(4px);
+}
+
+@media (max-width: 600px) {
+    .chatbot-window {
+        width: calc(100vw - 20px);
+        height: 500px;
+        bottom: 80px;
+        right: 10px;
+    }
+}
+
     </style>
 </head>
 
 <body>
     <div class="container">
         <div class="logo-area">
-            <img src="https://i.imgur.com/8tYDprH.png" alt="ই-কমার্স স্টোর ডিজাইন, শপিফাই,amazon,alibaba,daraz,rokomari,aliexpress">
+            <img src="https://i.imgur.com/8tYDprH.png" alt="ই-কমার্স স্টোর ডিজাইন, শপিফাই, amazon, alibaba, daraz, rokomari, aliexpress, Booeb Bangladesh">
             <h1>Booeb.com</h1>
         </div>
 
@@ -355,13 +552,13 @@
 
         <div class="links-grid">
             <div class="link-card" onclick="showBuyGuide('book')">
-                <div class="icon"><img src="bookicon1.png" alt="বই কালেকশন"></div>
+                <div class="icon"><img src="bookicon1.png" alt="বই কালেকশন আইকন"></div>
                 <h2>বই কালেকশন</h2>
                 <p>সকল ইসলামিক ও শিক্ষামূলক বইয়ের বিশাল সমাহার</p>
             </div>
             
             <div class="link-card" onclick="showBuyGuide('product')">
-                <div class="icon"><img src="productIcon2.jpg" alt="প্রোডাক্ট শপ"></div>
+                <div class="icon"><img src="productIcon2.jpg" alt="প্রোডাক্ট শপ আইকন"></div>
                 <h2>প্রোডাক্ট শপ</h2>
                 <p>দৈনন্দিন জীবনের সকল কোয়ালিটি প্রোডাক্ট</p>
             </div>
@@ -371,7 +568,7 @@
     <footer>
         <h3>Booeb.com সম্পর্কে</h3>
         <p>
-            Booeb.com একটি বিশ্বস্ত অনলাইন শপিং প্ল্যাটফর্ম। আমরা আপনাদের জন্য নিয়ে এসেছি হাজারো পণ্য এবং বই।
+            Booeb.com একটি বিশ্বস্ত অনলাইন শপিং প্ল্যাটফর্ম যেখানে আপনি পাবেন হাজারো পণ্য এবং শিক্ষামূলক বই। আমরা প্রতিশ্রুতিবদ্ধ সেরা মানের পণ্য এবং দ্রুত ডেলিভারি সেবা প্রদান করতে।
         </p>
         <!-- SEO Content - ফুটারের নিচে বাম পাশে -->
 <div class="seo-section">
@@ -382,41 +579,93 @@
         </button>
         
         <div class="seo-content" id="seoContent">
-            <h4>আমাদের গল্প</h4>
+            <h4>আমাদের গল্প - Booeb.com এর যাত্রা</h4>
             <p>
-                <strong>Booeb.com</strong> এর যাত্রা শুরু হয়েছিল ২০২৪ সালে একটি ছোট্ট স্বপ্ন নিয়ে।
+                <strong>Booeb.com</strong> এর যাত্রা শুরু হয়েছিল ২০২৪ সালে একটি সাধারণ স্বপ্ন নিয়ে - বাংলাদেশের মানুষকে সাশ্রয়ী মূল্যে মানসম্পন্ন পণ্য এবং বই সরবরাহ করা। আমরা বিশ্বাস করি যে শিক্ষা এবং গুণমানের পণ্য সবার নাগালের মধ্যে থাকা উচিত।
             </p>
             <p>
-                সেই ভাবনা থেকেই Booeb.com এর জন্ম। প্রথমে আমরা মাত্র ৫০টা বই নিয়ে শুরু করেছিলাম।
-            </p>
-
-            <h4>আমরা কি করি</h4>
-            <p>
-                আমরা শুধু বই বিক্রি করি না, আমরা জ্ঞান পৌঁছে দেই। আমাদের কাছে পাবেন কুরআন, হাদিস, ইসলামিক জ্ঞান এবং আরও অনেক কিছু।
-            </p>
-            <p>
-                বইয়ের পাশাপাশি আমরা নিয়ে এসেছি দৈনন্দিন জীবনের প্রয়োজনীয় পণ্য যা মানুষ প্রতিদিন ব্যবহার করে।
+                প্রথম দিনে আমরা মাত্র ৫০টি বই নিয়ে ছোট একটি স্বপ্ন দেখেছিলাম। কিন্তু আজ, হাজারো সন্তুষ্ট গ্রাহক এবং ব্যাপক পণ্যের সংগ্রহ নিয়ে আমরা গর্বিত। Booeb.com এর পিছনে রয়েছে একটি দক্ষ এবং নিবেদিত টিম যারা প্রতিদিন কাজ করে যাচ্ছে গ্রাহক সেবা উন্নত করতে।
             </p>
 
-            <h4>আমাদের প্রতিশ্রুতি</h4>
+            <h4>আমরা কী অফার করি - Booeb এর পণ্য এবং সেবা</h4>
             <p>
-                আমরা তিনটা জিনিসের গ্যারান্টি দেই। <strong>প্রথমত, অরিজিনাল পণ্য।</strong> আমরা কখনোই নকল পণ্য বিক্রি করি না।
+                <strong>বই সংগ্রহ:</strong> আমাদের বই সংগ্রহে রয়েছে কুরআন, হাদিস, ইসলামিক জ্ঞান, স্ব-উন্নয়ন, উদ্যোক্তা জ্ঞান এবং আরও অনেক বিষয়ের বই। প্রতিটি বই সতর্কতার সাথে নির্বাচিত এবং গুণমান যাচাই করা হয়।
             </p>
             <p>
-                আমাদের কাস্টমার সার্ভিস টিম সবসময় একটিভ। রাত ১২টায় মেসেজ দিলেও আমরা উত্তর দেব।
+                <strong>পণ্য বিভাগ:</strong> দৈনন্দিন জীবনের প্রয়োজনীয় সকল পণ্য পাবেন এক জায়গায় - ইলেকট্রনিক্স, হোম এপ্লায়েন্স, পোশাক, খাবার এবং আরও অনেক কিছু। সব পণ্যই অরিজিনাল এবং নির্ভরযোগ্য সরবরাহকারী থেকে আনা।
             </p>
-
-            <h4>কিভাবে অর্ডার করবেন</h4>
             <p>
-                খুব সহজ। আমাদের ওয়েবসাইটে এসে "বই কালেকশন" বা "প্রোডাক্ট শপ" এ ক্লিক করুন।
+                <strong>দ্রুত ডেলিভারি:</strong> Dhaka এবং অন্যান্য প্রধান শহরে আমরা ২৪-৪৮ ঘণ্টার মধ্যে ডেলিভারি করি। আমাদের লজিস্টিক পার্টনাররা নিশ্চিত করে যে আপনার পণ্য নিরাপদে পৌঁছায়।
             </p>
 
-            <h4>শেষ কথা</h4>
+            <h4>আমাদের প্রতিশ্রুতি - Booeb.com এর মূল্যবোধ</h4>
             <p>
-                Booeb.com শুধু একটা ব্যবসা না ভাই। এটা আমাদের ইবাদত। আমরা বিশ্বাস করি, একটা ভালো পণ্য একজন মানুষের জীবনকে বদলে দিতে পারে।
+                <strong>১. অরিজিনাল পণ্যের নিশ্চয়তা:</strong> Booeb.com এ আমরা শুধুমাত্র আসল এবং যাচাইকৃত পণ্য বিক্রি করি। কোন নকল বা ডুপ্লিকেট পণ্য আমাদের প্ল্যাটফর্মে স্থান পায় না। প্রতিটি পণ্যের গুণমান আমাদের টিম দ্বারা যাচাই করা হয়।
             </p>
             <p>
-                আপনার দোয়ায় আমাদের রাখবেন। কোনো ভুল হলে ক্ষমা করে দেবেন।
+                <strong>২. প্রতিযোগিতামূলক মূল্য:</strong> আমরা সর্বদা বাজারের সেরা মূল্য অফার করার চেষ্টা করি। আমাদের সরবরাহকারীদের সাথে সরাসরি সম্পর্ক থাকায় আমরা মধ্যস্থতাকারী খরচ কমাতে পারি এবং সেই সঞ্চয় আপনাদের কাছে পৌঁছে দিতে পারি।
+            </p>
+            <p>
+                <strong>৩. চমৎকার গ্রাহক সেবা:</strong> আমাদের কাস্টমার সার্ভিস টিম সপ্তাহের সাতদিন, দিনে ২৪ ঘণ্টা সক্রিয় থাকে। আপনার যেকোনো সমস্যা, প্রশ্ন বা সাজেশন আমরা খুশি মনে শুনি এবং দ্রুত সমাধান দিই।
+            </p>
+            <p>
+                <strong>৪. নিরাপদ পেমেন্ট সিস্টেম:</strong> আমরা একাধিক নিরাপদ পেমেন্ট অপশন প্রদান করি - ক্যাশ অন ডেলিভারি, বিকাশ, নগদ, অনলাইন ব্যাংক ট্রান্সফার ইত্যাদি। আপনার আর্থিক তথ্য সম্পূর্ণ সুরক্ষিত থাকে।
+            </p>
+
+            <h4>কীভাবে অর্ডার করবেন - Step by Step গাইড</h4>
+            <p>
+                <strong>ধাপ ১:</strong> আমাদের ওয়েবসাইট booeb.com এ ভিজিট করুন বা মোবাইল অ্যাপ ডাউনলোড করুন।
+            </p>
+            <p>
+                <strong>ধাপ ২:</strong> "বই কালেকশন" বা "প্রোডাক্ট শপ" বিভাগে ক্লিক করুন এবং আপনার পছন্দের পণ্য খুঁজুন।
+            </p>
+            <p>
+                <strong>ধাপ ৩:</strong> পণ্যের বিবরণ পড়ুন এবং পরিমাণ নির্বাচন করুন।
+            </p>
+            <p>
+                <strong>ধাপ ৪:</strong> কার্টে যোগ করুন এবং চেকআউট করুন।
+            </p>
+            <p>
+                <strong>ধাপ ৫:</strong> আপনার ডেলিভারি ঠিকানা এবং পেমেন্ট পদ্ধতি নির্বাচন করুন।
+            </p>
+            <p>
+                <strong>ধাপ ৬:</strong> অর্ডার কনফার্ম করুন এবং ডেলিভারির জন্য অপেক্ষা করুন। আপনি SMS এবং ইমেইলের মাধ্যমে অর্ডার ট্র্যাক করতে পারবেন।
+            </p>
+
+            <h4>সাধারণ প্রশ্ন এবং উত্তর - FAQ</h4>
+            <p>
+                <strong>প্রশ্ন: ডেলিভারি কতদিন সময় লাগে?</strong> উত্তর: ঢাকার মধ্যে সাধারণত ২৪-৪৮ ঘণ্টা এবং অন্যান্য জেলায় ৩-৫ দিন সময় লাগে।
+            </p>
+            <p>
+                <strong>প্রশ্ন: পণ্য ভেঙ্গে এসেছে কি করব?</strong> উত্তর: আমাদের যোগাযোগ করুন, আমরা সম্পূর্ণ রিফান্ড বা পণ্য বিনিময় করে দেব।
+            </p>
+            <p>
+                <strong>প্রশ্ন: কি রিটার্ন করা যায়?</strong> উত্তর: হ্যাঁ, ৭ দিনের মধ্যে অব্যবহৃত পণ্য রিটার্ন করতে পারবেন।
+            </p>
+            <p>
+                <strong>প্রশ্ন: ক্যাশ অন ডেলিভারি উপলব্ধ আছে?</strong> উত্তর: হ্যাঁ, সম্পূর্ণ বাংলাদেশে ক্যাশ অন ডেলিভারি সুবিধা পাওয়া যায়।
+            </p>
+
+            <h4>আমাদের সাথে যোগাযোগ করুন</h4>
+            <p>
+                <strong>ইমেইল:</strong> support@booeb.com
+            </p>
+            <p>
+                <strong>ফোন:</strong> +880 1XXX-XXXXXX
+            </p>
+            <p>
+                <strong>লাইভ চ্যাট:</strong> আমাদের ওয়েবসাইটের নিচে চ্যাটবট ব্যবহার করুন সরাসরি সাপোর্টের জন্য।
+            </p>
+
+            <h4>শেষ কথা - Booeb.com এর বার্তা</h4>
+            <p>
+                Booeb.com শুধু একটি অনলাইন শপ নয় - এটি আমাদের একটি ইবাদত এবং সামাজিক দায়বদ্ধতা। আমরা বিশ্বাস করি যে একটি ভাল পণ্য এবং শিক্ষামূলক সামগ্রী একজন মানুষের জীবনকে সম্পূর্ণভাবে পরিবর্তন করে দিতে পারে।
+            </p>
+            <p>
+                আমাদের লক্ষ্য হলো বাংলাদেশে একটি বিশ্বস্ত অনলাইন শপিং পরিবেশ তৈরি করা যেখানে গ্রাহকরা নিরাপদে, সাশ্রয়ে এবং বিশ্বস্তভাবে কেনাকাটা করতে পারবেন। আপনার সন্তুষ্টি আমাদের সাফল্য।
+            </p>
+            <p>
+                আমাদের সাথে থাকার জন্য আপনাকে ধন্যবাদ। আপনার প্রতিটি অর্ডার আমাদের কাছে বিশেষ এবং আমরা প্রতিশ্রুতিবদ্ধ সর্বোত্তম সেবা প্রদান করতে।
             </p>
         </div>
 
@@ -439,7 +688,122 @@
         </div>
     </div>
 
+    <!-- চ্যাটবট AI অ্যাসিস্ট্যান্ট -->
+    <div class="chatbot-container">
+        <button class="chatbot-button" id="chatbotToggle" onclick="toggleChatbot()">💬</button>
+        
+        <div class="chatbot-window" id="chatbotWindow">
+            <div class="chatbot-header">
+                <h3>Booeb সহায়তা</h3>
+                <button class="chatbot-close" onclick="toggleChatbot()">✕</button>
+            </div>
+            
+            <div class="chatbot-messages" id="chatbotMessages">
+                <div class="chatbot-message bot">
+                    <div class="message-bubble bot-message">
+                        হ্যালো! 👋 আমি Booeb.com এর AI সহায়ক। আপনার কোন প্রশ্ন বা সমস্যা আছে? আমি আপনাকে সাহায্য করতে এখানে আছি।
+                    </div>
+                </div>
+                <div class="chatbot-message bot">
+                    <div class="message-bubble bot-message">
+                        আপনি নিম্নলিখিত বিষয়ে সাহায্য পেতে পারেন:
+                        <div class="quick-replies" style="margin-top: 10px;">
+                            <button class="quick-reply-btn" onclick="askQuestion('অর্ডার করতে কী করব?')">অর্ডার করতে কী করব?</button>
+                            <button class="quick-reply-btn" onclick="askQuestion('ডেলিভারি কতদিন সময় লাগে?')">ডেলিভারি সময়</button>
+                            <button class="quick-reply-btn" onclick="askQuestion('পেমেন্ট পদ্ধতি কি?')">পেমেন্ট পদ্ধতি</button>
+                            <button class="quick-reply-btn" onclick="askQuestion('রিটার্ন নীতি কি?')">রিটার্ন নীতি</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="chatbot-input-area">
+                <input type="text" class="chatbot-input" id="chatbotInput" placeholder="আপনার প্রশ্ন লিখুন..." onkeypress="if(event.key==='Enter') sendMessage()">
+                <button class="chatbot-send" onclick="sendMessage()">পাঠান</button>
+            </div>
+        </div>
+    </div>
+
     <script>
+        // AI চ্যাটবট ফাংশনালিটি
+        let chatbotActive = false;
+
+        const faqDatabase = {
+            'অর্ডার করতে কী করব?': 'আমাদের ওয়েবসাইটে ভিজিট করুন, পণ্য নির্বাচন করুন, কার্টে যোগ করুন এবং চেকআউট করুন। আপনার ঠিকানা এবং পেমেন্ট পদ্ধতি নির্বাচন করে অর্ডার কনফার্ম করুন। খুবই সহজ!',
+            'ডেলিভারি কতদিন সময় লাগে?': 'ঢাকার মধ্যে সাধারণত ২৪-৪৮ ঘণ্টা এবং অন্যান্য জেলায় ৩-৫ দিন সময় লাগে। আপনি SMS বা ইমেইলের মাধ্যমে আপনার অর্ডার ট্র্যাক করতে পারবেন।',
+            'পেমেন্ট পদ্ধতি কি?': 'আমরা একাধিক পেমেন্ট অপশন প্রদান করি: ক্যাশ অন ডেলিভারি, বিকাশ, নগদ, রকেট এবং অনলাইন ব্যাংক ট্রান্সফার। আপনার সুবিধামত যেকোনো পদ্ধতি বেছে নিন।',
+            'রিটার্ন নীতি কি?': 'আপনি ৭ দিনের মধ্যে অব্যবহৃত পণ্য রিটার্ন করতে পারেন। পণ্য ভেঙ্গে এসেছে বা ত্রুটিপূর্ণ হলে আমরা সম্পূর্ণ রিফান্ড বা বিনিময় করে দেব।',
+            'বই খুঁজতে কেমন করব?': 'আমাদের বই সংগ্রহে রয়েছে ইসলামিক বই, শিক্ষামূলক বই, উদ্যোক্তা বই এবং আরও অনেক কিছু। ক্যাটাগরি অনুযায়ী ব্রাউজ করুন অথবা সার্চ বারে আপনার পছন্দের বই খুঁজুন।',
+            'প্রোডাক্ট শপে কি পাবো?': 'আমাদের প্রোডাক্ট শপে পাবেন ইলেকট্রনিক্স, হোম এপ্লায়েন্স, পোশাক, খাবার এবং দৈনন্দিন জীবনের সকল প্রয়োজনীয় পণ্য। সব পণ্য অরিজিনাল এবং গুণমান নিশ্চিত।',
+            'কিভাবে যোগাযোগ করব?': 'আমাদের ইমেইল: support@booeb.com অথবা এই লাইভ চ্যাটের মাধ্যমে সরাসরি যোগাযোগ করুন। আমরা ২৪/৭ আপনার সেবায় নিয়োজিত।',
+            'পণ্য খুঁজে পাচ্ছি না': 'আমাদের সার্চ বার ব্যবহার করুন বা ক্যাটাগরি ব্রাউজ করুন। যদি আপনার পছন্দের পণ্য না পান, আমাদের লাইভ চ্যাটের মাধ্যমে বলুন আমরা সংগ্রহ করার চেষ্টা করব।',
+            'পণ্য ত্রুটিপূর্ণ এসেছে': 'দুঃখিত! অবিলম্বে আমাদের যোগাযোগ করুন সাথে ছবি পাঠান। আমরা সম্পূর্ণ রিফান্ড অথবা নতুন পণ্য পাঠিয়ে দেব।',
+            'হ্যালো': 'হ্যালো! 👋 আমি Booeb.com এর AI সহায়ক। আপনাকে কিভাবে সাহায্য করতে পারি?',
+            'ধন্যবাদ': 'আপনাকে স্বাগতম! আরও কোন প্রশ্ন থাকলে জানাবেন। 😊'
+        };
+
+        function toggleChatbot() {
+            const window = document.getElementById('chatbotWindow');
+            const button = document.getElementById('chatbotToggle');
+            window.classList.toggle('active');
+            chatbotActive = !chatbotActive;
+        }
+
+        function sendMessage() {
+            const input = document.getElementById('chatbotInput');
+            const message = input.value.trim();
+            
+            if (!message) return;
+            
+            // ইউজার মেসেজ যোগ করুন
+            addMessage(message, 'user');
+            input.value = '';
+            
+            // বট রেসপন্স
+            setTimeout(() => {
+                const response = getBotResponse(message);
+                addMessage(response, 'bot');
+            }, 500);
+        }
+
+        function askQuestion(question) {
+            addMessage(question, 'user');
+            setTimeout(() => {
+                const response = getBotResponse(question);
+                addMessage(response, 'bot');
+            }, 500);
+        }
+
+        function getBotResponse(message) {
+            const lowerMessage = message.toLowerCase();
+            
+            // FAQ ডাটাবেস চেক করুন
+            for (let key in faqDatabase) {
+                if (lowerMessage.includes(key.toLowerCase())) {
+                    return faqDatabase[key];
+                }
+            }
+            
+            // ডিফল্ট রেসপন্স
+            return 'আমি আপনার প্রশ্নটি সম্পূর্ণভাবে বুঝতে পারিনি। অনুগ্রহ করে আরও বিশদভাবে বলুন অথবা উপরের দ্রুত প্রশ্নগুলির মধ্য থেকে একটি বেছে নিন। আপনার যোগাযোগের জন্য ধন্যবাদ! 😊';
+        }
+
+        function addMessage(text, sender) {
+            const messagesContainer = document.getElementById('chatbotMessages');
+            const messageDiv = document.createElement('div');
+            messageDiv.className = `chatbot-message ${sender}`;
+            
+            const bubble = document.createElement('div');
+            bubble.className = `message-bubble ${sender === 'bot' ? 'bot-message' : 'user-message'}`;
+            bubble.textContent = text;
+            
+            messageDiv.appendChild(bubble);
+            messagesContainer.appendChild(messageDiv);
+            
+            // স্ক্রল করুন নিচে
+            messagesContainer.scrollTop = messagesContainer.scrollHeight;
+        }
+
         let currentLink = '';
         
         function showBuyGuide(type) {
@@ -473,7 +837,6 @@
                 document.getElementById('guideModal').classList.remove('active');
             }
         }
-
 
         // SEO কন্টেন্ট টগল
 function toggleSeoContent() {
