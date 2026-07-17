@@ -349,7 +349,7 @@
 
         <div class="links-grid">
             <div class="link-card" onclick="showBuyGuide('book')">
-                <div class="icon"><img src="https://i.imgur.com/8tYDprH.png"></div>
+                <div class="icon"><img src="https://i.book icon1.png"></div>
                 <h2>বই কালেকশন</h2>
                 <p>সকল ইসলামিক ও শিক্ষামূলক বইয়ের বিশাল সমাহার</p>
             </div>
@@ -424,7 +424,7 @@
     <!-- ক্রয় গাইড পপআপ -->
     <div id="guideModal" class="guide-modal" onclick="closeGuide(event)">
         <div class="guide-box" onclick="event.stopPropagation()">
-            <div class="icon" id="guideIcon">📚</div>
+            <div class="icon" id="guideIcon"><img src="https://i.book icon1.png">📚</div>
             <h3 id="guideTitle">বই কিভাবে ক্রয় করবেন?</h3>
             <p id="guideText">বই ক্রয় করতে চাইলে এই বাটনে ক্লিক করুন। আপনাকে বইয়ের কালেকশন পেজে নিয়ে যাওয়া হবে। সেখানে পছন্দের বই সিলেক্ট করে অর্ডার করুন।</p>
             <button class="btn" id="goBtn" onclick="goToLink()">এখনই যান</button>
@@ -442,7 +442,7 @@
             const text = document.getElementById('guideText');
             
             if(type === 'book') {
-                icon.textContent = '📚';
+                icon.imgContent = 'img src="https://i.book icon1.png';
                 title.textContent = 'বই কিভাবে ক্রয় করবেন?';
                 text.textContent = 'বই ক্রয় করতে চাইলে "এখনই যান" বাটনে ক্লিক করুন। আপনাকে বইয়ের কালেকশন পেজে নিয়ে যাওয়া হবে। সেখানে পছন্দের বই সিলেক্ট করে সহজেই অর্ডার করুন।';
                 currentLink = 'https://bithilikha.lovable.app';
