@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="application-name" content="Booeb">
     <meta property="og:site_name" content="Booeb">
-    <meta name="description" content="Booeb: Bangladesh's #1 marketplace! Shop millions of quality products at the best prices with secure cash on delivery and fast delivery. Online shopping made easy.">
-    <meta name="keywords" content="Booeb, অনলাইন শপিং, বই কিনুন, পণ্য কিনুন, বাংলাদেশ, ই-কমার্স, শপিং, ক্যাশ অন ডেলিভারি">
+    <meta name="description" content="Booeb: Bangladesh's #1 marketplace! Shop millions of quality products at the best prices with secure cash on delivery and fast delivery. Online shopping made easy[...]
+    <meta name="keywords" content="Booeb, অনলাইন শপিং, বই কিনুন, পণ্য কিনুন, বাংলাদেশ, ই-কমার্স, শপিং, ক্�[...]
     <meta name="author" content="Booeb">
     <meta property="og:title" content="Booeb.com - Bangladesh's #1 Online Marketplace">
     <meta property="og:description" content="Buy books and products online from Booeb. Fast delivery, secure payment, cash on delivery available.">
@@ -127,26 +127,519 @@
         .link-card h2 { font-size: 26px; margin-bottom: 10px; color: #0f172a; font-weight: 700; }
         .link-card p { color: #64748b; font-size: 16px; line-height: 1.6; }
        
-        footer h3 { color: white; font-size: 26px; margin-bottom: 18px; font-weight: 700; }
-        footer p { max-width: 650px; margin: 0 auto 25px; line-height: 1.9; font-size: 16px; color: #94a3b8; }
-        footer .copyright {
-            margin-top: 35px;
-            padding-top: 25px;
-            border-top: 1px solid #334155;
-            font-size: 14px;
-            color: #64748b;
-        }
-         footer {
-            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+        /* ===== উন্নত ফুটার স্টাইল ===== */
+        footer {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
             color: #cbd5e1;
-            text-align: center;
-            padding: 60px 20px 35px;
-            margin-top: auto;
             border-top: 4px solid #dc2626;
+            margin-top: auto;
         }
-        
-        
-        /* ===== ক্রয় গাইড পপআপ ===== */
+
+        .footer-main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 20px 40px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-section {
+            animation: fadeInUp 0.6s ease;
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .footer-section h3 {
+            font-size: 18px;
+            font-weight: 700;
+            color: #f1f5f9;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            position: relative;
+            padding-bottom: 12px;
+        }
+
+        .footer-section h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 3px;
+            background: linear-gradient(90deg, #dc2626, #8b3dff);
+            border-radius: 2px;
+        }
+
+        .footer-section h3 .icon {
+            font-size: 22px;
+            background: linear-gradient(135deg, #dc2626, #8b3dff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .footer-links {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .footer-links li {
+            transition: all 0.3s ease;
+        }
+
+        .footer-links a {
+            color: #94a3b8;
+            text-decoration: none;
+            font-size: 15px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: #dc2626;
+            transform: translateX(5px);
+            font-weight: 600;
+        }
+
+        .footer-links a::before {
+            content: '›';
+            font-size: 18px;
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+
+        .footer-links a:hover::before {
+            opacity: 1;
+        }
+
+        /* সোশ্যাল মিডিয়া স্টাইল */
+        .social-links {
+            display: flex;
+            gap: 12px;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            background: rgba(220, 38, 38, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #dc2626;
+            text-decoration: none;
+            font-size: 18px;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .social-links a:hover {
+            background: #dc2626;
+            color: white;
+            transform: translateY(-5px);
+            border-color: #8b3dff;
+        }
+
+        /* কন্টাক্ট ইনফো স্টাইল */
+        .contact-info {
+            background: rgba(220, 38, 38, 0.05);
+            padding: 20px;
+            border-radius: 12px;
+            border-left: 4px solid #dc2626;
+            margin-top: 15px;
+        }
+
+        .contact-info p {
+            color: #94a3b8;
+            margin-bottom: 10px;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .contact-info strong {
+            color: #f1f5f9;
+        }
+
+        /* ডিভাইডার */
+        .footer-divider {
+            height: 2px;
+            background: linear-gradient(90deg, transparent, rgba(220, 38, 38, 0.3), transparent);
+            margin: 30px 0;
+        }
+
+        /* কপিরাইট এবং বটম ফুটার */
+        .footer-bottom {
+            background: rgba(15, 23, 42, 0.8);
+            padding: 25px 20px;
+            border-top: 1px solid rgba(220, 38, 38, 0.2);
+        }
+
+        .footer-bottom-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .copyright {
+            color: #64748b;
+            font-size: 14px;
+            text-align: center;
+        }
+
+        .footer-bottom-links {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .footer-bottom-links a {
+            color: #94a3b8;
+            text-decoration: none;
+            font-size: 13px;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .footer-bottom-links a:hover {
+            color: #dc2626;
+            font-weight: 600;
+        }
+
+        .trust-badge {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: #cbd5e1;
+            font-size: 13px;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            background: rgba(220, 38, 38, 0.1);
+            padding: 6px 12px;
+            border-radius: 20px;
+            color: #dc2626;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .badge .icon {
+            font-size: 16px;
+        }
+
+        /* রেসপন্সিভ ডিজাইন */
+        @media (max-width: 768px) {
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .footer-bottom-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .footer-bottom-links {
+                justify-content: center;
+            }
+
+            .footer-section h3 {
+                font-size: 16px;
+            }
+
+            .footer-links a {
+                font-size: 14px;
+            }
+
+            .social-links {
+                justify-content: center;
+            }
+
+            .contact-info {
+                margin-top: 20px;
+            }
+        }
+       
+        /* ===== SEO Content - ন্যাচারাল লেখা ===== */
+        .seo-section {
+            background: #0f172a;
+            padding: 25px 20px;
+            border-top: 1px solid #334155;
+        }
+        .seo-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            text-align: left;
+        }
+        .seo-toggle {
+            background: transparent;
+            color: #64748b;
+            padding: 8px 0;
+            border: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+            font-weight: 500;
+            font-size: 13px;
+            transition: all 0.3s ease;
+        }
+        .seo-toggle:hover {
+            color: #dc2626;
+        }
+        #seoIcon {
+            transition: transform 0.3s ease;
+            font-size: 10px;
+        }
+        #seoIcon.open {
+            transform: rotate(180deg);
+        }
+        .seo-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.8s ease;
+            margin-top: 20px;
+        }
+        .seo-content.active {
+            max-height: 8000px;
+        }
+        .seo-content h4 {
+            color: #e2e8f0;
+            font-size: 18px;
+            margin: 30px 0 15px 0;
+            font-weight: 700;
+        }
+        .seo-content p {
+            color: #94a3b8;
+            line-height: 2;
+            font-size: 15px;
+            margin-bottom: 20px;
+            text-align: justify;
+        }
+        .seo-content strong {
+            color: #cbd5e1;
+            font-weight: 600;
+        }
+
+        /* ===== চ্যাটবট স্টাইল ===== */
+        .chatbot-container {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 9998;
+            font-family: 'Hind Siliguri', sans-serif;
+        }
+
+        .chatbot-button {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #dc2626, #8b3dff);
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(220, 38, 38, 0.4);
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+        }
+
+        .chatbot-button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 24px rgba(220, 38, 38, 0.6);
+        }
+
+        .chatbot-button.active {
+            display: none;
+        }
+
+        .chatbot-window {
+            position: absolute;
+            bottom: 80px;
+            right: 0;
+            width: 380px;
+            height: 600px;
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 5px 40px rgba(0, 0, 0, 0.2);
+            display: none;
+            flex-direction: column;
+            animation: slideUp 0.3s ease;
+        }
+
+        .chatbot-window.active {
+            display: flex;
+        }
+
+        .chatbot-header {
+            background: linear-gradient(135deg, #dc2626, #8b3dff);
+            color: white;
+            padding: 20px;
+            border-radius: 16px 16px 0 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .chatbot-header h3 {
+            font-size: 18px;
+            font-weight: 700;
+        }
+
+        .chatbot-close {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .chatbot-close:hover {
+            transform: rotate(90deg);
+        }
+
+        .chatbot-messages {
+            flex: 1;
+            overflow-y: auto;
+            padding: 20px;
+            background: #f8f9fa;
+        }
+
+        .chatbot-message {
+            margin-bottom: 15px;
+            display: flex;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .chatbot-message.bot {
+            justify-content: flex-start;
+        }
+
+        .chatbot-message.user {
+            justify-content: flex-end;
+        }
+
+        .message-bubble {
+            max-width: 80%;
+            padding: 12px 16px;
+            border-radius: 12px;
+            line-height: 1.5;
+            font-size: 14px;
+        }
+
+        .bot-message {
+            background: #e5e7eb;
+            color: #0f172a;
+            border-radius: 12px 12px 12px 0;
+        }
+
+        .user-message {
+            background: linear-gradient(135deg, #dc2626, #8b3dff);
+            color: white;
+            border-radius: 12px 12px 0 12px;
+        }
+
+        .chatbot-input-area {
+            padding: 15px;
+            border-top: 1px solid #e5e7eb;
+            display: flex;
+            gap: 10px;
+        }
+
+        .chatbot-input {
+            flex: 1;
+            padding: 12px;
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+            font-family: 'Hind Siliguri', sans-serif;
+            font-size: 14px;
+            resize: none;
+        }
+
+        .chatbot-input:focus {
+            outline: none;
+            border-color: #dc2626;
+            box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.1);
+        }
+
+        .chatbot-send {
+            background: linear-gradient(135deg, #dc2626, #8b3dff);
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: 0.2s;
+        }
+
+        .chatbot-send:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(220, 38, 38, 0.4);
+        }
+
+        .quick-replies {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 8px;
+            margin-top: 10px;
+        }
+
+        .quick-reply-btn {
+            background: white;
+            border: 1px solid #dc2626;
+            color: #dc2626;
+            padding: 10px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 13px;
+            font-weight: 500;
+            transition: all 0.2s;
+            text-align: left;
+        }
+
+        .quick-reply-btn:hover {
+            background: #fee2e2;
+            transform: translateX(4px);
+        }
+
+        @media (max-width: 600px) {
+            .chatbot-window {
+                width: calc(100vw - 20px);
+                height: 500px;
+                bottom: 80px;
+                right: 10px;
+            }
+        }
+
+        /* ===== গাইড মডাল ===== */
         .guide-modal {
             display: none;
             position: fixed;
@@ -161,10 +654,6 @@
             align-items: center;
             animation: fadeIn 0.3s ease;
         }
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
         .guide-modal.active { display: flex; }
         .guide-box {
             background: white;
@@ -175,10 +664,6 @@
             box-shadow: 0 25px 60px rgba(220, 38, 38, 0.3);
             text-align: center;
             animation: slideUp 0.4s ease;
-        }
-        @keyframes slideUp {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
         }
         .guide-box .icon {
             font-size: 64px;
@@ -230,312 +715,57 @@
         }
 
         /* ===== অফলাইন ডাইনো গেম ===== */
-.offline-game {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: #f7f7f7;
-    z-index: 999999;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    font-family: 'Inter', sans-serif;
-}
-.offline-game.active { display: flex; }
-.offline-game h2 {
-    font-size: 28px;
-    color: #535353;
-    margin-bottom: 10px;
-}
-.offline-game p {
-    font-size: 16px;
-    color: #666;
-    margin-bottom: 20px;
-}
-#gameCanvas {
-    border: 2px solid #535353;
-    background: white;
-}
-.offline-game.score {
-    font-size: 20px;
-    font-weight: 700;
-    color: #535353;
-    margin: 15px 0;
-}
-.offline-game.btn-retry {
-    background: #dc2626;
-    color: white;
-    border: none;
-    padding: 12px 28px;
-    border-radius: 8px;
-    cursor: pointer;
-    font-weight: 600;
-    font-size: 16px;
-    margin-top: 10px;
-}
-.offline-game.hint {
-    margin-top: 15px;
-    font-size: 14px;
-    color: #999;
-}
-
-
-  /* ===== SEO Content - ন্যাচারাল লেখা ===== */
-.seo-section {
-    background: #0f172a;
-    padding: 25px 20px;
-    border-top: 1px solid #334155;
-}
-.seo-container {
-    max-width: 1000px;
-    margin: 0 auto;
-    text-align: left;
-}
-.seo-toggle {
-    background: transparent;
-    color: #64748b;
-    padding: 8px 0;
-    border: none;
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    cursor: pointer;
-    font-weight: 500;
-    font-size: 13px;
-    transition: all 0.3s ease;
-}
-.seo-toggle:hover {
-    color: #dc2626;
-}
-#seoIcon {
-    transition: transform 0.3s ease;
-    font-size: 10px;
-}
-#seoIcon.open {
-    transform: rotate(180deg);
-}
-.seo-content {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.8s ease;
-    margin-top: 20px;
-}
-.seo-content.active {
-    max-height: 8000px;
-}
-.seo-content h4 {
-    color: #e2e8f0;
-    font-size: 18px;
-    margin: 30px 0 15px 0;
-    font-weight: 700;
-}
-.seo-content p {
-    color: #94a3b8;
-    line-height: 2;
-    font-size: 15px;
-    margin-bottom: 20px;
-    text-align: justify;
-}
-.seo-content strong {
-    color: #cbd5e1;
-    font-weight: 600;
-}
-
-/* ===== চ্যাটবট স্টাইল ===== */
-.chatbot-container {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    z-index: 9998;
-    font-family: 'Hind Siliguri', sans-serif;
-}
-
-.chatbot-button {
-    width: 60px;
-    height: 60px;
-    background: linear-gradient(135deg, #dc2626, #8b3dff);
-    border: none;
-    border-radius: 50%;
-    cursor: pointer;
-    box-shadow: 0 4px 12px rgba(220, 38, 38, 0.4);
-    transition: all 0.3s ease;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 28px;
-}
-
-.chatbot-button:hover {
-    transform: scale(1.1);
-    box-shadow: 0 8px 24px rgba(220, 38, 38, 0.6);
-}
-
-.chatbot-button.active {
-    display: none;
-}
-
-.chatbot-window {
-    position: absolute;
-    bottom: 80px;
-    right: 0;
-    width: 380px;
-    height: 600px;
-    background: white;
-    border-radius: 16px;
-    box-shadow: 0 5px 40px rgba(0, 0, 0, 0.2);
-    display: none;
-    flex-direction: column;
-    animation: slideUp 0.3s ease;
-}
-
-.chatbot-window.active {
-    display: flex;
-}
-
-.chatbot-header {
-    background: linear-gradient(135deg, #dc2626, #8b3dff);
-    color: white;
-    padding: 20px;
-    border-radius: 16px 16px 0 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.chatbot-header h3 {
-    font-size: 18px;
-    font-weight: 700;
-}
-
-.chatbot-close {
-    background: none;
-    border: none;
-    color: white;
-    font-size: 24px;
-    cursor: pointer;
-    transition: 0.2s;
-}
-
-.chatbot-close:hover {
-    transform: rotate(90deg);
-}
-
-.chatbot-messages {
-    flex: 1;
-    overflow-y: auto;
-    padding: 20px;
-    background: #f8f9fa;
-}
-
-.chatbot-message {
-    margin-bottom: 15px;
-    display: flex;
-    animation: fadeIn 0.3s ease;
-}
-
-.chatbot-message.bot {
-    justify-content: flex-start;
-}
-
-.chatbot-message.user {
-    justify-content: flex-end;
-}
-
-.message-bubble {
-    max-width: 80%;
-    padding: 12px 16px;
-    border-radius: 12px;
-    line-height: 1.5;
-    font-size: 14px;
-}
-
-.bot-message {
-    background: #e5e7eb;
-    color: #0f172a;
-    border-radius: 12px 12px 12px 0;
-}
-
-.user-message {
-    background: linear-gradient(135deg, #dc2626, #8b3dff);
-    color: white;
-    border-radius: 12px 12px 0 12px;
-}
-
-.chatbot-input-area {
-    padding: 15px;
-    border-top: 1px solid #e5e7eb;
-    display: flex;
-    gap: 10px;
-}
-
-.chatbot-input {
-    flex: 1;
-    padding: 12px;
-    border: 1px solid #e5e7eb;
-    border-radius: 8px;
-    font-family: 'Hind Siliguri', sans-serif;
-    font-size: 14px;
-    resize: none;
-}
-
-.chatbot-input:focus {
-    outline: none;
-    border-color: #dc2626;
-    box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.1);
-}
-
-.chatbot-send {
-    background: linear-gradient(135deg, #dc2626, #8b3dff);
-    color: white;
-    border: none;
-    padding: 12px 20px;
-    border-radius: 8px;
-    cursor: pointer;
-    font-weight: 600;
-    transition: 0.2s;
-}
-
-.chatbot-send:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(220, 38, 38, 0.4);
-}
-
-.quick-replies {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 8px;
-    margin-top: 10px;
-}
-
-.quick-reply-btn {
-    background: white;
-    border: 1px solid #dc2626;
-    color: #dc2626;
-    padding: 10px;
-    border-radius: 8px;
-    cursor: pointer;
-    font-size: 13px;
-    font-weight: 500;
-    transition: all 0.2s;
-    text-align: left;
-}
-
-.quick-reply-btn:hover {
-    background: #fee2e2;
-    transform: translateX(4px);
-}
-
-@media (max-width: 600px) {
-    .chatbot-window {
-        width: calc(100vw - 20px);
-        height: 500px;
-        bottom: 80px;
-        right: 10px;
-    }
-}
+        .offline-game {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #f7f7f7;
+            z-index: 999999;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            font-family: 'Inter', sans-serif;
+        }
+        .offline-game.active { display: flex; }
+        .offline-game h2 {
+            font-size: 28px;
+            color: #535353;
+            margin-bottom: 10px;
+        }
+        .offline-game p {
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 20px;
+        }
+        #gameCanvas {
+            border: 2px solid #535353;
+            background: white;
+        }
+        .offline-game.score {
+            font-size: 20px;
+            font-weight: 700;
+            color: #535353;
+            margin: 15px 0;
+        }
+        .offline-game.btn-retry {
+            background: #dc2626;
+            color: white;
+            border: none;
+            padding: 12px 28px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 16px;
+            margin-top: 10px;
+        }
+        .offline-game.hint {
+            margin-top: 15px;
+            font-size: 14px;
+            color: #999;
+        }
 
     </style>
 </head>
@@ -543,7 +773,7 @@
 <body>
     <div class="container">
         <div class="logo-area">
-            <img src="https://i.imgur.com/8tYDprH.png" alt="ই-কমার্স স্টোর ডিজাইন, শপিফাই, amazon, alibaba, daraz, rokomari, aliexpress, Booeb Bangladesh">
+            <img src="https://i.imgur.com/8tYDprH.png" alt="ই-কমার্স স্টোর ডিজাইন, শপিফাই, amazon, alibaba, daraz, rokomari, aliexpress, Booeb Banglades[...]
             <h1>Booeb.com</h1>
         </div>
 
@@ -565,130 +795,186 @@
         </div>
     </div>
 
+    <!-- ===== উন্নত ফুটার সেকশন ===== -->
     <footer>
-        <h3>Booeb.com সম্পর্কে</h3>
-        <p>
-            Booeb.com একটি বিশ্বস্ত অনলাইন শপিং প্ল্যাটফর্ম যেখানে আপনি পাবেন হাজারো পণ্য এবং শিক্ষামূলক বই। আমরা প্রতিশ্রুতিবদ্ধ সেরা মানের পণ্য এবং দ্রুত ডেলিভারি সেবা প্রদান করতে।
-        </p>
-        <!-- SEO Content - ফুটারের নিচে বাম পাশে -->
-<div class="seo-section">
-    <div class="seo-container">
-        <button class="seo-toggle" onclick="toggleSeoContent()">
-            <span id="seoText">Booeb.com সম্পর্কে আরও জানুন</span>
-            <span id="seoIcon">▼</span>
-        </button>
-        
-        <div class="seo-content" id="seoContent">
-            <h4>আমাদের গল্প - Booeb.com এর যাত্রা</h4>
-            <p>
-                <strong>Booeb.com</strong> এর যাত্রা শুরু হয়েছিল ২০২৪ সালে একটি সাধারণ স্বপ্ন নিয়ে - বাংলাদেশের মানুষকে সাশ্রয়ী মূল্যে মানসম্পন্ন পণ্য এবং বই সরবরাহ করা। আমরা বিশ্বাস করি যে শিক্ষা এবং গুণমানের পণ্য সবার নাগালের মধ্যে থাকা উচিত।
-            </p>
-            <p>
-                প্রথম দিনে আমরা মাত্র ৫০টি বই নিয়ে ছোট একটি স্বপ্ন দেখেছিলাম। কিন্তু আজ, হাজারো সন্তুষ্ট গ্রাহক এবং ব্যাপক পণ্যের সংগ্রহ নিয়ে আমরা গর্বিত। Booeb.com এর পিছনে রয়েছে একটি দক্ষ এবং নিবেদিত টিম যারা প্রতিদিন কাজ করে যাচ্ছে গ্রাহক সেবা উন্নত করতে।
-            </p>
+        <!-- মূল ফুটার কন্টেন্ট -->
+        <div class="footer-main">
+            <div class="footer-content">
+                <!-- পলিসি এবং শর্তাবলী -->
+                <div class="footer-section">
+                    <h3><span class="icon">📋</span>পলিসি ও শর্তাবলী</h3>
+                    <ul class="footer-links">
+                        <li><a href="#terms">শর্তাবলী</a></li>
+                        <li><a href="#privacy">গোপনীয়তা পলিসি</a></li>
+                        <li><a href="#returns">রিটার্ন পলিসি</a></li>
+                        <li><a href="#shipping">শিপিং পলিসি</a></li>
+                        <li><a href="#warranty">ওয়ারেন্টি তথ্য</a></li>
+                    </ul>
+                </div>
 
-            <h4>আমরা কী অফার করি - Booeb এর পণ্য এবং সেবা</h4>
-            <p>
-                <strong>বই সংগ্রহ:</strong> আমাদের বই সংগ্রহে রয়েছে কুরআন, হাদিস, ইসলামিক জ্ঞান, স্ব-উন্নয়ন, উদ্যোক্তা জ্ঞান এবং আরও অনেক বিষয়ের বই। প্রতিটি বই সতর্কতার সাথে নির্বাচিত এবং গুণমান যাচাই করা হয়।
-            </p>
-            <p>
-                <strong>পণ্য বিভাগ:</strong> দৈনন্দিন জীবনের প্রয়োজনীয় সকল পণ্য পাবেন এক জায়গায় - ইলেকট্রনিক্স, হোম এপ্লায়েন্স, পোশাক, খাবার এবং আরও অনেক কিছু। সব পণ্যই অরিজিনাল এবং নির্ভরযোগ্য সরবরাহকারী থেকে আনা।
-            </p>
-            <p>
-                <strong>দ্রুত ডেলিভারি:</strong> Dhaka এবং অন্যান্য প্রধান শহরে আমরা ২৪-৪৮ ঘণ্টার মধ্যে ডেলিভারি করি। আমাদের লজিস্টিক পার্টনাররা নিশ্চিত করে যে আপনার পণ্য নিরাপদে পৌঁছায়।
-            </p>
+                <!-- সাপোর্ট এবং সহায়তা -->
+                <div class="footer-section">
+                    <h3><span class="icon">🎧</span>সাপোর্ট ও সহায়তা</h3>
+                    <ul class="footer-links">
+                        <li><a href="#track-order">অর্ডার ট্র্যাক করুন</a></li>
+                        <li><a href="#contact">যোগাযোগ করুন</a></li>
+                        <li><a href="#find-product">পণ্য খুঁজুন</a></li>
+                        <li><a href="#faq">সচরাচর জিজ্ঞাসা (FAQ)</a></li>
+                        <li><a href="#help-desk">হেল্প ডেস্ক</a></li>
+                    </ul>
+                </div>
 
-            <h4>আমাদের প্রতিশ্রুতি - Booeb.com এর মূল্যবোধ</h4>
-            <p>
-                <strong>১. অরিজিনাল পণ্যের নিশ্চয়তা:</strong> Booeb.com এ আমরা শুধুমাত্র আসল এবং যাচাইকৃত পণ্য বিক্রি করি। কোন নকল বা ডুপ্লিকেট পণ্য আমাদের প্ল্যাটফর্মে স্থান পায় না। প্রতিটি পণ্যের গুণমান আমাদের টিম দ্বারা যাচাই করা হয়।
-            </p>
-            <p>
-                <strong>২. প্রতিযোগিতামূলক মূল্য:</strong> আমরা সর্বদা বাজারের সেরা মূল্য অফার করার চেষ্টা করি। আমাদের সরবরাহকারীদের সাথে সরাসরি সম্পর্ক থাকায় আমরা মধ্যস্থতাকারী খরচ কমাতে পারি এবং সেই সঞ্চয় আপনাদের কাছে পৌঁছে দিতে পারি।
-            </p>
-            <p>
-                <strong>৩. চমৎকার গ্রাহক সেবা:</strong> আমাদের কাস্টমার সার্ভিস টিম সপ্তাহের সাতদিন, দিনে ২৪ ঘণ্টা সক্রিয় থাকে। আপনার যেকোনো সমস্যা, প্রশ্ন বা সাজেশন আমরা খুশি মনে শুনি এবং দ্রুত সমাধান দিই।
-            </p>
-            <p>
-                <strong>৪. নিরাপদ পেমেন্ট সিস্টেম:</strong> আমরা একাধিক নিরাপদ পেমেন্ট অপশন প্রদান করি - ক্যাশ অন ডেলিভারি, বিকাশ, নগদ, অনলাইন ব্যাংক ট্রান্সফার ইত্যাদি। আপনার আর্থিক তথ্য সম্পূর্ণ সুরক্ষিত থাকে।
-            </p>
+                <!-- আমাদের সম্পর্কে -->
+                <div class="footer-section">
+                    <h3><span class="icon">ℹ️</span>আমাদের সম্পর্কে</h3>
+                    <ul class="footer-links">
+                        <li><a href="#about">Booeb সম্পর্কে জানুন</a></li>
+                        <li><a href="#careers">কর্মসংস্থান</a></li>
+                        <li><a href="#press">সংবাদ ও মিডিয়া</a></li>
+                        <li><a href="#blog">ব্লগ</a></li>
+                        <li><a href="#sitemap">সাইট ম্যাপ</a></li>
+                    </ul>
+                </div>
 
-            <h4>কীভাবে অর্ডার করবেন - Step by Step গাইড</h4>
-            <p>
-                <strong>ধাপ ১:</strong> আমাদের ওয়েবসাইট booeb.com এ ভিজিট করুন বা মোবাইল অ্যাপ ডাউনলোড করুন।
-            </p>
-            <p>
-                <strong>ধাপ ২:</strong> "বই কালেকশন" বা "প্রোডাক্ট শপ" বিভাগে ক্লিক করুন এবং আপনার পছন্দের পণ্য খুঁজুন।
-            </p>
-            <p>
-                <strong>ধাপ ৩:</strong> পণ্যের বিবরণ পড়ুন এবং পরিমাণ নির্বাচন করুন।
-            </p>
-            <p>
-                <strong>ধাপ ৪:</strong> কার্টে যোগ করুন এবং চেকআউট করুন।
-            </p>
-            <p>
-                <strong>ধাপ ৫:</strong> আপনার ডেলিভারি ঠিকানা এবং পেমেন্ট পদ্ধতি নির্বাচন করুন।
-            </p>
-            <p>
-                <strong>ধাপ ৬:</strong> অর্ডার কনফার্ম করুন এবং ডেলিভারির জন্য অপেক্ষা করুন। আপনি SMS এবং ইমেইলের মাধ্যমে অর্ডার ট্র্যাক করতে পারবেন।
-            </p>
+                <!-- যোগাযোগ তথ্য -->
+                <div class="footer-section">
+                    <h3><span class="icon">📞</span>আমাদের সাথে যোগাযোগ করুন</h3>
+                    <div class="contact-info">
+                        <p><strong>📧 ইমেইল:</strong><br>support@booeb.com</p>
+                        <p><strong>📱 হটলাইন:</strong><br>+880 1XXXX-XXXXXX</p>
+                        <p><strong>🕐 সময়:</strong><br>সোম-শুক্র: ৯AM - ৬PM</p>
+                    </div>
+                    <div class="social-links">
+                        <a href="#facebook" title="ফেসবুক">f</a>
+                        <a href="#instagram" title="ইনস্টাগ্রাম">📷</a>
+                        <a href="#twitter" title="টুইটার">𝕏</a>
+                        <a href="#youtube" title="ইউটিউব">▶️</a>
+                    </div>
+                </div>
+            </div>
 
-            <h4>সাধারণ প্রশ্ন এবং উত্তর - FAQ</h4>
-            <p>
-                <strong>প্রশ্ন: ডেলিভারি কতদিন সময় লাগে?</strong> উত্তর: ঢাকার মধ্যে সাধারণত ২৪-৪৮ ঘণ্টা এবং অন্যান্য জেলায় ৩-৫ দিন সময় লাগে।
-            </p>
-            <p>
-                <strong>প্রশ্ন: পণ্য ভেঙ্গে এসেছে কি করব?</strong> উত্তর: আমাদের যোগাযোগ করুন, আমরা সম্পূর্ণ রিফান্ড বা পণ্য বিনিময় করে দেব।
-            </p>
-            <p>
-                <strong>প্রশ্ন: কি রিটার্ন করা যায়?</strong> উত্তর: হ্যাঁ, ৭ দিনের মধ্যে অব্যবহৃত পণ্য রিটার্ন করতে পারবেন।
-            </p>
-            <p>
-                <strong>প্রশ্ন: ক্যাশ অন ডেলিভারি উপলব্ধ আছে?</strong> উত্তর: হ্যাঁ, সম্পূর্ণ বাংলাদেশে ক্যাশ অন ডেলিভারি সুবিধা পাওয়া যায়।
-            </p>
+            <!-- ডিভাইডার -->
+            <div class="footer-divider"></div>
 
-            <h4>আমাদের সাথে যোগাযোগ করুন</h4>
-            <p>
-                <strong>ইমেইল:</strong> support@booeb.com
-            </p>
-            <p>
-                <strong>ফোন:</strong> +880 1XXX-XXXXXX
-            </p>
-            <p>
-                <strong>লাইভ চ্যাট:</strong> আমাদের ওয়েবসাইটের নিচে চ্যাটবট ব্যবহার করুন সরাসরি সাপোর্টের জন্য।
-            </p>
-
-            <h4>শেষ কথা - Booeb.com এর বার্তা</h4>
-            <p>
-                Booeb.com শুধু একটি অনলাইন শপ নয় - এটি আমাদের একটি ইবাদত এবং সামাজিক দায়বদ্ধতা। আমরা বিশ্বাস করি যে একটি ভাল পণ্য এবং শিক্ষামূলক সামগ্রী একজন মানুষের জীবনকে সম্পূর্ণভাবে পরিবর্তন করে দিতে পারে।
-            </p>
-            <p>
-                আমাদের লক্ষ্য হলো বাংলাদেশে একটি বিশ্বস্ত অনলাইন শপিং পরিবেশ তৈরি করা যেখানে গ্রাহকরা নিরাপদে, সাশ্রয়ে এবং বিশ্বস্তভাবে কেনাকাটা করতে পারবেন। আপনার সন্তুষ্টি আমাদের সাফল্য।
-            </p>
-            <p>
-                আমাদের সাথে থাকার জন্য আপনাকে ধন্যবাদ। আপনার প্রতিটি অর্ডার আমাদের কাছে বিশেষ এবং আমরা প্রতিশ্রুতিবদ্ধ সর্বোত্তম সেবা প্রদান করতে।
-            </p>
+            <!-- ট্রাস্ট ব্যাজ এবং সার্টিফিকেশন -->
+            <div style="display: flex; justify-content: center; gap: 15px; margin-bottom: 25px; flex-wrap: wrap;">
+                <div class="badge">
+                    <span class="icon">✓</span>
+                    <span>১০০% নিরাপদ</span>
+                </div>
+                <div class="badge">
+                    <span class="icon">🚚</span>
+                    <span>দ্রুত ডেলিভারি</span>
+                </div>
+                <div class="badge">
+                    <span class="icon">💳</span>
+                    <span>সহজ পেমেন্ট</span>
+                </div>
+                <div class="badge">
+                    <span class="icon">🎁</span>
+                    <span>সর্বোত্তম অফার</span>
+                </div>
+            </div>
         </div>
 
-        <footer style="text-align: center;">
-  <p>© 2026 Booeb.com. সর্বস্বত্ব সংরক্ষিত | All rights reserved.</p>
-</footer>
-    </div>
-</div>
+        <!-- SEO কন্টেন্ট সেকশন -->
+        <div class="seo-section">
+            <div class="seo-container">
+                <button class="seo-toggle" onclick="toggleSeoContent()">
+                    <span id="seoText">Booeb.com সম্পর্কে আরও জানুন</span>
+                    <span id="seoIcon">▼</span>
+                </button>
+                
+                <div class="seo-content" id="seoContent">
+                    <h4>আমাদের গল্প - Booeb.com এর যাত্রা</h4>
+                    <p>
+                        <strong>Booeb.com</strong> এর যাত্রা শুরু হয়েছিল ২০২৪ সালে একটি সাধারণ স্বপ্ন নিয়ে - বাংলাদেশে একটি বিশ্বস্ত অনলাইন শপিং প্ল্যাটফর্ম তৈরি করা।
+                    </p>
+                    <p>
+                        প্রথম দিনে আমরা মাত্র ৫০টি বই নিয়ে ছোট একটি স্বপ্ন দেখেছিলাম। কিন্তু আজ Booeb হয়ে উঠেছে হাজারো মানুষের প্রথম পছন্দ।
+                    </p>
 
+                    <h4>আমরা কী অফার করি - Booeb এর পণ্য এবং সেবা</h4>
+                    <p>
+                        <strong>বই সংগ্রহ:</strong> আমাদের বই সংগ্রহে রয়েছে কুরআন, হাদিস, ইসলামিক জ্ঞান, শিক্ষামূলক বই এবং আরও অনেক কিছু।
+                    </p>
+                    <p>
+                        <strong>পণ্য বিভাগ:</strong> দৈনন্দিন জীবনের প্রয়োজনীয় সকল পণ্য পাবেন এক জায়গায়।
+                    </p>
+                    <p>
+                        <strong>দ্রুত ডেলিভারি:</strong> Dhaka এবং অন্যান্য প্রধান শহরে আমরা ২৪-৪৮ ঘণ্টার মধ্যে ডেলিভারি নিশ্চিত করি।
+                    </p>
+
+                    <h4>আমাদের প্রতিশ্রুতি - Booeb.com এর মূল্যবোধ</h4>
+                    <p>
+                        <strong>১. অরিজিনাল পণ্যের নিশ্চয়তা:</strong> Booeb.com এ আমরা শুধুমাত্র আসল এবং যাচাইকৃত পণ্য বিক্রয় করি।
+                    </p>
+                    <p>
+                        <strong>২. প্রতিযোগিতামূলক মূল্য:</strong> আমরা সর্বদা বাজারের সেরা মূল্য অফার করি এবং নিয়মিত ছাড় প্রদান করি।
+                    </p>
+                    <p>
+                        <strong>৩. চমৎকার গ্রাহক সেবা:</strong> আমাদের কাস্টমার সার্ভিস টিম সপ্তাহের সাতদিন আপনার সেবায় নিয়োজিত।
+                    </p>
+                    <p>
+                        <strong>৪. নিরাপদ পেমেন্ট সিস্টেম:</strong> আমরা একাধিক নিরাপদ পেমেন্ট অপশন প্রদান করি যা আন্তর্জাতিক মানের।
+                    </p>
+
+                    <h4>কীভাবে অর্ডার করবেন - Step by Step গাইড</h4>
+                    <p>
+                        <strong>ধাপ ১:</strong> আমাদের ওয়েবসাইট booeb.com এ ভিজিট করুন বা মোবাইল অ্যাপ ডাউনলোড করুন।
+                    </p>
+                    <p>
+                        <strong>ধাপ ২:</strong> "বই কালেকশন" বা "প্রোডাক্ট শপ" বিভাগে ক্লিক করুন এবং আপনার পছন্দের পণ্য খুঁজুন।
+                    </p>
+                    <p>
+                        <strong>ধাপ ৩:</strong> পণ্যের বিবরণ পড়ুন এবং পরিমাণ নির্বাচন করুন।
+                    </p>
+                    <p>
+                        <strong>ধাপ ৪:</strong> কার্টে যোগ করুন এবং চেকআউট করুন।
+                    </p>
+                    <p>
+                        <strong>ধাপ ৫:</strong> আপনার ডেলিভারি ঠিকানা এবং পেমেন্ট পদ্ধতি নির্বাচন করুন।
+                    </p>
+                    <p>
+                        <strong>ধাপ ৬:</strong> অর্ডার কনফার্ম করুন এবং ডেলিভারির জন্য অপেক্ষা করুন।
+                    </p>
+
+                    <h4>সাধারণ প্রশ্ন এবং উত্তর - FAQ</h4>
+                    <p>
+                        <strong>প্রশ্ন: ডেলিভারি কতদিন সময় লাগে?</strong> উত্তর: ঢাকার মধ্যে সাধারণত ২৪-৪৮ ঘণ্টা এবং দেশের অন্যান্য স্থানে ৩-৫ দিন।
+                    </p>
+                    <p>
+                        <strong>প্রশ্ন: পণ্য ভেঙ্গে এসেছে কি করব?</strong> উত্তর: আমাদের যোগাযোগ করুন, আমরা তৎক্ষণাৎ প্রতিস্থাপন করব।
+                    </p>
+                    <p>
+                        <strong>প্রশ্ন: কি রিটার্ন করা যায়?</strong> উত্তর: হ্যাঁ, ৭ দিনের মধ্যে অব্যবহৃত পণ্য রিটার্ন করা যায়।
+                    </p>
+                    <p>
+                        <strong>প্রশ্ন: ক্যাশ অন ডেলিভারি উপলব্ধ আছে?</strong> উত্তর: হ্যাঁ, সম্পূর্ণ বাংলাদেশে ক্যাশ অন ডেলিভারি সুবিধা রয়েছে।
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- বটম ফুটার -->
+        <div class="footer-bottom">
+            <div class="footer-bottom-content">
+                <div class="copyright">
+                    © 2026 Booeb.com. সর্বস্বত্ব সংরক্ষিত | All rights reserved.
+                </div>
+                <div class="footer-bottom-links">
+                    <a href="#cookies">কুকিজ নীতি</a>
+                    <a href="#accessibility">অ্যাক্সেসিবিলিটি</a>
+                    <a href="#feedback">ফিডব্যাক</a>
+                </div>
+                <div class="trust-badge">
+                    🔒 SSL Secured
+                </div>
+            </div>
+        </div>
     </footer>
 
-    <!-- ক্রয় গাইড পপআপ -->
-    <div id="guideModal" class="guide-modal" onclick="closeGuide(event)">
-        <div class="guide-box" onclick="event.stopPropagation()">
-            <div class="icon" id="guideIcon"><img src="bookicon1.png" alt="বই আইকন"></div>
-            <h3 id="guideTitle">বই কিভাবে ক্রয় করবেন?</h3>
-            <p id="guideText">বই ক্রয় করতে চাইলে "এখনই যান" বাটনে ক্লিক করুন। আপনাকে বইয়ের বিশাল কালেকশন দেখাবে।</p>
-            <button class="btn" id="goBtn" onclick="goToLink()">এখনই যান</button>
-            <button class="btn btn-cancel" onclick="closeGuide()">বন্ধ করুন</button>
-        </div>
-    </div>
-
-    <!-- চ্যাটবট AI অ্যাসিস্ট্যান্ট -->
+    <!-- চ্যাটবট এবং অন্যান্য কম্পোনেন্ট -->
     <div class="chatbot-container">
         <button class="chatbot-button" id="chatbotToggle" onclick="toggleChatbot()">💬</button>
         
@@ -701,7 +987,7 @@
             <div class="chatbot-messages" id="chatbotMessages">
                 <div class="chatbot-message bot">
                     <div class="message-bubble bot-message">
-                        হ্যালো! 👋 আমি Booeb.com এর AI সহায়ক। আপনার কোন প্রশ্ন বা সমস্যা আছে? আমি আপনাকে সাহায্য করতে এখানে আছি।
+                        হ্যালো! 👋 আমি Booeb.com এর AI সহায়ক। আপনার কোন প্রশ্ন বা সমস্যা আছে?
                     </div>
                 </div>
                 <div class="chatbot-message bot">
@@ -724,20 +1010,37 @@
         </div>
     </div>
 
+    <!-- গাইড মডাল -->
+    <div id="guideModal" class="guide-modal" onclick="closeGuide(event)">
+        <div class="guide-box" onclick="event.stopPropagation()">
+            <div class="icon" id="guideIcon"><img src="bookicon1.png" alt="বই আইকন"></div>
+            <h3 id="guideTitle">বই কিভাবে ক্রয় করবেন?</h3>
+            <p id="guideText">বই ক্রয় করতে চাইলে "এখনই যান" বাটনে ক্লিক করুন।</p>
+            <button class="btn" id="goBtn" onclick="goToLink()">এখনই যান</button>
+            <button class="btn btn-cancel" onclick="closeGuide()">বন্ধ করুন</button>
+        </div>
+    </div>
+
+    <!-- অফলাইন গেম -->
+    <div id="offlineGame" class="offline-game">
+        <h2>ইন্টারনেট সংযোগ নেই</h2>
+        <p>নেট আসা পর্যন্ত গেম খেলুন!</p>
+        <div class="score">স্কোর: <span id="score">0</span></div>
+        <canvas id="gameCanvas" width="600" height="150"></canvas>
+        <p class="hint">স্পেস/ট্যাপ করে লাফ দিন</p>
+        <button class="btn-retry" onclick="location.reload()">আবার চেষ্টা করুন</button>
+    </div>
+
     <script>
         // AI চ্যাটবট ফাংশনালিটি
         let chatbotActive = false;
 
         const faqDatabase = {
-            'অর্ডার করতে কী করব?': 'আমাদের ওয়েবসাইটে ভিজিট করুন, পণ্য নির্বাচন করুন, কার্টে যোগ করুন এবং চেকআউট করুন। আপনার ঠিকানা এবং পেমেন্ট পদ্ধতি নির্বাচন করে অর্ডার কনফার্ম করুন। খুবই সহজ!',
-            'ডেলিভারি কতদিন সময় লাগে?': 'ঢাকার মধ্যে সাধারণত ২৪-৪৮ ঘণ্টা এবং অন্যান্য জেলায় ৩-৫ দিন সময় লাগে। আপনি SMS বা ইমেইলের মাধ্যমে আপনার অর্ডার ট্র্যাক করতে পারবেন।',
-            'পেমেন্ট পদ্ধতি কি?': 'আমরা একাধিক পেমেন্ট অপশন প্রদান করি: ক্যাশ অন ডেলিভারি, বিকাশ, নগদ, রকেট এবং অনলাইন ব্যাংক ট্রান্সফার। আপনার সুবিধামত যেকোনো পদ্ধতি বেছে নিন।',
-            'রিটার্ন নীতি কি?': 'আপনি ৭ দিনের মধ্যে অব্যবহৃত পণ্য রিটার্ন করতে পারেন। পণ্য ভেঙ্গে এসেছে বা ত্রুটিপূর্ণ হলে আমরা সম্পূর্ণ রিফান্ড বা বিনিময় করে দেব।',
-            'বই খুঁজতে কেমন করব?': 'আমাদের বই সংগ্রহে রয়েছে ইসলামিক বই, শিক্ষামূলক বই, উদ্যোক্তা বই এবং আরও অনেক কিছু। ক্যাটাগরি অনুযায়ী ব্রাউজ করুন অথবা সার্চ বারে আপনার পছন্দের বই খুঁজুন।',
-            'প্রোডাক্ট শপে কি পাবো?': 'আমাদের প্রোডাক্ট শপে পাবেন ইলেকট্রনিক্স, হোম এপ্লায়েন্স, পোশাক, খাবার এবং দৈনন্দিন জীবনের সকল প্রয়োজনীয় পণ্য। সব পণ্য অরিজিনাল এবং গুণমান নিশ্চিত।',
-            'কিভাবে যোগাযোগ করব?': 'আমাদের ইমেইল: support@booeb.com অথবা এই লাইভ চ্যাটের মাধ্যমে সরাসরি যোগাযোগ করুন। আমরা ২৪/৭ আপনার সেবায় নিয়োজিত।',
-            'পণ্য খুঁজে পাচ্ছি না': 'আমাদের সার্চ বার ব্যবহার করুন বা ক্যাটাগরি ব্রাউজ করুন। যদি আপনার পছন্দের পণ্য না পান, আমাদের লাইভ চ্যাটের মাধ্যমে বলুন আমরা সংগ্রহ করার চেষ্টা করব।',
-            'পণ্য ত্রুটিপূর্ণ এসেছে': 'দুঃখিত! অবিলম্বে আমাদের যোগাযোগ করুন সাথে ছবি পাঠান। আমরা সম্পূর্ণ রিফান্ড অথবা নতুন পণ্য পাঠিয়ে দেব।',
+            'অর্ডার করতে কী করব?': 'আমাদের ওয়েবসাইটে ভিজিট করুন, পণ্য নির্বাচন করুন, কার্টে যোগ করুন এবং চেকআউট সম্পন্ন করুন।',
+            'ডেলিভারি কতদিন সময় লাগে?': 'ঢাকার মধ্যে সাধারণত ২৪-৪৮ ঘণ্টা এবং অন্যান্য স্থানে ৩-৫ দিন।',
+            'পেমেন্ট পদ্ধতি কি?': 'আমরা একাধিক পেমেন্ট অপশন প্রদান করি: ক্যাশ অন ডেলিভারি, বিকাশ, নগদ এবং ক্রেডিট কার্ড।',
+            'রিটার্ন নীতি কি?': 'আপনি ৭ দিনের মধ্যে অব্যবহৃত পণ্য রিটার্ন করতে পারেন।',
+            'বই খুঁজতে কেমন করব?': 'আমাদের বই সংগ্রহে রয়েছে ইসলামিক বই, শিক্ষামূলক বই এবং আরও অনেক কিছু।',
             'হ্যালো': 'হ্যালো! 👋 আমি Booeb.com এর AI সহায়ক। আপনাকে কিভাবে সাহায্য করতে পারি?',
             'ধন্যবাদ': 'আপনাকে স্বাগতম! আরও কোন প্রশ্ন থাকলে জানাবেন। 😊'
         };
@@ -755,11 +1058,9 @@
             
             if (!message) return;
             
-            // ইউজার মেসেজ যোগ করুন
             addMessage(message, 'user');
             input.value = '';
             
-            // বট রেসপন্স
             setTimeout(() => {
                 const response = getBotResponse(message);
                 addMessage(response, 'bot');
@@ -777,15 +1078,13 @@
         function getBotResponse(message) {
             const lowerMessage = message.toLowerCase();
             
-            // FAQ ডাটাবেস চেক করুন
             for (let key in faqDatabase) {
                 if (lowerMessage.includes(key.toLowerCase())) {
                     return faqDatabase[key];
                 }
             }
             
-            // ডিফল্ট রেসপন্স
-            return 'আমি আপনার প্রশ্নটি সম্পূর্ণভাবে বুঝতে পারিনি। অনুগ্রহ করে আরও বিশদভাবে বলুন অথবা উপরের দ্রুত প্রশ্নগুলির মধ্য থেকে একটি বেছে নিন। আপনার যোগাযোগের জন্য ধন্যবাদ! 😊';
+            return 'আমি আপনার প্রশ্নটি সম্পূর্ণভাবে বুঝতে পারিনি। অনুগ্রহ করে আরও বিশদভাবে জানান।';
         }
 
         function addMessage(text, sender) {
@@ -800,7 +1099,6 @@
             messageDiv.appendChild(bubble);
             messagesContainer.appendChild(messageDiv);
             
-            // স্ক্রল করুন নিচে
             messagesContainer.scrollTop = messagesContainer.scrollHeight;
         }
 
@@ -815,12 +1113,12 @@
             if(type === 'book') {
                 icon.innerHTML = '<img src="bookicon1.png" alt="বই আইকন">';
                 title.textContent = 'বই কিভাবে ক্রয় করবেন?';
-                text.textContent = 'বই ক্রয় করতে চাইলে "এখনই যান" বাটনে ক্লিক করুন। আপনাকে বইয়ের বিশাল কালেকশন দেখাবে।';
+                text.textContent = 'বই ক্রয় করতে চাইলে "এখনই যান" বাটনে ক্লিক করুন।';
                 currentLink = 'https://bithilikha.lovable.app';
             } else {
                 icon.innerHTML = '<img src="productIcon2.jpg" alt="প্রোডাক্ট আইকন">';
                 title.textContent = 'প্রোডাক্ট কিভাবে ক্রয় করবেন?';
-                text.textContent = 'প্রোডাক্ট ক্রয় করতে চাইলে "এখনই যান" বাটনে ক্লিক করুন। আপনাকে সকল প্রোডাক্টের তালিকা দেখাবে।';
+                text.textContent = 'প্রোডাক্ট ক্রয় করতে চাইলে "এখনই যান" বাটনে ক্লিক করুন।';
                 currentLink = 'https://booeb.bolt.host/';
             }
             
@@ -838,139 +1136,120 @@
             }
         }
 
-        // SEO কন্টেন্ট টগল
-function toggleSeoContent() {
-    const content = document.getElementById('seoContent');
-    const text = document.getElementById('seoText');
-    const icon = document.getElementById('seoIcon');
-    
-    content.classList.toggle('active');
-    
-    if (content.classList.contains('active')) {
-        text.textContent = 'লেখা বন্ধ করুন';
-        icon.classList.add('open');
-    } else {
-        text.textContent = 'Booeb.com সম্পর্কে আরও জানুন';
-        icon.classList.remove('open');
-    }
-}
-
-    </script>
-
-<!-- অফলাইন ডাইনো গেম -->
-<div id="offlineGame" class="offline-game">
-    <h2>ইন্টারনেট সংযোগ নেই</h2>
-    <p>নেট আসা পর্যন্ত গেম খেলুন!</p>
-    <div class="score">স্কোর: <span id="score">0</span></div>
-    <canvas id="gameCanvas" width="600" height="150"></canvas>
-    <p class="hint">স্পেস/ট্যাপ করে লাফ দিন</p>
-    <button class="btn-retry" onclick="location.reload()">আবার চেষ্টা করুন</button>
-</div>
-
-<script>
-// অফলাইন চেক করো
-if (!navigator.onLine) {
-    document.getElementById('offlineGame').classList.add('active');
-    startDinoGame();
-}
-
-window.addEventListener('offline', () => {
-    document.getElementById('offlineGame').classList.add('active');
-    startDinoGame();
-});
-
-window.addEventListener('online', () => {
-    document.getElementById('offlineGame').classList.remove('active');
-});
-
-// সিম্পল ডাইনো গেম
-function startDinoGame() {
-    const canvas = document.getElementById('gameCanvas');
-    const ctx = canvas.getContext('2d');
-    let score = 0;
-    let dino = { x: 50, y: 110, vy: 0, jumping: false };
-    let obstacles = [];
-    let gameSpeed = 3;
-    let gameOver = false;
-
-    function drawDino() {
-        ctx.fillStyle = '#535353';
-        ctx.fillRect(dino.x, dino.y, 20, 20);
-        ctx.fillRect(dino.x + 15, dino.y - 5, 10, 10); // মাথা
-    }
-
-    function drawObstacle(obs) {
-        ctx.fillStyle = '#535353';
-        ctx.fillRect(obs.x, obs.y, 15, 30);
-    }
-
-    function jump() {
-        if (!dino.jumping &&!gameOver) {
-            dino.vy = -12;
-            dino.jumping = true;
-        }
-        if (gameOver) {
-            location.reload();
-        }
-    }
-
-    document.addEventListener('keydown', (e) => {
-        if (e.code === 'Space') jump();
-    });
-    canvas.addEventListener('click', jump);
-    canvas.addEventListener('touchstart', jump);
-
-    function update() {
-        if (gameOver) return;
-
-        ctx.clearRect(0, 0, 600, 150);
-
-        // গ্রাউন্ড
-        ctx.fillStyle = '#535353';
-        ctx.fillRect(0, 130, 600, 2);
-
-        // ডাইনো
-        dino.y += dino.vy;
-        dino.vy += 0.6; // গ্র্যাভিটি
-
-        if (dino.y >= 110) {
-            dino.y = 110;
-            dino.vy = 0;
-            dino.jumping = false;
-        }
-        drawDino();
-
-        // অবস্টেকল
-        if (Math.random() < 0.02) {
-            obstacles.push({ x: 600, y: 100 });
+        function toggleSeoContent() {
+            const content = document.getElementById('seoContent');
+            const text = document.getElementById('seoText');
+            const icon = document.getElementById('seoIcon');
+            
+            content.classList.toggle('active');
+            
+            if (content.classList.contains('active')) {
+                text.textContent = 'লেখা বন্ধ করুন';
+                icon.classList.add('open');
+            } else {
+                text.textContent = 'Booeb.com সম্পর্কে আরও জানুন';
+                icon.classList.remove('open');
+            }
         }
 
-        for (let i = obstacles.length - 1; i >= 0; i--) {
-            obstacles[i].x -= gameSpeed;
-            drawObstacle(obstacles[i]);
+        // অফলাইন চেক
+        if (!navigator.onLine) {
+            document.getElementById('offlineGame').classList.add('active');
+            startDinoGame();
+        }
 
-            // কলিশন চেক
-            if (dino.x < obstacles[i].x + 15 && dino.x + 20 > obstacles[i].x &&
-                dino.y < obstacles[i].y + 30 && dino.y + 20 > obstacles[i].y) {
-                gameOver = true;
-                ctx.fillStyle = '#dc2626';
-                ctx.font = '20px Inter';
-                ctx.fillText('গেম ওভার! ট্যাপ করে আবার খেলুন', 150, 75);
+        window.addEventListener('offline', () => {
+            document.getElementById('offlineGame').classList.add('active');
+            startDinoGame();
+        });
+
+        window.addEventListener('online', () => {
+            document.getElementById('offlineGame').classList.remove('active');
+        });
+
+        function startDinoGame() {
+            const canvas = document.getElementById('gameCanvas');
+            const ctx = canvas.getContext('2d');
+            let score = 0;
+            let dino = { x: 50, y: 110, vy: 0, jumping: false };
+            let obstacles = [];
+            let gameSpeed = 3;
+            let gameOver = false;
+
+            function drawDino() {
+                ctx.fillStyle = '#535353';
+                ctx.fillRect(dino.x, dino.y, 20, 20);
+                ctx.fillRect(dino.x + 15, dino.y - 5, 10, 10);
             }
 
-            if (obstacles[i].x < -15) obstacles.splice(i, 1);
-        }
+            function drawObstacle(obs) {
+                ctx.fillStyle = '#535353';
+                ctx.fillRect(obs.x, obs.y, 15, 30);
+            }
 
-        if (!gameOver) {
-            score++;
-            document.getElementById('score').textContent = Math.floor(score / 10);
-            gameSpeed = 3 + score / 500;
-            requestAnimationFrame(update);
+            function jump() {
+                if (!dino.jumping && !gameOver) {
+                    dino.vy = -12;
+                    dino.jumping = true;
+                }
+                if (gameOver) {
+                    location.reload();
+                }
+            }
+
+            document.addEventListener('keydown', (e) => {
+                if (e.code === 'Space') jump();
+            });
+            canvas.addEventListener('click', jump);
+            canvas.addEventListener('touchstart', jump);
+
+            function update() {
+                if (gameOver) return;
+
+                ctx.clearRect(0, 0, 600, 150);
+
+                ctx.fillStyle = '#535353';
+                ctx.fillRect(0, 130, 600, 2);
+
+                dino.y += dino.vy;
+                dino.vy += 0.6;
+
+                if (dino.y >= 110) {
+                    dino.y = 110;
+                    dino.vy = 0;
+                    dino.jumping = false;
+                }
+                drawDino();
+
+                if (Math.random() < 0.02) {
+                    obstacles.push({ x: 600, y: 100 });
+                }
+
+                for (let i = obstacles.length - 1; i >= 0; i--) {
+                    obstacles[i].x -= gameSpeed;
+                    drawObstacle(obstacles[i]);
+
+                    if (dino.x < obstacles[i].x + 15 && dino.x + 20 > obstacles[i].x &&
+                        dino.y < obstacles[i].y + 30 && dino.y + 20 > obstacles[i].y) {
+                        gameOver = true;
+                        ctx.fillStyle = '#dc2626';
+                        ctx.font = '20px Inter';
+                        ctx.fillText('গেম ওভার! ট্যাপ করে আবার খেলুন', 150, 75);
+                    }
+
+                    if (obstacles[i].x < -15) obstacles.splice(i, 1);
+                }
+
+                if (!gameOver) {
+                    score++;
+                    document.getElementById('score').textContent = Math.floor(score / 10);
+                    gameSpeed = 3 + score / 500;
+                    requestAnimationFrame(update);
+                }
+            }
+            update();
         }
-    }
-    update();
-}
-</script>
+    </script>
   
 </body>
 </html>
