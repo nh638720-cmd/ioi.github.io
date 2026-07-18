@@ -359,6 +359,12 @@
                 <h2>প্রোডাক্ট শপ</h2>
                 <p>দৈনন্দিন জীবনের সকল কোয়ালিটি প্রোডাক্ট</p>
             </div>
+
+            <div class="link-card" onclick="showBuyGuide('jewelry')">
+                <div class="icon">💍</div>
+                <h2>জুয়েলারি কালেকশন</h2>
+                <p>হাতে তৈরি স্টাইলিশ ও আরামদায়ক জুয়েলারির অসাধারণ সংগ্রহ</p>
+            </div>
         </div>
     </div>
 
@@ -446,11 +452,16 @@
                 title.textContent = 'বই কিভাবে ক্রয় করবেন?';
                 text.textContent = 'বই ক্রয় করতে চাইলে "এখনই যান" বাটনে ক্লিক করুন। আপনাকে বইয়ের কালেকশন পেজে নিয়ে যাওয়া হবে। সেখানে পছন্দের বই সিলেক্ট করে সহজেই অর্ডার করুন।';
                 currentLink = 'https://bithilikha.lovable.app';
+            } else if(type === 'jewelry') {
+                icon.textContent = '💍';
+                title.textContent = 'জুয়েলারি কিভাবে ক্রয় করবেন?';
+                text.textContent = 'জুয়েলারি ক্রয় করতে চাইলে "এখনই যান" বাটনে ক্লিক করুন। আপনাকে জুয়েলারি শপে নিয়ে যাওয়া হবে। সেখানে পছন্দের প্রোডাক্ট সিলেক্ট করে অর্ডার করুন।';
+                currentLink = 'https://YOUR-JEWELRY-LINK-HERE';
             } else {
                 icon.textContent = '🛍️';
                 title.textContent = 'প্রোডাক্ট কিভাবে ক্রয় করবেন?';
                 text.textContent = 'প্রোডাক্ট ক্রয় করতে চাইলে "এখনই যান" বাটনে ক্লিক করুন। আপনাকে প্রোডাক্ট শপে নিয়ে যাওয়া হবে। সেখানে পছন্দের প্রোডাক্ট সিলেক্ট করে অর্ডার করুন।';
-                currentLink = 'https://booeb.bolt.host/';
+                currentLink = 'https://bithilikha.bolt.host/';
             }
             
             modal.classList.add('active');
@@ -537,7 +548,7 @@ function startDinoGame() {
     function jump() {
         if (!dino.jumping &&!gameOver) {
             dino.vy = -12;
-            dino.jumping = true;
+dino.jumping = true;
         }
         if (gameOver) {
             location.reload();
@@ -603,4 +614,4 @@ function startDinoGame() {
 </script>
   
 </body>
-</html>-
+</html>
